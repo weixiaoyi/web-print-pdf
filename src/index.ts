@@ -1,7 +1,7 @@
 class WebPrintPdf {
   constructor() {}
-  init() {
-    console.log("ahahahha");
+  testConsole() {
+    console.log("test");
   }
 }
 

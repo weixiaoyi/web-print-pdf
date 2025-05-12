@@ -1,17 +1,30 @@
 {
-  "name": "webprintpdf",
+  "name": "web-print-pdf",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "html to pdf, print html, print pdf",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": ["print","printer","html","pdf"],
+  "author": "杭州把把胡科技有限公司",
   "license": "ISC",
-  "description": "html to pdf, print html, print pdf",
+  "bugs": {
+    "url": "https://github.com/weixiaoyi/web-print-pdf/issues"
+  },
+  "homepage": "https://github.com/weixiaoyi/web-print-pdf#readme",
   "devDependencies": {
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
