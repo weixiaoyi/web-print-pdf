@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "html to pdf, print html, print pdf",
   "devDependencies": {
+    "prettier": "^3.5.3",
     "typescript": "^5.8.3"
   }
 }
