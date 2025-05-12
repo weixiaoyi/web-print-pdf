@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var WebPrintPdf = /** @class */ (function () {
     function WebPrintPdf() {
     }
-    WebPrintPdf.prototype.init = function () {
-        console.log("ahahahha");
+    WebPrintPdf.prototype.testConsole = function () {
+        console.log("test");
     };
     return WebPrintPdf;
 }());
