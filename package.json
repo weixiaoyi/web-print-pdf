@@ -1,0 +1,16 @@
+{
+  "name": "webprintpdf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "html to pdf, print html, print pdf",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
