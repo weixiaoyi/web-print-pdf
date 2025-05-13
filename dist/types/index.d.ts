@@ -3,4 +3,3 @@ declare class WebPrintPdf {
     testConsole(): void;
 }
 export default WebPrintPdf;
-//# sourceMappingURL=index.d.ts.map
