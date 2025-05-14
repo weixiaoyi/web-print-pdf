@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -w",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,12 @@
     "type": "git",
     "url": ""
   },
-  "keywords": ["print","printer","htmltopdf","printpdf"],
+  "keywords": [
+    "print",
+    "printer",
+    "htmltopdf",
+    "printpdf"
+  ],
   "author": "杭州把把胡科技有限公司",
   "license": "MIT",
   "bugs": {
@@ -27,5 +32,7 @@
   "files": [
     "dist/**/*",
     "README.md"
-  ]
+  ],
+  "dependencies": {
+  }
 }
