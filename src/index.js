@@ -66,14 +66,20 @@ class WebPrintPdf {
     });
   }
 
-  async printHtmlToPdf(content, pdfOptions = {}, printOptions) {
-    return await this._promiseWrapper((commonOptions = {}) => {
+  async printHtml(
+    content,
+    pdfOptions = {},
+    printOptions = {},
+    extraOptions = {},
+  ) {
+    return await this._promiseWrapper((commonParams = {}) => {
       this._ws.send({
-        ...commonOptions,
-        type: this.printHtmlToPdf.name,
+        ...commonParams,
+        type: this.printHtml.name,
         content,
         pdfOptions,
         printOptions,
+        extraOptions,
       });
     });
   }
