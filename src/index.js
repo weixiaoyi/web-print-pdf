@@ -3,7 +3,7 @@ import uuid from "./components/uuid";
 
 class WebPrintPdf {
   constructor() {
-    this.ws = null;
+    this._ws = null;
     this._messagePromisePool = {};
     this._connectPromisePool = [];
   }
@@ -22,13 +22,13 @@ class WebPrintPdf {
     // to keep a single instance in a project
     return new Promise((resolve, reject) => {
       this._connectPromisePool.push({ resolve, reject });
-      if (!this.ws) {
-        this.ws = new Socket();
-        this.ws.init({
+      if (!this._ws) {
+        this._ws = new Socket();
+        this._ws.init({
           url: "ws://127.0.0.1:16794/websocket/standard",
           onOpen: this._mapResolveConnectPromise,
           onClose: (e) => {
-            this.ws = null;
+            this._ws = null;
             this._mapRejectConnectPromise(e);
           },
           onMessage: (payload) => {
@@ -47,9 +47,9 @@ class WebPrintPdf {
           },
         });
       } else {
-        if (this.ws.isConnected) {
+        if (this._ws.isConnected) {
           this._mapResolveConnectPromise();
-        } else if (this.ws.isDestroyed) {
+        } else if (this._ws.isDestroyed) {
           this._mapRejectConnectPromise();
         }
       }
@@ -60,15 +60,16 @@ class WebPrintPdf {
     await this._init();
     return new Promise((resolve, reject) => {
       const id = uuid();
+      const timestamp = Date.now();
       this._messagePromisePool[id] = { resolve, reject };
-      callback && callback({ id });
+      callback && callback({ id, timestamp });
     });
   }
 
   async printHtmlToPdf(content, pdfOptions = {}, printOptions) {
-    return await this._promiseWrapper(({ id }) => {
-      this.ws.send({
-        id,
+    return await this._promiseWrapper((commonOptions = {}) => {
+      this._ws.send({
+        ...commonOptions,
         type: this.printHtmlToPdf.name,
         content,
         pdfOptions,
