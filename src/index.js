@@ -83,6 +83,44 @@ class WebPrintPdf {
       });
     });
   }
+
+  async printHtmlByUrl(
+    url,
+    pdfOptions = {},
+    printOptions = {},
+    extraOptions = {},
+  ) {
+    return await this._promiseWrapper((commonParams = {}) => {
+      this._ws.send({
+        ...commonParams,
+        type: this.printHtmlByUrl.name,
+        url,
+        pdfOptions,
+        printOptions,
+        extraOptions,
+      });
+    });
+  }
+
+  async printHtmlByBase64() {}
+
+  async printPdfByUrl(
+    url,
+    pdfOptions = {},
+    printOptions = {},
+    extraOptions = {},
+  ) {
+    return await this._promiseWrapper((commonParams = {}) => {
+      this._ws.send({
+        ...commonParams,
+        type: this.printPdfByUrl.name,
+        url,
+        pdfOptions,
+        printOptions,
+        extraOptions,
+      });
+    });
+  }
 }
 
 export default new WebPrintPdf();
