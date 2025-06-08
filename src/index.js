@@ -102,7 +102,23 @@ class WebPrintPdf {
     });
   }
 
-  async printHtmlByBase64() {}
+  async printHtmlByBase64(
+    base64,
+    pdfOptions = {},
+    printOptions = {},
+    extraOptions = {},
+  ) {
+    return await this._promiseWrapper((commonParams = {}) => {
+      this._ws.send({
+        ...commonParams,
+        type: this.printHtmlByBase64.name,
+        base64,
+        pdfOptions,
+        printOptions,
+        extraOptions,
+      });
+    });
+  }
 
   async printPdfByUrl(
     url,
@@ -115,6 +131,24 @@ class WebPrintPdf {
         ...commonParams,
         type: this.printPdfByUrl.name,
         url,
+        pdfOptions,
+        printOptions,
+        extraOptions,
+      });
+    });
+  }
+
+  async printPdfByBase64(
+    base64,
+    pdfOptions = {},
+    printOptions = {},
+    extraOptions = {},
+  ) {
+    return await this._promiseWrapper((commonParams = {}) => {
+      this._ws.send({
+        ...commonParams,
+        type: this.printPdfByBase64.name,
+        base64,
         pdfOptions,
         printOptions,
         extraOptions,
