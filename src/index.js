@@ -191,6 +191,24 @@ class WebPrintPdf {
       });
     });
   }
+
+  async batchPrint(
+    printTaskList = [],
+    pdfOptions = {},
+    printOptions = {},
+    extraOptions = {},
+  ) {
+    return await this._promiseWrapper((commonParams = {}) => {
+      this._ws.send({
+        ...commonParams,
+        type: this.batchPrint.name,
+        printTaskList,
+        pdfOptions,
+        printOptions,
+        extraOptions,
+      });
+    });
+  }
 }
 
 export default new WebPrintPdf();
