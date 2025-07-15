@@ -1,11 +1,14 @@
 import Socket from "./components/Websocket";
 import uuid from "./components/uuid";
+import Utils from "./components/Utils";
 
 class WebPrintPdf {
   constructor() {
     this._ws = null;
     this._messagePromisePool = {};
     this._connectPromisePool = [];
+    this._port = 16794;
+    this.utils = new Utils(this);
   }
 
   _mapResolveConnectPromise = () => {
@@ -25,7 +28,7 @@ class WebPrintPdf {
       if (!this._ws) {
         this._ws = new Socket();
         this._ws.init({
-          url: "ws://127.0.0.1:16794/websocket/standard",
+          url: `ws://127.0.0.1:${this._port}/websocket/standard`,
           onOpen: this._mapResolveConnectPromise,
           onClose: (e) => {
             this._ws = null;
