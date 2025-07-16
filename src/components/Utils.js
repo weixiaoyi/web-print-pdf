@@ -16,4 +16,14 @@ export default class Utils {
       });
     });
   };
+
+  setContactUsTabInnerHtml = async (html) => {
+    return await this.ins._promiseWrapper((commonParams = {}) => {
+      this.ins._ws.send({
+        ...commonParams,
+        type: "setContactUsTabInnerHtml",
+        html,
+      });
+    });
+  };
 }
