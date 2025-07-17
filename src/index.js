@@ -9,6 +9,8 @@ class WebPrintPdf {
     this._connectPromisePool = [];
     this._port = 16794;
     this.utils = new Utils(this);
+    this._onResponseCallback = null;
+    this._onErrorCallback = null;
   }
 
   _mapResolveConnectPromise = () => {
@@ -25,7 +27,7 @@ class WebPrintPdf {
     // to keep a single instance in a project
     return new Promise((resolve, reject) => {
       this._connectPromisePool.push({ resolve, reject });
-      if (!this._ws) {
+      if (!this._ws?.ws) {
         this._ws = new Socket();
         this._ws.init({
           url: `ws://127.0.0.1:${this._port}/websocket/standard`,
@@ -46,14 +48,18 @@ class WebPrintPdf {
                   findPromiseOne.reject(message);
                 }
               }
+              this._onResponseCallback && this._onResponseCallback(message);
             }
           },
+          onError: this._onErrorCallback,
         });
       } else {
         if (this._ws.isConnected) {
           this._mapResolveConnectPromise();
         } else if (this._ws.isDestroyed) {
-          this._mapRejectConnectPromise();
+          this._mapRejectConnectPromise("client ws has been destroyed");
+        } else {
+          this._mapRejectConnectPromise("client ws has not been connected");
         }
       }
     });

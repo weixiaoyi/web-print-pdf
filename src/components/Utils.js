@@ -3,6 +3,20 @@ export default class Utils {
     this.ins = ins;
   }
 
+  onResponse(callback) {
+    if (Object.prototype.toString.call(callback) !== "[object Function]") {
+      throw new Error("onResponse's callback should be a function");
+    }
+    this.ins._onResponseCallback = callback;
+  }
+
+  onError(callback) {
+    if (Object.prototype.toString.call(callback) !== "[object Function]") {
+      throw new Error("onError's callback should be a function");
+    }
+    this.ins._onErrorCallback = callback;
+  }
+
   setPort = (port) => {
     this.ins._port = port;
   };
