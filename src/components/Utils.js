@@ -18,6 +18,9 @@ export default class Utils {
   }
 
   setPort = (port) => {
+    if (port !== this.ins._port && this.ins._ws) {
+      this.ins._ws = null;
+    }
     this.ins._port = port;
   };
 
