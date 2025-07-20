@@ -23,6 +23,13 @@ class WebPrintPdf {
     this._connectPromisePool = [];
   };
 
+  _setPort = async (port) => {
+    if (port !== this._port && this._ws) {
+      this._ws = null;
+    }
+    this._port = port;
+  };
+
   async _init() {
     // to keep a single instance in a project
     return new Promise((resolve, reject) => {

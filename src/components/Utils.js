@@ -17,11 +17,13 @@ export default class Utils {
     this.ins._onErrorCallback = callback;
   }
 
-  setPort = (port) => {
-    if (port !== this.ins._port && this.ins._ws) {
-      this.ins._ws = null;
-    }
-    this.ins._port = port;
+  getConnectStatus = async () => {
+    return await this.ins._promiseWrapper((commonParams = {}) => {
+      this.ins._ws.send({
+        ...commonParams,
+        type: "getConnectStatus",
+      });
+    });
   };
 
   setTitle = async (title) => {
@@ -30,6 +32,16 @@ export default class Utils {
         ...commonParams,
         type: "setTitle",
         title,
+      });
+    });
+  };
+
+  setThemeColor = async (themeColor) => {
+    return await this.ins._promiseWrapper((commonParams = {}) => {
+      this.ins._ws.send({
+        ...commonParams,
+        type: "setThemeColor",
+        themeColor,
       });
     });
   };
