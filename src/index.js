@@ -64,9 +64,15 @@ class WebPrintPdf {
         if (this._ws.isConnected) {
           this._mapResolveConnectPromise();
         } else if (this._ws.isDestroyed) {
-          this._mapRejectConnectPromise("client ws has been destroyed");
+          this._mapRejectConnectPromise(
+            new Error("client websocket has been destroyed"),
+          );
         } else {
-          this._mapRejectConnectPromise("client ws has not been connected");
+          this._mapRejectConnectPromise(
+            new Error(
+              "client websocket has not been connected. Note that the API is asynchronous, you may need to use 'async await'",
+            ),
+          );
         }
       }
     });
