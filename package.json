@@ -1,6 +1,6 @@
 {
   "name": "web-print-pdf",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "html to pdf, print html, print pdf",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
