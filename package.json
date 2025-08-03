@@ -1,23 +1,49 @@
 {
   "name": "web-print-pdf",
-  "version": "2.0.0",
-  "description": "html to pdf, print html, print pdf",
+  "version": "2.1.0",
+  "description": "A powerful web HTML printing library that converts HTML to PDF and prints. Support multiple formats, batch printing, and WebSocket communication. Perfect for web applications needing print functionality.",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "tsc -w",
+    "build": "tsc && copyfiles -u 0 README.md README_EN.md LICENSE CHANGELOG.md CONTRIBUTING.md dist/",
+    "build:watch": "tsc -w",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format:check": "prettier --check \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build",
+    "clean": "rimraf dist",
+    "dev": "npm run build:watch",
+    "docs": "echo \"Documentation is in README.md and README_EN.md\"",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/weixiaoyi/web-print-pdf.git"
   },
   "keywords": [
     "print",
     "printer",
-    "htmltopdf",
-    "printpdf"
+    "html-to-pdf",
+    "html2pdf",
+    "pdf-generation",
+    "web-printing",
+    "print-html",
+    "print-pdf",
+    "batch-print",
+    "websocket-print",
+    "javascript-print",
+    "typescript-print",
+    "electron-print",
+    "print-library",
+    "html-printing",
+    "pdf-printing",
+    "print-service",
+    "web-print",
+    "print-client",
+    "print-utility"
   ],
   "author": "杭州把把胡科技有限公司",
   "license": "MIT",
@@ -26,13 +52,23 @@
   },
   "homepage": "https://github.com/weixiaoyi/web-print-pdf#readme",
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "prettier": "^3.5.3",
+    "rimraf": "^5.0.0",
     "typescript": "^5.8.3"
   },
   "files": [
     "dist/**/*",
-    "README.md"
+    "README.md",
+    "README_EN.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md"
   ],
-  "dependencies": {
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
