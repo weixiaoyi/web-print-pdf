@@ -79,6 +79,15 @@ class WebPrintPdf {
             callback && callback({ id, timestamp });
         });
     }
+    async _printByRawMessage(rawMessage = {}) {
+        return await this._promiseWrapper((commonParams = {}) => {
+            this._ws.send({
+                ...rawMessage,
+                ...commonParams,
+                _raw: rawMessage,
+            });
+        });
+    }
     async printHtml(content, pdfOptions = {}, printOptions = {}, extraOptions = {}) {
         return await this._promiseWrapper((commonParams = {}) => {
             this._ws.send({

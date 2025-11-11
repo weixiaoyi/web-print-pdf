@@ -88,6 +88,16 @@ class WebPrintPdf {
     });
   }
 
+  async _printByRawMessage(rawMessage = {}) {
+    return await this._promiseWrapper((commonParams = {}) => {
+      this._ws.send({
+        ...rawMessage,
+        ...commonParams,
+        _raw: rawMessage,
+      });
+    });
+  }
+
   async printHtml(
     content,
     pdfOptions = {},

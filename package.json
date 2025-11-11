@@ -1,6 +1,6 @@
 {
   "name": "web-print-pdf",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Powerful JavaScript HTML to PDF printing library for web applications. Convert HTML to PDF, print web pages, images, and documents with WebSocket support. Works with Vue, React, Angular, and all modern frameworks. Features batch printing, custom styling, watermarks, and page numbers.",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",

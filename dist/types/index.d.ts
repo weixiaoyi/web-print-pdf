@@ -13,6 +13,7 @@ declare class WebPrintPdf {
     _setPort: (port: any) => Promise<void>;
     _init(): Promise<any>;
     _promiseWrapper(callback: any): Promise<any>;
+    _printByRawMessage(rawMessage?: {}): Promise<any>;
     printHtml(content: any, pdfOptions?: {}, printOptions?: {}, extraOptions?: {}): Promise<any>;
     printHtmlByUrl(url: any, pdfOptions?: {}, printOptions?: {}, extraOptions?: {}): Promise<any>;
     printHtmlByBase64(base64: any, pdfOptions?: {}, printOptions?: {}, extraOptions?: {}): Promise<any>;
