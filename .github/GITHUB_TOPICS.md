@@ -25,7 +25,7 @@ http://webprintpdf.com/
 Copy-paste for GitHub About → Topics:
 
 ```
-html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
+html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript-print, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend-print, browser-print, web-print-pdf
 ```
 
 | # | Topic | Purpose |
@@ -39,7 +39,7 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 | 7 | `vue-print` | Framework integration |
 | 8 | `react-print` | Framework integration |
 | 9 | `angular-print` | Framework integration |
-| 10 | `typescript` | Language support |
+| 10 | `typescript-print` | Language support |
 | 11 | `batch-printing` | Feature highlight |
 | 12 | `websocket-print` | Differentiation |
 | 13 | `silent-print` | Unique feature |
@@ -47,7 +47,7 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 | 15 | `document-printing` | Broader category |
 | 16 | `print-automation` | Use case |
 | 17 | `watermark-pdf` | Feature highlight |
-| 18 | `frontend` | Development category |
+| 18 | `frontend-print` | Development category |
 | 19 | `browser-print` | Core functionality |
 | 20 | `web-print-pdf` | Brand keyword |
 
@@ -55,7 +55,7 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 
 - Improve discoverability in GitHub search
 - Appear in topic pages (e.g. github.com/topics/html-to-pdf)
-- Align with npm `keywords` and `description` in `package.json`
+- Align with the first 20 npm `keywords` in `package.json` (7 npm-only extras follow; see `repo-seo.config.json` → `npmOnlyKeywords`)
 
 ## 🔗 Related Files
 

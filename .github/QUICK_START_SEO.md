@@ -25,7 +25,7 @@ http://webprintpdf.com/
 
 ### Topics（标签）- 复制粘贴以下内容
 ```
-html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
+html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript-print, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend-print, browser-print, web-print-pdf
 ```
 
 4. 点击 **Save changes**
@@ -45,33 +45,30 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 
 **Choose a tag:**
 ```
-v2.1.4
+v2.1.6
 ```
 
 **Release title:**
 ```
-Release v2.1.4
+Release v2.1.6
 ```
 
 **Description:** （复制粘贴）
 ```
-## 🎉 主要特性
+## 🔧 改进
 
-- ✅ 支持 HTML 转 PDF 高质量打印
-- ✅ 兼容 Vue、React、Angular 等主流框架
-- ✅ 批量打印支持
-- ✅ 自定义水印和页码
-- ✅ WebSocket 实时通信
-- ✅ TypeScript 类型支持
+- ✅ 统一 npm keywords 与 GitHub Topics（前 20 项一致，7 个 npm 扩展词）
+- ✅ 修正 Topics 命名一致性（`typescript-print`、`frontend-print`）
+- ✅ 更新 GitHub SEO 配置文档
 
 ## 📦 安装
 
 \`\`\`bash
-npm install web-print-pdf@2.1.4
+npm install web-print-pdf@2.1.6
 # or
-yarn add web-print-pdf@2.1.4
+yarn add web-print-pdf@2.1.6
 # or
-pnpm add web-print-pdf@2.1.4
+pnpm add web-print-pdf@2.1.6
 \`\`\`
 
 ## 🚀 快速开始

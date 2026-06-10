@@ -2,6 +2,7 @@
   "repository": "weixiaoyi/web-print-pdf",
   "website": "http://webprintpdf.com/",
   "_descriptionNote": "GitHub About description is in package.json -> githubDescription (npm uses description)",
+  "_topicsNote": "topics must match the first 20 entries in package.json keywords; npm-only extras follow after",
   "topics": [
     "html-to-pdf",
     "pdf-generator",
@@ -12,7 +13,7 @@
     "vue-print",
     "react-print",
     "angular-print",
-    "typescript",
+    "typescript-print",
     "batch-printing",
     "websocket-print",
     "silent-print",
@@ -20,8 +21,17 @@
     "document-printing",
     "print-automation",
     "watermark-pdf",
-    "frontend",
+    "frontend-print",
     "browser-print",
     "web-print-pdf"
+  ],
+  "npmOnlyKeywords": [
+    "html2pdf",
+    "local-print-client",
+    "print-service",
+    "pdf-generation",
+    "client-print",
+    "printer-api",
+    "print-preview"
   ]
 }

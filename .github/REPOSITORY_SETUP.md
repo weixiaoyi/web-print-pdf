@@ -18,9 +18,9 @@ JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print
 http://webprintpdf.com/
 ```
 
-**Topics（标签）** - 添加以下 20 个推荐标签（与 `package.json` keywords 对齐）：
+**Topics（标签）** - 添加以下 20 个标签（与 `package.json` keywords 前 20 项一致；npm 另有 7 个扩展词见 `repo-seo.config.json` → `npmOnlyKeywords`）：
 ```
-html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
+html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript-print, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend-print, browser-print, web-print-pdf
 ```
 
 
@@ -37,7 +37,7 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 
 1. 进入 Settings → Pages
 2. Source: Deploy from a branch
-3. Branch: `main` 或 `gh-pages`
+3. Branch: `master` 或 `gh-pages`
 4. 可以使用 VitePress 或 Docusaurus 构建文档站点
 
 ## 📦 创建 Release
@@ -48,22 +48,22 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 2. 点击右侧 "Releases"
 3. 点击 "Create a new release"
 4. 填写以下信息：
-   - **Tag**: v2.1.2
-   - **Title**: Release v2.1.2
+   - **Tag**: v2.1.6
+   - **Title**: Release v2.1.6
    - **Description**: 使用 `.github/RELEASE_TEMPLATE.md` 作为模板
 5. 点击 "Publish release"
 
 ### 方式二：命令行创建（需要 GitHub CLI）
 
 ```bash
-gh release create v2.1.2 \
-  --title "Release v2.1.2" \
+gh release create v2.1.6 \
+  --title "Release v2.1.6" \
   --notes-file .github/RELEASE_TEMPLATE.md
 ```
 
 ## 🏷️ npm 包优化检查清单
 
-- ✅ keywords 已配置（27个关键词，已去除 node-print、browser-automation 等误导词）
+- ✅ keywords 已配置（20 个核心词与 GitHub Topics 一致 + 7 个 npm 扩展词，共 27 个）
 - ✅ description 已优化
 - ✅ homepage 指向官网
 - ✅ repository 链接正确

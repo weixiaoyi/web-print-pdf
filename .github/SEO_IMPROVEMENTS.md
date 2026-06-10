@@ -10,8 +10,9 @@
 - ✅ 更新 `homepage` 指向官网: http://webprintpdf.com/
 - ✅ 修复 `build` 脚本：将 README_EN.md 改为 README_CN.md
 - ✅ 优化 `files` 字段：包含所有必要的文档文件
-- ✅ 保留 40 个精选关键词，覆盖全面
-- ✅ 完善的包描述信息
+- ✅ 精简为 27 个关键词，去除 node-print、browser-automation 等误导词
+- ✅ npm description 控制在 256 字符以内，避免展示截断
+- ✅ `githubDescription` 与 npm `description` 分工维护
 
 ### 2. 文档优化
 
@@ -41,31 +42,25 @@ GitHub 社区标准检查清单：
 - ✅ Issue 模板 - 已存在
 - ✅ Pull Request 模板 - 已存在
 
-## 📋 待执行的配置（需要仓库管理员手动操作）
+## 📋 配置状态
 
-### 立即配置（5分钟）
+### 已完成
 
-1. **GitHub 仓库 About 设置**
-   - 位置：仓库首页右侧 → 点击 ⚙️ 图标
-   - Description（见 `package.json` → `githubDescription`，上限 350 字符）: 
-     ```
-     JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print Expert Client. Vue, React, Angular.
-     ```
-   - Website: `http://webprintpdf.com/`
-   - Topics（添加以下 20 个，见 `.github/repo-seo.config.json`）:
-     ```
-     html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
-     ```
+1. **GitHub 仓库 About 设置** — Description、Website、Topics（20 个）已配置
+2. **npm 包发布** — 当前准备发布 `2.1.6`，keywords / description / README 已同步
+3. **文档优化** — 中英文 README、FAQ、CHANGELOG 已对齐
 
-2. **启用 GitHub Discussions**
+### 待执行（需要仓库管理员手动操作）
+
+1. **启用 GitHub Discussions**
    - 位置：Settings → Features → Discussions
    - ✅ 勾选启用
 
-3. **创建 GitHub Release**
+2. **创建 GitHub Release v2.1.6**
    - 位置：仓库首页 → Releases → Create a new release
-   - Tag: v2.1.4
-   - Title: Release v2.1.4
-   - Description: 使用 `.github/RELEASE_TEMPLATE.md` 作为模板
+   - Tag: `v2.1.6`
+   - Title: `Release v2.1.6`
+   - Description: 参考 `.github/QUICK_START_SEO.md` 第三步或 `.github/RELEASE_TEMPLATE.md`
 
 ### 短期优化（1-2周）
 
@@ -118,13 +113,15 @@ GitHub 社区标准检查清单：
 - ❌ 缺少社区文档
 - ❌ 缺少实际案例
 
-### 优化后（当前）：8.0/10
+### 优化后（当前 v2.1.6）：8.5/10
 - ✅ 文档完善且同步
-- ✅ 关键词优化
-- ✅ GitHub 配置文档完整
+- ✅ 关键词优化（20 核心 + 7 npm 扩展）
+- ✅ GitHub About / Topics 已配置
+- ⚠️ npm 2.1.6 待发布
 - ✅ 社区文档齐全
 - ✅ 丰富的使用示例
-- ⚠️ 需要手动配置 GitHub 设置
+- ⚠️ GitHub Release 待创建 v2.1.6
+- ⚠️ Discussions 未启用
 - ⚠️ 缺少实际推广
 
 ### 完全执行后（预期）：8.5-9.0/10
@@ -186,7 +183,7 @@ GitHub 社区标准检查清单：
 
 ---
 
-**优化日期**: 2025-10-01  
-**优化人员**: AI Assistant  
-**下次复查**: 2025-11-01
+**优化日期**: 2026-06-11  
+**当前版本**: 2.1.6  
+**下次复查**: 2026-07-11
 

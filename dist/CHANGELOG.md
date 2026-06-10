@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.6] - 2026-06-11
+
+### Changed
+- Aligned npm keywords with GitHub Topics: first 20 entries match exactly; 7 npm-only extras documented in `repo-seo.config.json`
+- Fixed topic naming consistency (`typescript-print`, `frontend-print`) across `package.json` and GitHub SEO config
+- Updated GitHub SEO guides for v2.1.6 release
+
 ## [2.1.5] - 2026-06-10
 
 ### Added
