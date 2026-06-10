@@ -10,7 +10,7 @@
 
 ### Description（描述）
 ```
-Powerful JavaScript HTML to PDF printing library. Works with Vue, React, Angular. Features batch printing, watermarks, and WebSocket support.
+Powerful JavaScript HTML to PDF printing library. Convert HTML to PDF and print via WebSocket. Requires Web Print Expert Client for silent/local printing. Vue, React, Angular. Batch printing, watermarks.
 ```
 
 ### Website（网站）
@@ -20,7 +20,13 @@ http://webprintpdf.com/
 
 ### Topics（标签）- 复制粘贴以下内容
 ```
-html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket, silent-print, pdf-generation, document-printing, frontend, nodejs, cross-platform, enterprise, print-automation
+html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
+```
+
+或使用脚本自动配置（需 `GITHUB_TOKEN`）：
+```powershell
+$env:GITHUB_TOKEN = "ghp_xxx"
+.\scripts\set-github-repo-seo.ps1
 ```
 
 4. 点击 **Save changes**
@@ -40,12 +46,12 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 
 **Choose a tag:**
 ```
-v2.1.2
+v2.1.4
 ```
 
 **Release title:**
 ```
-Release v2.1.2
+Release v2.1.4
 ```
 
 **Description:** （复制粘贴）
@@ -62,11 +68,11 @@ Release v2.1.2
 ## 📦 安装
 
 \`\`\`bash
-npm install web-print-pdf@2.1.2
+npm install web-print-pdf@2.1.4
 # or
-yarn add web-print-pdf@2.1.2
+yarn add web-print-pdf@2.1.4
 # or
-pnpm add web-print-pdf@2.1.2
+pnpm add web-print-pdf@2.1.4
 \`\`\`
 
 ## 🚀 快速开始

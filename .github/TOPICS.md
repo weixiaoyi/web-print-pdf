@@ -1,52 +1,11 @@
 # GitHub Topics for web-print-pdf
 
-This file contains suggested topics for the web-print-pdf repository to improve discoverability on GitHub.
+See `.github/GITHUB_TOPICS.md` and `.github/repo-seo.config.json` for the canonical list.
 
-## Suggested Topics
+**20 recommended topics** (aligned with npm keywords):
 
-- print
-- printer
-- html-to-pdf
-- html2pdf
-- pdf-generation
-- web-printing
-- print-html
-- print-pdf
-- batch-print
-- websocket-print
-- javascript-print
-- typescript-print
-- electron-print
-- print-library
-- html-printing
-- pdf-printing
-- print-service
-- web-print
-- print-client
-- print-utility
-- nodejs
-- browser
-- websocket
-- client-server
-- printing-solution
-- document-generation
-- web-application
-- frontend
-- javascript-library
-- typescript-library
+```
+html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
+```
 
-## How to Add Topics
-
-1. Go to your repository on GitHub
-2. Click on "About" section
-3. Click on the gear icon next to "Topics"
-4. Add the topics from the list above
-5. Click "Done"
-
-## Benefits
-
-- Improved searchability on GitHub
-- Better categorization
-- Increased discoverability
-- Related project suggestions
-- Community engagement 
+Apply via `scripts/set-github-repo-seo.ps1` or GitHub About settings.

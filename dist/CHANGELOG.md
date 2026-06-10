@@ -7,26 +7,52 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.5] - 2026-06-10
+
 ### Added
-- GitHub Actions CI workflow
-- Issue and PR templates
-- Enhanced SEO optimization
-- Bilingual documentation (Chinese/English)
-- Comprehensive badges and metrics
+- `utils.getPrinterList()` — retrieve available printers on the client
+- `utils.getPrinterPapers(printer)` — retrieve supported paper types for a specified printer
+- GitHub SEO automation (`.github/repo-seo.config.json`, `scripts/set-github-repo-seo.ps1`)
 
 ### Changed
-- Improved package.json metadata
-- Enhanced README documentation
-- Better project structure
+- Refined npm keywords: removed misleading terms (`node-print`, `browser-automation`, `electron-print`), strengthened differentiation (`websocket-print`, `silent-print`, `desktop-print-client`)
+- Updated npm description and FAQ with differentiation vs Print.js/jsPDF and local client requirements
+- Enhanced README documentation (utility methods, configuration fixes, overview alignment)
+- Unified GitHub SEO guides and topic recommendations
+- Trimmed marketing/SEO sections from README
 
-## [2.0.0] - 2024-01-XX
+## [2.1.4] - 2025-11-11
+
+### Added
+- `_printByRawMessage()` — send raw WebSocket print messages for advanced use cases
+- Bilingual documentation (`README.md`, `README_CN.md`)
+- GitHub Actions CI workflow, issue and PR templates
+- Comprehensive SEO guides and repository setup docs (`.github/`)
+
+### Changed
+- Major README documentation overhaul
+- Improved `package.json` metadata and keywords
+- Replaced separate English README with bilingual doc structure
+
+## [2.1.2] - 2025-08-04
+
+### Changed
+- Version bump and maintenance updates
+
+## [2.1.1] - 2025-08-04
+
+### Changed
+- Version bump and maintenance updates
+
+## [2.0.0] - 2025-07-28
 
 ### Added
 - Support for multiple printing formats (HTML, URL, Base64)
 - Batch printing functionality
 - WebSocket communication
-- Client customization features
-- Comprehensive configuration options
+- Client customization features (`setTitle`, `setThemeColor`, `switchTabsVisibility`, `setContactUsTabInnerHtml`)
+- Utility methods (`getConnectStatus`, `onResponse`, `onError`)
+- Comprehensive configuration options (pdfOptions, printOptions, extraOptions)
 
 ### Changed
 - Major API redesign for better usability
@@ -60,4 +86,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Deprecated** for soon-to-be removed features
 - **Removed** for now removed features
 - **Fixed** for any bug fixes
-- **Security** in case of vulnerabilities 
+- **Security** in case of vulnerabilities

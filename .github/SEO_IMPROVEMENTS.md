@@ -52,29 +52,11 @@ GitHub 社区标准检查清单：
      Powerful JavaScript HTML to PDF printing library. Works with Vue, React, Angular. Features batch printing, watermarks, and WebSocket support.
      ```
    - Website: `http://webprintpdf.com/`
-   - Topics（添加以下 20 个）:
+   - Topics（添加以下 20 个，见 `.github/repo-seo.config.json`）:
      ```
-     html-to-pdf
-     pdf-generator
-     javascript-print
-     web-printing
-     pdf-converter
-     print-library
-     vue-print
-     react-print
-     angular-print
-     typescript
-     batch-printing
-     websocket
-     silent-print
-     pdf-generation
-     document-printing
-     frontend
-     nodejs
-     cross-platform
-     enterprise
-     print-automation
+     html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
      ```
+     或运行 `scripts/set-github-repo-seo.ps1`
 
 2. **启用 GitHub Discussions**
    - 位置：Settings → Features → Discussions
@@ -82,8 +64,8 @@ GitHub 社区标准检查清单：
 
 3. **创建 GitHub Release**
    - 位置：仓库首页 → Releases → Create a new release
-   - Tag: v2.1.2
-   - Title: Release v2.1.2
+   - Tag: v2.1.4
+   - Title: Release v2.1.4
    - Description: 使用 `.github/RELEASE_TEMPLATE.md` 作为模板
 
 ### 短期优化（1-2周）

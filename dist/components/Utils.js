@@ -64,6 +64,27 @@ export default class Utils {
                 });
             });
         };
+        this.getPrinterList = async () => {
+            // return [{name:"",driverName:""},...]
+            return await this.ins._promiseWrapper((commonParams = {}) => {
+                this.ins._ws.send({
+                    ...commonParams,
+                    type: "getPrinterList",
+                });
+            });
+        };
+        this.getPrinterPapers = async (printer) => {
+            // printer: {name:"",driverName:""}， "printer" is an item from the result returned by the getPrinterList interface
+            // Obtain all paper types for the specified printer
+            // return [{name:'A4',width:210,height:296,unit:'mm'}]
+            return await this.ins._promiseWrapper((commonParams = {}) => {
+                this.ins._ws.send({
+                    ...commonParams,
+                    type: "getPrinterPapers",
+                    printer,
+                });
+            });
+        };
         this.ins = ins;
     }
     onResponse(callback) {

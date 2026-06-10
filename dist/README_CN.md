@@ -14,16 +14,16 @@
 [![GitHub stars](https://img.shields.io/github/stars/weixiaoyi/web-print-pdf.svg)](https://github.com/weixiaoyi/web-print-pdf/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/weixiaoyi/web-print-pdf.svg)](https://github.com/weixiaoyi/web-print-pdf/network)
 [![GitHub issues](https://img.shields.io/github/issues/weixiaoyi/web-print-pdf.svg)](https://github.com/weixiaoyi/web-print-pdf/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/web-print-pdf.svg)](https://github.com/weixiaoyi/web-print-pdf/pulls)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/weixiaoyi/web-print-pdf.svg)](https://github.com/weixiaoyi/web-print-pdf/pulls)
 [![npm downloads](https://img.shields.io/npm/dm/web-print-pdf.svg)](https://www.npmjs.com/package/web-print-pdf)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![Framework Agnostic](https://img.shields.io/badge/Framework-Agnostic-green.svg)](https://github.com/weixiaoyi/web-print-pdf)
 
-> 🖨️ **强大的 JavaScript HTML 转 PDF 打印库** - 将 HTML 转换为 PDF，打印网页、图片和文档，支持 WebSocket。可与 Vue、React、Angular 和所有现代 JavaScript 框架无缝集成。
+> 🖨️ **强大的 JavaScript HTML 转 PDF 打印库** - 将 HTML 转换为 PDF，打印网页、图片和文档，支持 WebSocket。需安装 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/) 实现静默/本地打印。可与 Vue、React、Angular 和所有现代 JavaScript 框架无缝集成。
 
 ## 🎯 概述
 
-**web-print-pdf** 是一个全面的 JavaScript 打印库，使 Web 应用能够将 HTML 内容转换为高质量的 PDF 文档并直接从浏览器打印。非常适合发票打印、报表生成、文档管理系统以及任何需要专业打印功能的 Web 应用。
+**web-print-pdf** 是一个全面的 JavaScript 打印库，使 Web 应用能够将 HTML 内容转换为高质量的 PDF 文档，并通过 Web 打印专家客户端将打印任务发送到本地打印机。非常适合需要静默打印和生产级打印控制的发票打印、报表生成、文档管理系统等 Web 应用。
 
 ### 🌟 为什么选择 web-print-pdf？
 
@@ -50,6 +50,7 @@
 - 📦 **批量打印**：支持批量任务处理
 - 🔧 **灵活配置**：丰富的 PDF 和打印选项
 - 🌐 **WebSocket 通信**：实时连接状态监控
+- 🔕 **静默打印**：通过本地客户端实现静默打印，无需浏览器打印对话框
 - 🎨 **自定义样式**：支持自定义页眉、页脚、边距以及客户端主题色、标题等
 - 🚀 **简洁的 API 设计**：API 一致性，前端开发友好，学习成本低
 - 🎯 **HTML/CSS 控制**：通过 HTML 和 CSS 控制所有 PDF 样式，无需额外学习
@@ -323,7 +324,7 @@ const printTasks = [
 await webPrintPdf.batchPrint(
     printTasks,
     { paperFormat: 'A4',... }, // pdfOptions
-    { printer: 'Default Printer',... }, // printOptions
+    { printerName: 'Default Printer',... }, // 打印选项 printOptions
     { requestTimeout: 15,... } // extraOptions
 );
 ```
@@ -338,7 +339,7 @@ await webPrintPdf.batchPrint(
 | `width` | string\|number | - | 纸张宽度，支持单位：px、in、cm、mm | string \| number (可选) 纸张宽度，接受带单位的值 px、in、cm、mm。（注意：使用自定义尺寸时，不需要设置 paperFormat） |
 | `height` | string\|number | - | 纸张高度，支持单位：px、in、cm、mm | string \| number (可选)，纸张高度，接受带单位的值 px、in、cm、mm。（注意：使用自定义尺寸时，不需要设置 paperFormat） |
 | `displayHeaderFooter` | boolean | false | 是否显示页眉页脚 | boolean (可选)，显示页眉和页脚。默认为 false |
-| `headerTemplate` | string | - | 页眉 HTML 模板，支持特殊类：date、title、url、pageNumber、totalPages | string (可选)，打印页眉的 HTML 模板，应该是有效的 HTML 标记，使用以下类来注入打印值：'date'：格式化的打印日期；'title'：文档标题；'url'：文档位置；'pageNumber'：当前页码；'totalPages'：文档总页数。例如：<span class="pageNumber"><span/>。（页眉模板 html 字符串，支持插入特殊类自动实现日期、页面、总页数等显示功能） |
+| `headerTemplate` | string | - | 页眉 HTML 模板，支持特殊类：date、title、url、pageNumber、totalPages | string (可选)，打印页眉的 HTML 模板，应该是有效的 HTML 标记，使用以下类来注入打印值：'date'：格式化的打印日期；'title'：文档标题；'url'：文档位置；'pageNumber'：当前页码；'totalPages'：文档总页数。例如：<span class="pageNumber"></span>。（页眉模板 html 字符串，支持插入特殊类自动实现日期、页面、总页数等显示功能） |
 | `footerTemplate` | string | - | 页脚 HTML 模板，格式与 headerTemplate 相同 | string (可选)，打印页脚的 HTML 模板。应使用与 headerTemplate 相同的格式 |
 | `landscape` | boolean | false | 是否横向打印，默认 false（纵向） | boolean (可选)，纸张方向。默认为 false。（是否横向，默认 false，纵向） |
 | `margin` | object | 0 | 页边距，支持单位：px、in、cm、mm | Object (可选)，纸张边距，默认为无。top、right、bottom、left，接受带单位的边距值 px、in、cm、mm。默认为 0（pdf 边距） |
@@ -346,13 +347,13 @@ await webPrintPdf.batchPrint(
 | `preferCSSPageSize` | boolean | false | 优先使用 CSS @page 尺寸 | boolean (可选)，优先使用页面中声明的任何 CSS @page 尺寸，而不是 width、height 或 format 选项中声明的尺寸。默认为 false，将缩放内容以适合纸张尺寸 |
 | `printBackground` | boolean | false | 是否打印背景图形 | boolean (可选)，打印背景图形。默认为 false。（是否打印背景色） |
 | `watermark` | object | - | 水印设置（文本或图片水印） | Object (可选)，例如：文本水印：{ text:"hello, this is watermark", color:'rgb(0,0,0)', x: 200 \|'alignCenter'\|'alignLeft'\|'alignRight', y: 100 \|'alignCenter'\|'alignTop'\|'alignBottom', size: 20, rows: 4, cols:4, xSpace:20, ySpace:20, angle: 45, opacity:0.5  } 或图片水印 { base64: "", x: 200 \|'alignCenter'\|'alignLeft'\|'alignRight', y: 100 \|'alignCenter'\|'alignTop'\|'alignBottom', rows: 4, cols:4, angle: 45, xSpace:20, ySpace:20, width: 100, height: 100, opacity:0.5  }。（文本水印或图片水印） |
-| `pageNumber` | object | - | 页码设置 | Object (可选)，例如：{ start: 1, x: 200 \|'alignCenter'\|'alignLeft'\|'alignRight', y: 100 \|'alignCenter'\|'alignTop'\|'alignBottom', format: '{{page}}/{{totalPage}}', color:'rgb(0,0,0)',  size: 20', xSpace: 0, ySpace:0, opacity:1 }。（页码） |
+| `pageNumber` | object | - | 页码设置 | Object (可选)，例如：{ start: 1, x: 200 \|'alignCenter'\|'alignLeft'\|'alignRight', y: 100 \|'alignCenter'\|'alignTop'\|'alignBottom', format: '{{page}}/{{totalPage}}', color:'rgb(0,0,0)', size: 20, xSpace: 0, ySpace:0, opacity:1 }。（页码） |
 
 ### 打印选项 (printOptions)
 
 | 选项 | 类型 | 默认值 | 描述 | 详细描述 |
 |:-----|:---|:------|:-----|:-----|
-| `paperFormat` | string | - | 纸张格式：A2、A3、A4、A5、A6、Letter、Legal、Tabloid、Ledger、Statement，以及所选打印机支持的所有纸张格式 | string (可选)，A2、A3、A4、A5、A6、Letter、Legal、Tabloid、Ledger、Statement，支持从支持的纸张格式列表中选择一个，可以在预览页面上找到（除了这些固定格式，更多输入项取决于打印机支持的纸张格式，支持从打印机支持的纸张格式列表中选择一个作为参数，例如 "10x14"、"信封 B6" 等。如果输入不支持的格式，实际打印格式取决于打印机的默认纸张设置） |
+| `paperFormat` | string | - | 纸张格式：A2、A3、A4、A5、A6、Letter、Legal、Tabloid、Ledger、Statement，以及所选打印机支持的所有纸张格式 | string (可选)，A2、A3、A4、A5、A6、Letter、Legal、Tabloid、Ledger、Statement。打印机特有格式可通过 `utils.getPrinterPapers(printer)` 动态获取（`printer` 来自 `utils.getPrinterList()` 返回项），使用返回结果中的 `name` 作为参数，例如 "10x14"、"信封 B6"。也可在客户端预览页查看可选列表。如果输入不支持的格式，实际打印格式取决于打印机的默认纸张设置 |
 | `colorful` | boolean | false | 彩色或黑白，默认 false（黑白） | boolean (可选)，默认为 false。彩色或黑白（彩色或黑白，默认 false，黑白） |
 | `landscape` | boolean | false | 是否横向，默认 false（纵向） | boolean (可选)，内容方向，而不是纸张的旋转，必须通过打印机默认设置预先设置。默认为 false。（是否横向，默认 false，纵向） |
 | `printerName` | string | - | 指定打印机名称，默认为默认打印机 | string (可选)，指定打印机。（指定打印机名称，默认为默认打印机） |
@@ -390,7 +391,7 @@ console.log('连接状态:', status);
 ```javascript
 // 设置客户端标题
 await webPrintPdf.utils.setTitle('Web Print PDF Client'); // 设置 null 以恢复
-// or await webPrintPdf.utils.setTitle(<div>Web Print PDF Client</div>);
+// 或 await webPrintPdf.utils.setTitle('<div>Web Print PDF Client</div>');
 
 // 设置主题色
 await webPrintPdf.utils.setThemeColor('rgb(229,182,80)'); // 设置 null 以恢复
@@ -407,6 +408,38 @@ await webPrintPdf.utils.switchTabsVisibility([
 await webPrintPdf.utils.setContactUsTabInnerHtml(
     '<h2>联系我们</h2><p>邮箱: support@example.com</p>'
 ); // 设置 null 以恢复
+```
+
+### 获取打印机列表
+
+```javascript
+// 获取客户端所有可用打印机
+const printerList = await webPrintPdf.utils.getPrinterList();
+console.log('打印机列表:', printerList);
+
+// 返回格式示例：
+// [
+//   { name: 'HP LaserJet Pro', driverName: 'HP LaserJet Pro PCL6' },
+//   { name: 'Microsoft Print to PDF', driverName: 'Microsoft Print To PDF' }
+// ]
+```
+
+### 获取打印机纸张
+
+```javascript
+// 获取指定打印机支持的所有纸张类型
+// printer: { name: "", driverName: "" } — getPrinterList 返回结果中的一项
+const papers = await webPrintPdf.utils.getPrinterPapers({
+    name: 'HP LaserJet Pro',
+    driverName: 'HP LaserJet Pro PCL6'
+});
+console.log('纸张类型:', papers);
+
+// 返回格式示例：
+// [
+//   { name: 'A4', width: 210, height: 296, unit: 'mm' },
+//   { name: 'Letter', width: 216, height: 279, unit: 'mm' }
+// ]
 ```
 
 ### 事件
@@ -429,6 +462,8 @@ webPrintPdf.utils.onError((error) => {
 
 ## 💡 常见应用场景与解决方案
 
+以下场景均支持通过 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/) 实现静默打印、批量任务和本地打印机控制。
+
 ### 电子商务应用
 - **订单发票**：为客户订单生成可打印的发票
 - **运输标签**：创建带条形码的运输标签
@@ -449,22 +484,18 @@ webPrintPdf.utils.onError((error) => {
 - **表单**：生成政府表单和申请
 - **证书**：创建官方证书和许可证
 
-## 🔍 SEO 关键词
-
-本库针对以下关键词进行了优化：HTML 转 PDF 转换器、JavaScript 打印库、Web 打印解决方案、PDF 生成、浏览器打印、Vue 打印插件、React 打印组件、Angular 打印服务、TypeScript 打印库、批量打印、静默打印、文档转换器、发票生成器、报表生成器、标签打印机、条形码打印、收据打印机、表单打印、仪表板导出、图表打印、水印 PDF、自定义打印、打印预览、打印自动化、前端打印、客户端打印、WebSocket 打印等。
-
 ## 🌐 支持的技术
 
-- **框架**：Vue.js、React、Angular、Svelte、Next.js、Nuxt.js、Express.js
-- **语言**：JavaScript (ES5+)、TypeScript、Node.js
+- **框架**：Vue.js、React、Angular、Svelte、Next.js、Nuxt.js
+- **语言**：JavaScript (ES5+)、TypeScript
 - **浏览器**：Chrome、Firefox、Safari、Edge、Opera（需要 WebSocket 支持）
-- **模块系统**：ES Modules、CommonJS、AMD、UMD
+- **模块系统**：ES Modules
 - **构建工具**：Webpack、Vite、Rollup、Parcel、esbuild
 
 ## ❓ 常见问题 (FAQ)
 
 ### 我可以在没有后端的情况下使用这个库吗？
-可以！web-print-pdf 完全在客户端工作，但需要在用户的机器上安装 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/)。
+无需自建后端服务——web-print-pdf 在浏览器中运行。但每位用户必须在本机安装并运行 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/)，打印功能才能正常工作。
 
 ### 它可以与 TypeScript 一起使用吗？
 当然可以！包中包含完整的 TypeScript 类型定义。
@@ -484,13 +515,11 @@ webPrintPdf.utils.onError((error) => {
 ### 它支持打印图片和现有的 PDF 吗？
 可以，该库支持打印 HTML、图片（URL 或 Base64）和 PDF 文件（URL 或 Base64）。
 
-## 📊 项目统计
+### web-print-pdf 和 Print.js、jsPDF 有什么区别？
+**Print.js** 调用浏览器原生打印对话框，完全在浏览器内运行，无法实现静默打印、批量任务或对物理打印机的精细控制。**jsPDF** 在 JavaScript 中生成 PDF 文件供下载或预览，不会将任务发送到本地打印机。**web-print-pdf** 通过 WebSocket 连接 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/)，支持静默打印、选择打印机/纸张、批量打印、水印等企业级打印能力。
 
-- ⭐ GitHub Stars：不断增长的社区支持
-- 📦 npm 下载：每月数千次下载
-- 🐛 活跃问题：响应式维护和错误修复
-- 🔄 定期更新：持续改进和新功能
-- 💼 生产使用：受到全球企业的信赖
+### 除了 npm install，还需要安装什么吗？
+需要。执行 `npm install web-print-pdf` 之后，每位终端用户还需在本机安装并运行 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/)。库通过 `ws://127.0.0.1:16794` 与客户端通信——若客户端未启动，打印请求将失败。
 
 ## 🤝 贡献
 
@@ -511,6 +540,3 @@ MIT License - 详见 [LICENSE](https://github.com/weixiaoyi/web-print-pdf/blob/m
 ---
 
 **用 ❤️ 为 JavaScript 社区制作** | [报告错误](https://github.com/weixiaoyi/web-print-pdf/issues) | [请求功能](https://github.com/weixiaoyi/web-print-pdf/issues) | [文档](http://webprintpdf.com/)
-
-### 🏷️ 标签
-`html-to-pdf` `pdf-generator` `javascript-print` `web-printing` `browser-print` `vue-print` `react-print` `angular-print` `typescript-print` `pdf-converter` `print-library` `batch-printing` `websocket-print` `silent-print` `invoice-generator` `report-generator` `document-printing` `print-automation` `frontend-print` `client-print`

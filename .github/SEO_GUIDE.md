@@ -9,11 +9,11 @@ This guide provides comprehensive SEO strategies to improve the visibility of th
 ### 1. Package.json Optimization
 
 #### Keywords Strategy
-Our package uses 40 carefully selected keywords targeting:
+Our package uses 27 focused keywords targeting:
 - **Primary keywords**: html-to-pdf, pdf-generator, web-printing
 - **Framework-specific**: vue-print, react-print, angular-print
-- **Feature-based**: batch-printing, silent-print, websocket-print
-- **Use-case keywords**: invoice-generator, report-generator, document-converter
+- **Differentiation**: websocket-print, silent-print, desktop-print-client, local-print-client
+- **Feature-based**: batch-printing, watermark-pdf, print-preview, print-automation
 
 #### Description Optimization
 The description includes:
@@ -84,8 +84,8 @@ Add up to 20 relevant topics focusing on:
 #### File Structure
 ```
 /
-├── README.md (Chinese - primary)
-├── README_EN.md (English - comprehensive with SEO)
+├── README.md (English - primary)
+├── README_CN.md (Chinese)
 ├── CHANGELOG.md (version history)
 ├── CONTRIBUTING.md (contribution guide)
 ├── LICENSE (MIT license)
@@ -125,7 +125,7 @@ Primary keywords to target:
 - "Browser print API"
 
 #### Content Structure
-README_EN.md includes:
+README.md / README_CN.md include:
 - ✅ H1 title with main keyword
 - ✅ Descriptive subtitle
 - ✅ Overview section with keywords
@@ -280,10 +280,10 @@ Create example repositories:
 
 ### Immediate Actions
 - [x] Optimize package.json keywords and description
-- [x] Enhance README_EN.md with SEO content
+- [x] Enhance README.md / README_CN.md with SEO content
 - [x] Add comprehensive examples
 - [x] Create GitHub topics guide
-- [ ] Add topics to GitHub repository
+- [x] Add topics guide and `repo-seo.config.json` (apply via `scripts/set-github-repo-seo.ps1` or GitHub About)
 - [ ] Create GitHub releases for versions
 - [ ] Set up GitHub Discussions
 - [ ] Add code examples to repository

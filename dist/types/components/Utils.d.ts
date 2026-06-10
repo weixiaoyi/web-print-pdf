@@ -8,4 +8,6 @@ export default class Utils {
     setThemeColor: (themeColor: any) => Promise<any>;
     switchTabsVisibility: (tabsVisibility: any) => Promise<any>;
     setContactUsTabInnerHtml: (html: any) => Promise<any>;
+    getPrinterList: () => Promise<any>;
+    getPrinterPapers: (printer: any) => Promise<any>;
 }

@@ -10,7 +10,7 @@
 
 **Description（描述）**:
 ```
-Powerful JavaScript HTML to PDF printing library. Works with Vue, React, Angular. Features batch printing, watermarks, and WebSocket support.
+Powerful JavaScript HTML to PDF printing library. Convert HTML to PDF and print via WebSocket. Requires Web Print Expert Client for silent/local printing. Vue, React, Angular. Batch printing, watermarks.
 ```
 
 **Website（网站）**:
@@ -18,29 +18,12 @@ Powerful JavaScript HTML to PDF printing library. Works with Vue, React, Angular
 http://webprintpdf.com/
 ```
 
-**Topics（标签）** - 添加以下 20 个推荐标签：
+**Topics（标签）** - 添加以下 20 个推荐标签（与 `package.json` keywords 对齐）：
 ```
-html-to-pdf
-pdf-generator
-javascript-print
-web-printing
-pdf-converter
-print-library
-vue-print
-react-print
-angular-print
-typescript
-batch-printing
-websocket
-silent-print
-pdf-generation
-document-printing
-frontend
-nodejs
-cross-platform
-enterprise
-print-automation
+html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
 ```
+
+或使用 `scripts/set-github-repo-seo.ps1` 自动应用 `.github/repo-seo.config.json`。
 
 ### 2. 启用功能
 
@@ -81,7 +64,7 @@ gh release create v2.1.2 \
 
 ## 🏷️ npm 包优化检查清单
 
-- ✅ keywords 已配置（40个关键词）
+- ✅ keywords 已配置（27个关键词，已去除 node-print、browser-automation 等误导词）
 - ✅ description 已优化
 - ✅ homepage 指向官网
 - ✅ repository 链接正确
