@@ -8,9 +8,9 @@
 
 在 GitHub 仓库首页，点击右侧 ⚙️ 图标，配置以下内容：
 
-**Description（描述）**:
+**Description（描述）**（GitHub 上限 350 字符，建议 ≤120 字符，维护在 `package.json` → `githubDescription`）:
 ```
-Powerful JavaScript HTML to PDF printing library. Convert HTML to PDF and print via WebSocket. Requires Web Print Expert Client for silent/local printing. Vue, React, Angular. Batch printing, watermarks.
+JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print Expert Client. Vue, React, Angular.
 ```
 
 **Website（网站）**:
@@ -23,7 +23,6 @@ http://webprintpdf.com/
 html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
 ```
 
-或使用 `scripts/set-github-repo-seo.ps1` 自动应用 `.github/repo-seo.config.json`。
 
 ### 2. 启用功能
 

@@ -47,16 +47,15 @@ GitHub 社区标准检查清单：
 
 1. **GitHub 仓库 About 设置**
    - 位置：仓库首页右侧 → 点击 ⚙️ 图标
-   - Description: 
+   - Description（见 `package.json` → `githubDescription`，上限 350 字符）: 
      ```
-     Powerful JavaScript HTML to PDF printing library. Works with Vue, React, Angular. Features batch printing, watermarks, and WebSocket support.
+     JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print Expert Client. Vue, React, Angular.
      ```
    - Website: `http://webprintpdf.com/`
    - Topics（添加以下 20 个，见 `.github/repo-seo.config.json`）:
      ```
      html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
      ```
-     或运行 `scripts/set-github-repo-seo.ps1`
 
 2. **启用 GitHub Discussions**
    - 位置：Settings → Features → Discussions

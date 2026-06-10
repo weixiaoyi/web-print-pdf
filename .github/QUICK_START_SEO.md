@@ -9,9 +9,14 @@
 3. 填入以下信息：
 
 ### Description（描述）
+
+> GitHub About 描述上限 **350 字符**，建议控制在 **120 字符以内**，避免展示被截断。
+
 ```
-Powerful JavaScript HTML to PDF printing library. Convert HTML to PDF and print via WebSocket. Requires Web Print Expert Client for silent/local printing. Vue, React, Angular. Batch printing, watermarks.
+JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print Expert Client. Vue, React, Angular.
 ```
+
+（本地维护位置：`package.json` → `githubDescription`）
 
 ### Website（网站）
 ```
@@ -21,12 +26,6 @@ http://webprintpdf.com/
 ### Topics（标签）- 复制粘贴以下内容
 ```
 html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
-```
-
-或使用脚本自动配置（需 `GITHUB_TOKEN`）：
-```powershell
-$env:GITHUB_TOKEN = "ghp_xxx"
-.\scripts\set-github-repo-seo.ps1
 ```
 
 4. 点击 **Save changes**
@@ -86,7 +85,7 @@ await webPrintPdf.printHtml('<h1>Hello World!</h1>');
 ## 📚 文档
 
 - [完整文档](https://github.com/weixiaoyi/web-print-pdf#readme)
-- [使用示例](https://github.com/weixiaoyi/web-print-pdf/blob/main/.github/EXAMPLES.md)
+- [使用示例](https://github.com/weixiaoyi/web-print-pdf/blob/master/.github/EXAMPLES.md)
 - [官方网站](http://webprintpdf.com/)
 - [客户端下载](http://webprintpdf.com/downloadApp/)
 
@@ -94,7 +93,7 @@ await webPrintPdf.printHtml('<h1>Hello World!</h1>');
 
 欢迎提交 Issues 和 Pull Requests！
 
-查看 [贡献指南](https://github.com/weixiaoyi/web-print-pdf/blob/main/CONTRIBUTING.md)
+查看 [贡献指南](https://github.com/weixiaoyi/web-print-pdf/blob/master/CONTRIBUTING.md)
 ```
 
 4. 勾选 ✅ **Set as the latest release**

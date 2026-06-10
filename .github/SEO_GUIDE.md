@@ -54,7 +54,7 @@ Factors that improve npm search ranking:
 
 #### About Section
 ```
-Description: Powerful JavaScript HTML to PDF printing library. Convert HTML to PDF, print web pages, images, and documents. Works with Vue, React, Angular. Features batch printing, watermarks, and WebSocket support.
+Description (max 350 chars): JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print Expert Client. Vue, React, Angular.
 
 Website: http://webprintpdf.com/
 
@@ -283,7 +283,7 @@ Create example repositories:
 - [x] Enhance README.md / README_CN.md with SEO content
 - [x] Add comprehensive examples
 - [x] Create GitHub topics guide
-- [x] Add topics guide and `repo-seo.config.json` (apply via `scripts/set-github-repo-seo.ps1` or GitHub About)
+- [x] Add topics guide and `repo-seo.config.json` (apply via GitHub About)
 - [ ] Create GitHub releases for versions
 - [ ] Set up GitHub Discussions
 - [ ] Add code examples to repository

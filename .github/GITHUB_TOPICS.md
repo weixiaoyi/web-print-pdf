@@ -1,19 +1,18 @@
 # GitHub Repository Topics Configuration
 
-Canonical SEO settings live in `.github/repo-seo.config.json`. Apply automatically:
+Canonical SEO settings: `package.json` → `githubDescription`（About 描述）、`.github/repo-seo.config.json`（Topics）。
 
-```powershell
-$env:GITHUB_TOKEN = "ghp_xxx"
-.\scripts\set-github-repo-seo.ps1
-```
-
-Or configure manually in GitHub **About** (gear icon).
+在 GitHub 仓库 **About**（⚙️）中手动配置。
 
 ## 📝 Repository Description
 
+GitHub About description max **350 characters**; keep it short (~120) for search display.
+
 ```
-Powerful JavaScript HTML to PDF printing library. Convert HTML to PDF and print via WebSocket. Requires Web Print Expert Client for silent/local printing. Vue, React, Angular. Batch printing, watermarks.
+JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print Expert Client. Vue, React, Angular.
 ```
+
+（与 `package.json` 的 `githubDescription` 字段保持一致）
 
 ## 🌐 Website
 
@@ -60,8 +59,7 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 
 ## 🔗 Related Files
 
-- `.github/repo-seo.config.json` — canonical About/topics config
-- `scripts/set-github-repo-seo.ps1` — apply config via GitHub API
-- `package.json` — npm keywords and description
+- `package.json` — `githubDescription`（GitHub About）、`description`（npm）、keywords
+- `.github/repo-seo.config.json` — Topics 列表
 - `README.md` / `README_CN.md` — primary documentation
 - `CHANGELOG.md` — version history

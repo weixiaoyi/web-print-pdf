@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `utils.getPrinterList()` — retrieve available printers on the client
 - `utils.getPrinterPapers(printer)` — retrieve supported paper types for a specified printer
-- GitHub SEO automation (`.github/repo-seo.config.json`, `scripts/set-github-repo-seo.ps1`)
+- GitHub SEO config (`.github/repo-seo.config.json`, `package.json` → `githubDescription`)
 
 ### Changed
 - Refined npm keywords: removed misleading terms (`node-print`, `browser-automation`, `electron-print`), strengthened differentiation (`websocket-print`, `silent-print`, `desktop-print-client`)

@@ -10,7 +10,7 @@
 <br>
 
 [![npm version](https://img.shields.io/npm/v/web-print-pdf.svg)](https://www.npmjs.com/package/web-print-pdf)
-[![license](https://img.shields.io/npm/l/web-print-pdf.svg)](https://github.com/weixiaoyi/web-print-pdf/blob/main/LICENSE)
+[![license](https://img.shields.io/npm/l/web-print-pdf.svg)](https://github.com/weixiaoyi/web-print-pdf/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/weixiaoyi/web-print-pdf.svg)](https://github.com/weixiaoyi/web-print-pdf/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/weixiaoyi/web-print-pdf.svg)](https://github.com/weixiaoyi/web-print-pdf/network)
 [![GitHub issues](https://img.shields.io/github/issues/weixiaoyi/web-print-pdf.svg)](https://github.com/weixiaoyi/web-print-pdf/issues)
@@ -535,7 +535,7 @@ webPrintPdf.utils.onError((error) => {
 
 ## 📄 许可证
 
-MIT License - 详见 [LICENSE](https://github.com/weixiaoyi/web-print-pdf/blob/main/LICENSE) 文件
+MIT License - 详见 [LICENSE](https://github.com/weixiaoyi/web-print-pdf/blob/master/LICENSE) 文件
 
 ---
 

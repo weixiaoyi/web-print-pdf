@@ -1,7 +1,7 @@
 {
   "repository": "weixiaoyi/web-print-pdf",
   "website": "http://webprintpdf.com/",
-  "description": "Powerful JavaScript HTML to PDF printing library. Convert HTML to PDF and print via WebSocket. Requires Web Print Expert Client for silent/local printing. Vue, React, Angular. Batch printing, watermarks.",
+  "_descriptionNote": "GitHub About description is in package.json -> githubDescription (npm uses description)",
   "topics": [
     "html-to-pdf",
     "pdf-generator",
