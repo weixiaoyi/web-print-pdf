@@ -8,4 +8,4 @@ See `.github/GITHUB_TOPICS.md` and `.github/repo-seo.config.json` for the canoni
 html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend, browser-print, web-print-pdf
 ```
 
-Apply via `scripts/set-github-repo-seo.ps1` or GitHub About settings.
+在 GitHub About 设置中手动添加。
