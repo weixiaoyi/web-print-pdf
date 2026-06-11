@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.7] - 2026-06-12
+
+### Changed
+- README: trimmed duplicate sections; restored overview, FAQ, and detailed configuration option docs
+- npm keyword: replaced `browser-print` with `html-print` (GitHub Topics aligned)
+- Consolidated GitHub SEO docs (`TOPICS.md` removed, `SEO_IMPROVEMENTS.md` shortened to index)
+
 ## [2.1.6] - 2026-06-11
 
 ### Changed

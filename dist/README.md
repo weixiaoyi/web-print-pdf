@@ -19,28 +19,19 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![Framework Agnostic](https://img.shields.io/badge/Framework-Agnostic-green.svg)](https://github.com/weixiaoyi/web-print-pdf)
 
-> 🖨️ **Powerful JavaScript HTML to PDF Printing Library** - Convert HTML to PDF, print web pages, images, and documents via WebSocket. Requires [Web Print Expert Client](http://webprintpdf.com/downloadApp/) for silent/local printing. Works with Vue, React, Angular, and all modern JavaScript frameworks.
+> 🖨️ **Powerful JavaScript HTML to PDF Printing Library** — Convert HTML to PDF and print web pages, images, and documents via WebSocket. Requires Web Print Expert Client for silent/local printing. Works with Vue, React, Angular, and all modern JavaScript frameworks.
 
 ## 🎯 Overview
 
-**web-print-pdf** is a comprehensive JavaScript printing library that enables web applications to convert HTML content to high-quality PDF documents and send print jobs to local printers through the Web Print Expert Client. Perfect for invoice printing, report generation, document management systems, and any web application requiring silent printing and production-grade print control.
+**web-print-pdf** is a JavaScript printing library that enables web applications to convert HTML into high-quality PDF documents and send print jobs to local printers through the Web Print Expert Client — no backend server required. It is well suited for invoice printing, report generation, document management, and any web app that needs silent printing with production-grade control over printers, paper, and layout.
 
-### 🌟 Why Choose web-print-pdf?
+### Why web-print-pdf?
 
-- **Zero Configuration** - Works out of the box with sensible defaults
-- **Framework Agnostic** - Compatible with Vue.js, React, Angular, Svelte, and vanilla JavaScript
-- **Production Ready** - Battle-tested in enterprise applications
-- **TypeScript Support** - Full type definitions included
-- **Active Development** - Regular updates and community support
-
-## 🔑 Key Use Cases
-
-- 📄 **Invoice & Receipt Printing** - Generate professional invoices with custom styling
-- 📊 **Report Generation** - Create detailed business reports and analytics documents
-- 🏷️ **Label & Barcode Printing** - Print shipping labels, product labels, and barcodes
-- 📋 **Form Printing** - Print filled forms, contracts, and legal documents
-- 🎫 **Ticket Generation** - Create event tickets, boarding passes, and vouchers
-- 📈 **Dashboard Export** - Export dashboard data and charts to PDF
+- **Zero Configuration** — works out of the box with sensible defaults
+- **Framework Agnostic** — Vue, React, Angular, Svelte, or vanilla JavaScript
+- **Production Ready** — battle-tested in enterprise applications
+- **TypeScript Support** — full type definitions included
+- **HTML/CSS First** — control PDF styling with familiar web technologies, no proprietary template language
 
 ## ✨ Features
 
@@ -56,14 +47,18 @@
 - 🎯 **HTML/CSS Control**: Control all PDF styles through HTML and CSS, no additional learning required
 - ⚡ **Async Support**: Support complete Promise/async-await syntax while maintaining event listening mechanism
 
-## 📋 System Requirements
+## 🔑 Use Cases
 
-- Modern browser support (WebSocket support)
-- Need to install [Web Print Expert Client](http://webprintpdf.com/downloadApp/)
+- **E-commerce** — order invoices, shipping labels, packing slips
+- **Business & Enterprise** — financial reports, dashboard exports, payslips and contracts
+- **Healthcare & Education** — medical records, lab reports, certificates
+- **Legal & Government** — contracts, forms, official licenses
+- **General** — tickets, barcodes, form printing
 
-## 📱 Client Download
+## 📋 Requirements
 
-This library requires the [Web Print Expert Client](http://webprintpdf.com/downloadApp/) to work, supporting Chinese and English interfaces.
+- Modern browser with WebSocket support
+- [Web Print Expert Client](http://webprintpdf.com/downloadApp/) installed locally (Chinese/English UI)
 
 ## 🔗 Related Links
 
@@ -333,48 +328,48 @@ await webPrintPdf.batchPrint(
 
 ### PDF Options (pdfOptions)
 
-| Option | Type | Default | Description | Detailed Description |
-|:-----|:---|:------|:-----|:-----|
-| `paperFormat` | string | 'A4' | Paper format: Letter, Legal, Tabloid, Ledger, A0, A1, A2, A3, A4, A5, A6 | string (optional), Paper format. If set, takes priority over width or height options. Defaults to 'A4', Letter, Legal, Tabloid, Ledger, A0, A1, A2, A3, A4, A5, A6. (Only these fixed formats are supported, other formats can be customized through width, height, paperFormat takes priority over custom sizes) |
-| `width` | string\|number | - | Paper width, supports units: px, in, cm, mm | string \| number (optional) Paper width, accepts values labeled with units px, in, cm, mm. (Note: when using custom sizes, you don't need to set paperFormat) |
-| `height` | string\|number | - | Paper height, supports units: px, in, cm, mm | string \| number (optional), Paper height, accepts values labeled with units px, in, cm, mm. (Note: when using custom sizes, you don't need to set paperFormat) |
-| `displayHeaderFooter` | boolean | false | Whether to display header and footer | boolean (optional), Display header and footer. Defaults to false |
-| `headerTemplate` | string | - | Header HTML template, supports special classes: date, title, url, pageNumber, totalPages | string (optional), HTML template for the print header, Should be valid HTML markup with following classes used to inject printing values into them: 'date': formatted print date; 'title': document title; 'url': document location; 'pageNumber': current page number; 'totalPages': total pages in the document. eg: <span class="pageNumber"></span>. (Header template html string, supports inserting special classes to automatically implement date, page, total pages and other display functions) |
-| `footerTemplate` | string | - | Footer HTML template, same format as headerTemplate | string (optional), HTML template for the print footer. Should use the same format as the headerTemplate |
-| `landscape` | boolean | false | Whether to print horizontally, default false (vertical) | boolean (optional), Paper orientation. Defaults to false.(Whether horizontal, default false, vertical) |
-| `margin` | object | 0 | Page margins, supports units: px, in, cm, mm | Object (optional), Paper margins, defaults to none. top, right, bottom, left, accepts margin values labeled with units px, in, cm, mm. Defaults to 0 (pdf margins) |
-| `pageRanges` | Array<Object> | [] | Print page ranges, e.g.: [{from:1,to:5},{from:6,to:6}] | Array<Object> (optional), Paper ranges to print, e.g., [{from:1,to:5},{from:6,to:6},{from:7,to:10}]. Defaults to the empty, which means print all pages. (Print page ranges, default all) |
-| `preferCSSPageSize` | boolean | false | Prioritize CSS @page size | boolean (optional), Give any CSS @page size declared in the page priority over what is declared in width and height or format options. Defaults to false, which will scale the content to fit the paper size |
-| `printBackground` | boolean | false | Whether to print background graphics | boolean (optional), Print background graphics. Defaults to false. (Whether to print background color) |
-| `watermark` | object | - | Watermark settings (text or image watermark) | Object (optional), eg: text watermark: { text:"hello, this is watermark", color:'rgb(0,0,0)', x: 200 \|'alignCenter'\|'alignLeft'\|'alignRight', y: 100 \|'alignCenter'\|'alignTop'\|'alignBottom', size: 20, rows: 4, cols:4, xSpace:20, ySpace:20, angle: 45, opacity:0.5  } or image watermark { base64: "", x: 200 \|'alignCenter'\|'alignLeft'\|'alignRight', y: 100 \|'alignCenter'\|'alignTop'\|'alignBottom', rows: 4, cols:4, angle: 45, xSpace:20, ySpace:20, width: 100, height: 100, opacity:0.5  }. (Text watermark or image watermark) |
-| `pageNumber` | object | - | Page number settings | Object (optional), eg: { start: 1, x: 200 \|'alignCenter'\|'alignLeft'\|'alignRight', y: 100 \|'alignCenter'\|'alignTop'\|'alignBottom', format: '{{page}}/{{totalPage}}', color:'rgb(0,0,0)', size: 20, xSpace: 0, ySpace:0, opacity:1 }. (Page numbers) |
+| Option | Type | Default | Description |
+|:-----|:---|:------|:-----|
+| `paperFormat` | string | 'A4' | Paper format. Supported fixed sizes: Letter, Legal, Tabloid, Ledger, A0, A1, A2, A3, A4, A5, A6. When set, takes priority over `width`/`height`. For non-standard sizes, use custom `width` and `height` instead (omit `paperFormat`). |
+| `width` | string\|number | - | Paper width; accepts values with units px, in, cm, mm. Use with `height` for custom paper size; do not set `paperFormat` when using custom dimensions. |
+| `height` | string\|number | - | Paper height; accepts values with units px, in, cm, mm. Use with `width` for custom paper size; do not set `paperFormat` when using custom dimensions. |
+| `displayHeaderFooter` | boolean | false | Whether to display header and footer on each page. |
+| `headerTemplate` | string | - | HTML template for the print header. Use special classes to inject dynamic values: `date` (formatted print date), `title` (document title), `url` (document location), `pageNumber`, `totalPages`. Example: `<span class="pageNumber"></span>/<span class="totalPages"></span>`. |
+| `footerTemplate` | string | - | HTML template for the print footer; same class conventions as `headerTemplate`. |
+| `landscape` | boolean | false | Paper orientation. `false` (default) = portrait; `true` = landscape. |
+| `margin` | object | 0 | Page margins. Object with `top`, `right`, `bottom`, `left`; each value accepts px, in, cm, mm. Defaults to `0` on all sides. |
+| `pageRanges` | Array<Object> | [] | Page ranges to print, e.g. `[{from:1,to:5},{from:6,to:6},{from:7,to:10}]`. Empty array (default) prints all pages. |
+| `preferCSSPageSize` | boolean | false | When `true`, any CSS `@page` size declared in the document takes priority over `width`, `height`, and `paperFormat`. When `false` (default), content is scaled to fit the configured paper size. |
+| `printBackground` | boolean | false | Whether to print background graphics, including CSS background colors and background images. |
+| `watermark` | object | - | Text or image watermark. **Text:** `{ text, color, x, y, size, rows, cols, xSpace, ySpace, angle, opacity }`. **Image:** `{ base64, x, y, rows, cols, xSpace, ySpace, width, height, angle, opacity }`. For `x`/`y`, use a number or alignment keywords: `alignCenter`, `alignLeft`, `alignRight`, `alignTop`, `alignBottom`. |
+| `pageNumber` | object | - | Page number overlay. Example: `{ start: 1, x, y, format: '{{page}}/{{totalPage}}', color, size, xSpace, ySpace, opacity }`. `x`/`y` support the same alignment keywords as `watermark`. |
 
 ### Print Options (printOptions)
 
-| Option | Type | Default | Description | Detailed Description |
-|:-----|:---|:------|:-----|:-----|
-| `paperFormat` | string | - | Paper format: A2, A3, A4, A5, A6, Letter, Legal, Tabloid, Ledger, Statement, and all paper formats supported by the selected printer | string (optional), A2, A3, A4, A5, A6, Letter, Legal, Tabloid, Ledger, Statement. For printer-specific formats, use `utils.getPrinterPapers(printer)` (printer from `utils.getPrinterList()`) to get the supported `name` list dynamically, e.g. "10x14", "Envelope B6". You can also preview available options in the client. If an unsupported format is entered, the actual print format depends on the printer's default paper settings |
-| `colorful` | boolean | false | Color or monochrome, default false (monochrome) | boolean (optional), Defaults to false. color or monochrome (Color or monochrome, default false, monochrome) |
-| `landscape` | boolean | false | Whether horizontal, default false (vertical) | boolean (optional), contents orientation, NOT the rotation of paper which must be pre-set by the choice of printer defaults. Defaults to false. (Whether horizontal, default false, vertical) |
-| `printerName` | string | - | Specify printer name, default default printer | string (optional), specify a printer. (Specify printer name, default default printer) |
-| `pageRanges` | Array<Object> | [] | Print page ranges, e.g.: [{from:1,to:5},{from:6,to:6},{from:7,to:10}] | Array<Object> (optional), Paper ranges to print, e.g., [{from:1,to:5},{from:6,to:6},{from:7,to:10}]. Defaults to the empty, which means print all pages. (Page ranges, default all) |
-| `copies` | number | - | Number of copies | number(optional), Number of copies printed (Number of copies) |
-| `duplexMode` | string | 'simplex' | Single/double sided mode: simplex (single sided), duplex (double sided), duplexshort (double sided along short edge), duplexlong (double sided along long edge) | enums string (optional), "simplex" (single sided printing, default), "duplex" (double sided), "duplexshort" (double sided printing along short edge), "duplexlong" (double sided printing along long edge) |
-| `scaleMode` | string | 'shrink' | Scaling mode: noscale (original size), shrink (shrink to printable area), fit (adjust to printable area) | enums string (optional), noscale: use original page size, shrink: shrink page to printable area (if needed), fit: adjust page to printable area. (default shrink), specific differences can be viewed by setting the action parameter of extraOptions to 'preview' |
-| `bin` | number\|string | - | Select the paper tray to print to | num or name (optional), select the paper tray to print to |
+| Option | Type | Default | Description |
+|:-----|:---|:------|:-----|
+| `paperFormat` | string | - | Paper size: A2, A3, A4, A5, A6, Letter, Legal, Tabloid, Ledger, Statement, plus any format supported by the selected printer. For printer-specific sizes (e.g. `"10x14"`, `"Envelope B6"`), call `utils.getPrinterPapers(printer)` where `printer` is an item from `utils.getPrinterList()` and pass the returned `name`. You can also preview available options in the client UI. If an unsupported value is given, the printer's default paper is used. |
+| `colorful` | boolean | false | Color or monochrome printing. `false` (default) = monochrome; `true` = color. |
+| `landscape` | boolean | false | Content orientation. `false` (default) = portrait. This controls content layout, **not** physical paper rotation — set paper rotation via the printer's default settings. |
+| `printerName` | string | - | Target printer name as returned by `utils.getPrinterList()`. Omit to use the system default printer. |
+| `pageRanges` | Array<Object> | [] | Page ranges to print, same format as pdfOptions `pageRanges`. Empty array (default) prints all pages. |
+| `copies` | number | - | Number of copies to print. |
+| `duplexMode` | string | 'simplex' | Duplex mode: `"simplex"` — single-sided (default); `"duplex"` — double-sided; `"duplexshort"` — flip on short edge; `"duplexlong"` — flip on long edge. |
+| `scaleMode` | string | 'shrink' | Scaling behavior: `"noscale"` — original page size; `"shrink"` — shrink to printable area if needed (default); `"fit"` — adjust page to fill printable area. Set `extraOptions.action` to `"preview"` to compare modes visually. |
+| `bin` | number\|string | - | Paper tray (bin) to print to — tray number or tray name, depending on the printer driver. |
 
 ### Extra Options (extraOptions)
 
-| Option | Type | Default | Description | Detailed Description |
-|:-----|:---|:------|:-----|:-----|
-| `devtool` | boolean | false | Developer tools for development debugging HTML, only useful for local chrome and edge PDF engines | boolean (optional), use in development, it can be usable when debugging html. Defaults to false. (Developer tools for development debugging html, only useful for local chrome and edge PDF engines) |
-| `requestTimeout` | number | 15 | Network timeout (seconds), default 15 seconds, should be greater than or equal to the xhr timeout setting in the page | number (optional), request network timeout (http, xhr), default 15 (Network timeout, default 15 seconds. This parameter should be greater than or equal to the xhr timeout setting in the page) |
-| `cookies` | object | - | Cookie object, e.g.: { key1:value1, key2:value2 } | Object (optional), cookie Object. eg: { key1:value1, key2:value2 } |
-| `localStorages` | object | - | localStorage object, e.g.: { key1:value1, key2:value2 }, all pages have default { '_printMode_': 'true' } | Object (optional), localStorage Object. eg: { key1:value1, key2:value2 }, every page has a default localStorage key-value { '_printMode_' : 'true' }, to make difference in UI. For convenience in differentiating print areas, all pages have a default { '_printMode_' : 'true' } localStorage value available |
-| `sessionStorages` | object | - | sessionStorage object, e.g.: { key1:value1, key2:value2 } | Object (optional), sessionStorage Object. eg: { key1:value1, key2:value2 } |
-| `httpHeaders` | object | - | HTTP request header settings, e.g.: { Authorization: 'string' }, all header values must be strings | Object (optional), An object containing additional HTTP headers to be sent with every request. eg:{ Authorization: 'string' }, All header values must be strings. Request header settings {key,value} |
-| `action` | string | 'print' | Behavior: print (print), preview (preview), default print | enums string (optional), "print", "preview", default 'print'. The client can decide the preview behavior based on the returned preview address. (Behavior: print or preview, default print, client can decide preview behavior based on returned preview address) |
-| `[key]` | string | - | Can add any key-value, will be returned as-is with extraOptions | (optional), any key-value you want to add. It may be useful when extraOptions is returned (Can add any key:value, will be returned as-is with extraOptions) |
+| Option | Type | Default | Description |
+|:-----|:---|:------|:-----|
+| `devtool` | boolean | false | Open browser DevTools when rendering HTML (development only). Useful for debugging layout; only applies to the local Chrome and Edge PDF engines. |
+| `requestTimeout` | number | 15 | Network timeout in seconds for HTTP/XHR requests when loading URLs (default `15`). Should be greater than or equal to any xhr timeout configured in the page being printed. |
+| `cookies` | object | - | Cookie object sent with requests, e.g. `{ sessionId: 'abc123' }`. |
+| `localStorages` | object | - | `localStorage` key-value pairs injected into the printed page, e.g. `{ theme: 'dark' }`. Every page also receives `{ '_printMode_': 'true' }` by default so page scripts can detect print mode and adjust UI. |
+| `sessionStorages` | object | - | `sessionStorage` key-value pairs injected into the printed page, same usage as `localStorages`. |
+| `httpHeaders` | object | - | Additional HTTP headers sent with every request, e.g. `{ Authorization: 'Bearer token' }`. **All header values must be strings.** |
+| `action` | string | 'print' | Job behavior: `"print"` (default) — send directly to printer; `"preview"` — return a preview URL. The client determines how preview is displayed based on the returned address. |
+| `[key]` | string | - | Any custom key-value pair. Custom keys are echoed back in the response together with `extraOptions`, useful for correlating requests in your application. |
 
 ## 🛠️ Utility Methods
 
@@ -447,42 +442,20 @@ console.log('Paper types:', papers);
 If you don't want to use async, you can respond through event listening
 
 - Set response callback
-``` javascript
-webPrintPdf.utils.onResponse((response) => {
-    console.log('Received response:', response);
-});
-```
+
+  ```javascript
+  webPrintPdf.utils.onResponse((response) => {
+      console.log('Received response:', response);
+  });
+  ```
 
 - Set error callback
-``` javascript
-webPrintPdf.utils.onError((error) => {
-    console.error('Error occurred:', error);
-});
-```
 
-## 💡 Common Use Cases & Solutions
-
-All scenarios below support silent printing, batch jobs, and local printer control via the [Web Print Expert Client](http://webprintpdf.com/downloadApp/).
-
-### E-commerce Applications
-- **Order Invoices**: Generate printable invoices for customer orders
-- **Shipping Labels**: Create shipping labels with barcodes
-- **Packing Slips**: Print order details for warehouse fulfillment
-
-### Business & Enterprise
-- **Financial Reports**: Export financial statements and balance sheets
-- **Business Analytics**: Print dashboard reports and KPI summaries
-- **Employee Documents**: Generate payslips, contracts, and certificates
-
-### Healthcare & Education
-- **Medical Records**: Print patient records and prescriptions
-- **Lab Reports**: Generate test results and medical reports
-- **Student Certificates**: Create diplomas and achievement certificates
-
-### Legal & Government
-- **Contracts**: Print legal documents with proper formatting
-- **Forms**: Generate government forms and applications
-- **Certificates**: Create official certificates and licenses
+  ```javascript
+  webPrintPdf.utils.onError((error) => {
+      console.error('Error occurred:', error);
+  });
+  ```
 
 ## 🌐 Supported Technologies
 
@@ -494,32 +467,29 @@ All scenarios below support silent printing, batch jobs, and local printer contr
 
 ## ❓ Frequently Asked Questions (FAQ)
 
-### Can I use this library without a backend?
-No backend server is required — web-print-pdf runs in the browser. However, each user must install and run the [Web Print Expert Client](http://webprintpdf.com/downloadApp/) on their machine for printing to work.
-
-### Does it work with TypeScript?
-Absolutely! Full TypeScript type definitions are included in the package.
-
-### Can I print without showing a print dialog?
-Yes, silent printing is supported through the client application settings.
-
-### What paper sizes are supported?
-All standard paper sizes including A4, Letter, Legal, A3, A5, and custom sizes are supported.
-
-### Can I add watermarks to printed documents?
-Yes, both text and image watermarks are supported with customizable positioning and opacity.
-
-### Is batch printing supported?
-Yes, you can print multiple documents in a single operation using the `batchPrint()` method.
-
-### Does it support printing images and existing PDFs?
-Yes, the library supports printing HTML, images (URL or Base64), and PDF files (URL or Base64).
+### Do I need a backend or extra software?
+No backend is required — web-print-pdf runs entirely in the browser. After `npm install web-print-pdf`, each end user must install and run the [Web Print Expert Client](http://webprintpdf.com/downloadApp/) locally. The library connects at `ws://127.0.0.1:16794`; print requests fail if the client is not running.
 
 ### How is web-print-pdf different from Print.js or jsPDF?
-**Print.js** triggers the browser's native print dialog and runs entirely in the browser — it cannot do silent printing, batch jobs, or direct control of physical printers. **jsPDF** generates PDF files in JavaScript for download or preview; it does not send jobs to a local printer. **web-print-pdf** connects to the [Web Print Expert Client](http://webprintpdf.com/downloadApp/) via WebSocket, enabling silent printing, printer/paper selection, batch printing, watermarks, and other production-grade print workflows.
+**Print.js** uses the browser's native print dialog and cannot do silent printing, batch jobs, or direct printer control. **jsPDF** generates PDFs for download/preview but does not send jobs to a local printer. **web-print-pdf** connects to Web Print Expert Client via WebSocket for silent printing, printer/paper selection, batch jobs, watermarks, and other production workflows.
 
-### Do I need to install anything besides npm install?
-Yes. After `npm install web-print-pdf`, each end user must also install and run the [Web Print Expert Client](http://webprintpdf.com/downloadApp/) on their machine. The library communicates with the client at `ws://127.0.0.1:16794` — if the client is not running, print requests will fail.
+### Does it work with TypeScript?
+Yes. Full TypeScript type definitions are included — no separate `@types` package needed.
+
+### Can I print without showing a print dialog?
+Yes. Silent printing is supported through the Web Print Expert Client — no browser print dialog is shown.
+
+### What paper sizes are supported?
+Standard sizes (A4, Letter, Legal, A3, A5, etc.) and custom dimensions via `width`/`height`. For printer-specific formats, use `utils.getPrinterPapers()`.
+
+### Can I add watermarks to printed documents?
+Yes. Both text and image watermarks are supported via `pdfOptions.watermark` — position, opacity, rows/cols, and angle are configurable.
+
+### Is batch printing supported?
+Yes. Pass multiple tasks to `batchPrint()` to print HTML, URLs, Base64 content, images, or PDFs in one operation.
+
+### Does it support printing images and existing PDFs?
+Yes. Use `printImageByUrl` / `printImageByBase64` and `printPdfByUrl` / `printPdfByBase64` in addition to HTML methods.
 
 ## 🤝 Contributing
 

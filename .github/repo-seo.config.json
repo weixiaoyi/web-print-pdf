@@ -22,11 +22,12 @@
     "print-automation",
     "watermark-pdf",
     "frontend-print",
-    "browser-print",
+    "html-print",
     "web-print-pdf"
   ],
   "npmOnlyKeywords": [
-    "html2pdf",
+    "invoice-printing",
+    "label-printing",
     "local-print-client",
     "print-service",
     "pdf-generation",

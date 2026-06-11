@@ -25,7 +25,7 @@ http://webprintpdf.com/
 Copy-paste for GitHub About → Topics:
 
 ```
-html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript-print, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend-print, browser-print, web-print-pdf
+html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript-print, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend-print, html-print, web-print-pdf
 ```
 
 | # | Topic | Purpose |
@@ -48,14 +48,14 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 | 16 | `print-automation` | Use case |
 | 17 | `watermark-pdf` | Feature highlight |
 | 18 | `frontend-print` | Development category |
-| 19 | `browser-print` | Core functionality |
+| 19 | `html-print` | HTML content printing |
 | 20 | `web-print-pdf` | Brand keyword |
 
 ## 📈 SEO Benefits
 
 - Improve discoverability in GitHub search
 - Appear in topic pages (e.g. github.com/topics/html-to-pdf)
-- Align with the first 20 npm `keywords` in `package.json` (7 npm-only extras follow; see `repo-seo.config.json` → `npmOnlyKeywords`)
+- Align with the first 20 npm `keywords` in `package.json` (8 npm-only extras follow; see `repo-seo.config.json` → `npmOnlyKeywords`)
 
 ## 🔗 Related Files
 

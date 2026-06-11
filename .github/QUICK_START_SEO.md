@@ -25,7 +25,7 @@ http://webprintpdf.com/
 
 ### Topics（标签）- 复制粘贴以下内容
 ```
-html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript-print, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend-print, browser-print, web-print-pdf
+html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript-print, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend-print, html-print, web-print-pdf
 ```
 
 4. 点击 **Save changes**
@@ -45,12 +45,12 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 
 **Choose a tag:**
 ```
-v2.1.6
+v2.1.7
 ```
 
 **Release title:**
 ```
-Release v2.1.6
+Release v2.1.7
 ```
 
 **Description:** （复制粘贴）
@@ -64,11 +64,11 @@ Release v2.1.6
 ## 📦 安装
 
 \`\`\`bash
-npm install web-print-pdf@2.1.6
+npm install web-print-pdf@2.1.7
 # or
-yarn add web-print-pdf@2.1.6
+yarn add web-print-pdf@2.1.7
 # or
-pnpm add web-print-pdf@2.1.6
+pnpm add web-print-pdf@2.1.7
 \`\`\`
 
 ## 🚀 快速开始
@@ -111,7 +111,7 @@ await webPrintPdf.printHtml('<h1>Hello World!</h1>');
 
 查看完整的优化指南：
 - [详细配置指南](.github/REPOSITORY_SETUP.md)
-- [SEO 优化总结](.github/SEO_IMPROVEMENTS.md)
+- [SEO 配置索引](.github/SEO_IMPROVEMENTS.md)
 - [使用示例集合](.github/EXAMPLES.md)
 
 ### 📊 效果监控

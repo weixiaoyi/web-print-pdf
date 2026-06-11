@@ -19,28 +19,19 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![Framework Agnostic](https://img.shields.io/badge/Framework-Agnostic-green.svg)](https://github.com/weixiaoyi/web-print-pdf)
 
-> 🖨️ **强大的 JavaScript HTML 转 PDF 打印库** - 将 HTML 转换为 PDF，打印网页、图片和文档，支持 WebSocket。需安装 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/) 实现静默/本地打印。可与 Vue、React、Angular 和所有现代 JavaScript 框架无缝集成。
+> 🖨️ **强大的 JavaScript HTML 转 PDF 打印库** — 将 HTML 转换为 PDF，打印网页、图片和文档，支持 WebSocket。需安装 Web 打印专家客户端实现静默/本地打印。可与 Vue、React、Angular 和所有现代 JavaScript 框架无缝集成。
 
 ## 🎯 概述
 
-**web-print-pdf** 是一个全面的 JavaScript 打印库，使 Web 应用能够将 HTML 内容转换为高质量的 PDF 文档，并通过 Web 打印专家客户端将打印任务发送到本地打印机。非常适合需要静默打印和生产级打印控制的发票打印、报表生成、文档管理系统等 Web 应用。
+**web-print-pdf** 是一个 JavaScript 打印库，使 Web 应用能将 HTML 转换为高质量 PDF，并通过 Web 打印专家客户端将任务发送到本地打印机 — 无需自建后端服务。适用于发票打印、报表生成、文档管理，以及任何需要静默打印、并对打印机、纸张和版式有精细控制的生产场景。
 
-### 🌟 为什么选择 web-print-pdf？
+### 为什么选择 web-print-pdf？
 
-- **零配置** - 开箱即用，具有合理的默认设置
-- **框架无关** - 兼容 Vue.js、React、Angular、Svelte 和原生 JavaScript
-- **生产就绪** - 在企业应用中经过实战测试
-- **TypeScript 支持** - 包含完整的类型定义
-- **积极开发** - 定期更新和社区支持
-
-## 🔑 主要应用场景
-
-- 📄 **发票和收据打印** - 生成具有自定义样式的专业发票
-- 📊 **报表生成** - 创建详细的业务报表和分析文档
-- 🏷️ **标签和条形码打印** - 打印运输标签、产品标签和条形码
-- 📋 **表单打印** - 打印填写的表单、合同和法律文件
-- 🎫 **票据生成** - 创建活动门票、登机牌和优惠券
-- 📈 **仪表板导出** - 将仪表板数据和图表导出为 PDF
+- **零配置** — 开箱即用，默认参数合理
+- **框架无关** — 支持 Vue、React、Angular、Svelte 或原生 JavaScript
+- **生产就绪** — 已在企业级应用中广泛验证
+- **TypeScript 支持** — 内置完整类型定义
+- **HTML/CSS 优先** — 用熟悉的 Web 技术控制 PDF 样式，无需学习专有模板语法
 
 ## ✨ 特性
 
@@ -56,14 +47,18 @@
 - 🎯 **HTML/CSS 控制**：通过 HTML 和 CSS 控制所有 PDF 样式，无需额外学习
 - ⚡ **异步支持**：完全支持 Promise/async-await 语法，同时保留事件监听机制
 
-## 📋 系统要求
+## 🔑 应用场景
 
-- 现代浏览器支持（需要 WebSocket 支持）
-- 需要安装 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/)
+- **电子商务** — 订单发票、运输标签、装箱单
+- **商业与企业** — 财务报表、仪表板导出、工资单与合同
+- **医疗与教育** — 病历、检验报告、证书
+- **法律与政府** — 合同、表单、官方证照
+- **通用** — 票据、条形码、表单打印
 
-## 📱 客户端下载
+## 📋 环境要求
 
-本库需要配合 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/) 使用，客户端支持中英文界面。
+- 支持 WebSocket 的现代浏览器
+- 本机安装 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/)（支持中英文界面）
 
 ## 🔗 相关链接
 
@@ -333,48 +328,48 @@ await webPrintPdf.batchPrint(
 
 ### PDF 选项 (pdfOptions)
 
-| 选项 | 类型 | 默认值 | 描述 | 详细描述 |
-|:-----|:---|:------|:-----|:-----|
-| `paperFormat` | string | 'A4' | 纸张格式：Letter、Legal、Tabloid、Ledger、A0、A1、A2、A3、A4、A5、A6 | string (可选)，纸张格式。如果设置，优先于 width 或 height 选项。默认为 'A4'，Letter、Legal、Tabloid、Ledger、A0、A1、A2、A3、A4、A5、A6。（仅支持这些固定格式，其他格式可以通过 width、height 自定义，paperFormat 优先于自定义尺寸） |
-| `width` | string\|number | - | 纸张宽度，支持单位：px、in、cm、mm | string \| number (可选) 纸张宽度，接受带单位的值 px、in、cm、mm。（注意：使用自定义尺寸时，不需要设置 paperFormat） |
-| `height` | string\|number | - | 纸张高度，支持单位：px、in、cm、mm | string \| number (可选)，纸张高度，接受带单位的值 px、in、cm、mm。（注意：使用自定义尺寸时，不需要设置 paperFormat） |
-| `displayHeaderFooter` | boolean | false | 是否显示页眉页脚 | boolean (可选)，显示页眉和页脚。默认为 false |
-| `headerTemplate` | string | - | 页眉 HTML 模板，支持特殊类：date、title、url、pageNumber、totalPages | string (可选)，打印页眉的 HTML 模板，应该是有效的 HTML 标记，使用以下类来注入打印值：'date'：格式化的打印日期；'title'：文档标题；'url'：文档位置；'pageNumber'：当前页码；'totalPages'：文档总页数。例如：<span class="pageNumber"></span>。（页眉模板 html 字符串，支持插入特殊类自动实现日期、页面、总页数等显示功能） |
-| `footerTemplate` | string | - | 页脚 HTML 模板，格式与 headerTemplate 相同 | string (可选)，打印页脚的 HTML 模板。应使用与 headerTemplate 相同的格式 |
-| `landscape` | boolean | false | 是否横向打印，默认 false（纵向） | boolean (可选)，纸张方向。默认为 false。（是否横向，默认 false，纵向） |
-| `margin` | object | 0 | 页边距，支持单位：px、in、cm、mm | Object (可选)，纸张边距，默认为无。top、right、bottom、left，接受带单位的边距值 px、in、cm、mm。默认为 0（pdf 边距） |
-| `pageRanges` | Array<Object> | [] | 打印页面范围，例如：[{from:1,to:5},{from:6,to:6}] | Array<Object> (可选)，要打印的纸张范围，例如，[{from:1,to:5},{from:6,to:6},{from:7,to:10}]。默认为空，表示打印所有页面。（打印页面范围，默认全部） |
-| `preferCSSPageSize` | boolean | false | 优先使用 CSS @page 尺寸 | boolean (可选)，优先使用页面中声明的任何 CSS @page 尺寸，而不是 width、height 或 format 选项中声明的尺寸。默认为 false，将缩放内容以适合纸张尺寸 |
-| `printBackground` | boolean | false | 是否打印背景图形 | boolean (可选)，打印背景图形。默认为 false。（是否打印背景色） |
-| `watermark` | object | - | 水印设置（文本或图片水印） | Object (可选)，例如：文本水印：{ text:"hello, this is watermark", color:'rgb(0,0,0)', x: 200 \|'alignCenter'\|'alignLeft'\|'alignRight', y: 100 \|'alignCenter'\|'alignTop'\|'alignBottom', size: 20, rows: 4, cols:4, xSpace:20, ySpace:20, angle: 45, opacity:0.5  } 或图片水印 { base64: "", x: 200 \|'alignCenter'\|'alignLeft'\|'alignRight', y: 100 \|'alignCenter'\|'alignTop'\|'alignBottom', rows: 4, cols:4, angle: 45, xSpace:20, ySpace:20, width: 100, height: 100, opacity:0.5  }。（文本水印或图片水印） |
-| `pageNumber` | object | - | 页码设置 | Object (可选)，例如：{ start: 1, x: 200 \|'alignCenter'\|'alignLeft'\|'alignRight', y: 100 \|'alignCenter'\|'alignTop'\|'alignBottom', format: '{{page}}/{{totalPage}}', color:'rgb(0,0,0)', size: 20, xSpace: 0, ySpace:0, opacity:1 }。（页码） |
+| 选项 | 类型 | 默认值 | 描述 |
+|:-----|:---|:------|:-----|
+| `paperFormat` | string | 'A4' | 纸张格式。支持的固定尺寸：Letter、Legal、Tabloid、Ledger、A0、A1、A2、A3、A4、A5、A6。设置后优先于 `width`/`height`；非标准尺寸请用自定义 `width` 和 `height`（此时不要设置 `paperFormat`）。 |
+| `width` | string\|number | - | 纸张宽度，支持单位 px、in、cm、mm。与 `height` 配合使用自定义尺寸；使用自定义尺寸时不要设置 `paperFormat`。 |
+| `height` | string\|number | - | 纸张高度，支持单位 px、in、cm、mm。与 `width` 配合使用自定义尺寸；使用自定义尺寸时不要设置 `paperFormat`。 |
+| `displayHeaderFooter` | boolean | false | 是否在每页显示页眉和页脚。 |
+| `headerTemplate` | string | - | 页眉 HTML 模板。可用特殊 class 注入动态值：`date`（格式化打印日期）、`title`（文档标题）、`url`（文档地址）、`pageNumber`（当前页码）、`totalPages`（总页数）。示例：`<span class="pageNumber"></span>/<span class="totalPages"></span>`。 |
+| `footerTemplate` | string | - | 页脚 HTML 模板，class 用法与 `headerTemplate` 相同。 |
+| `landscape` | boolean | false | 纸张方向。`false`（默认）为纵向；`true` 为横向。 |
+| `margin` | object | 0 | 页边距。对象含 `top`、`right`、`bottom`、`left`，值支持 px、in、cm、mm。默认四边均为 `0`。 |
+| `pageRanges` | Array<Object> | [] | 打印页面范围，如 `[{from:1,to:5},{from:6,to:6},{from:7,to:10}]`。空数组（默认）表示打印全部页面。 |
+| `preferCSSPageSize` | boolean | false | 为 `true` 时，文档中 CSS `@page` 声明的尺寸优先于 `width`、`height`、`paperFormat`。为 `false`（默认）时，内容会缩放以适应配置的纸张尺寸。 |
+| `printBackground` | boolean | false | 是否打印背景图形，包括 CSS 背景色和背景图片。 |
+| `watermark` | object | - | 文本或图片水印。**文本：** `{ text, color, x, y, size, rows, cols, xSpace, ySpace, angle, opacity }`。**图片：** `{ base64, x, y, rows, cols, xSpace, ySpace, width, height, angle, opacity }`。`x`/`y` 可为数值或对齐关键字：`alignCenter`、`alignLeft`、`alignRight`、`alignTop`、`alignBottom`。 |
+| `pageNumber` | object | - | 页码叠加。示例：`{ start: 1, x, y, format: '{{page}}/{{totalPage}}', color, size, xSpace, ySpace, opacity }`。`x`/`y` 支持与 `watermark` 相同的对齐关键字。 |
 
 ### 打印选项 (printOptions)
 
-| 选项 | 类型 | 默认值 | 描述 | 详细描述 |
-|:-----|:---|:------|:-----|:-----|
-| `paperFormat` | string | - | 纸张格式：A2、A3、A4、A5、A6、Letter、Legal、Tabloid、Ledger、Statement，以及所选打印机支持的所有纸张格式 | string (可选)，A2、A3、A4、A5、A6、Letter、Legal、Tabloid、Ledger、Statement。打印机特有格式可通过 `utils.getPrinterPapers(printer)` 动态获取（`printer` 来自 `utils.getPrinterList()` 返回项），使用返回结果中的 `name` 作为参数，例如 "10x14"、"信封 B6"。也可在客户端预览页查看可选列表。如果输入不支持的格式，实际打印格式取决于打印机的默认纸张设置 |
-| `colorful` | boolean | false | 彩色或黑白，默认 false（黑白） | boolean (可选)，默认为 false。彩色或黑白（彩色或黑白，默认 false，黑白） |
-| `landscape` | boolean | false | 是否横向，默认 false（纵向） | boolean (可选)，内容方向，而不是纸张的旋转，必须通过打印机默认设置预先设置。默认为 false。（是否横向，默认 false，纵向） |
-| `printerName` | string | - | 指定打印机名称，默认为默认打印机 | string (可选)，指定打印机。（指定打印机名称，默认为默认打印机） |
-| `pageRanges` | Array<Object> | [] | 打印页面范围，例如：[{from:1,to:5},{from:6,to:6},{from:7,to:10}] | Array<Object> (可选)，要打印的纸张范围，例如，[{from:1,to:5},{from:6,to:6},{from:7,to:10}]。默认为空，表示打印所有页面。（页面范围，默认全部） |
-| `copies` | number | - | 打印份数 | number(可选)，打印的份数（打印份数） |
-| `duplexMode` | string | 'simplex' | 单双面模式：simplex（单面）、duplex（双面）、duplexshort（沿短边双面）、duplexlong（沿长边双面） | enums string (可选)，"simplex"（单面打印，默认）、"duplex"（双面）、"duplexshort"（沿短边双面打印）、"duplexlong"（沿长边双面打印） |
-| `scaleMode` | string | 'shrink' | 缩放模式：noscale（原始大小）、shrink（缩小至可打印区域）、fit（调整至可打印区域） | enums string (可选)，noscale：使用原始页面大小，shrink：将页面缩小至可打印区域（如果需要），fit：调整页面至可打印区域。（默认 shrink），具体差异可以通过将 extraOptions 的 action 参数设置为 'preview' 查看 |
-| `bin` | number\|string | - | 选择要打印到的纸盘 | num or name (可选)，选择要打印到的纸盘 |
+| 选项 | 类型 | 默认值 | 描述 |
+|:-----|:---|:------|:-----|
+| `paperFormat` | string | - | 纸张尺寸：A2、A3、A4、A5、A6、Letter、Legal、Tabloid、Ledger、Statement，以及所选打印机支持的其他格式。打印机特有尺寸（如 `"10x14"`、`"信封 B6"`）请调用 `utils.getPrinterPapers(printer)`（`printer` 为 `utils.getPrinterList()` 返回项），使用结果中的 `name` 作为参数。也可在客户端界面预览可选列表。若传入不支持的值，将使用打印机默认纸张。 |
+| `colorful` | boolean | false | 彩色或黑白打印。`false`（默认）为黑白；`true` 为彩色。 |
+| `landscape` | boolean | false | 内容方向。`false`（默认）为纵向。此选项控制内容排版，**不**旋转物理纸张——纸张旋转请在打印机默认设置中配置。 |
+| `printerName` | string | - | 目标打印机名称（与 `utils.getPrinterList()` 返回值一致）。省略则使用系统默认打印机。 |
+| `pageRanges` | Array<Object> | [] | 打印页面范围，格式同 pdfOptions 的 `pageRanges`。空数组（默认）表示打印全部页面。 |
+| `copies` | number | - | 打印份数。 |
+| `duplexMode` | string | 'simplex' | 单双面模式：`"simplex"` — 单面（默认）；`"duplex"` — 双面；`"duplexshort"` — 沿短边翻转；`"duplexlong"` — 沿长边翻转。 |
+| `scaleMode` | string | 'shrink' | 缩放模式：`"noscale"` — 原始页面大小；`"shrink"` — 必要时缩小至可打印区域（默认）；`"fit"` — 调整页面以填满可打印区域。将 `extraOptions.action` 设为 `"preview"` 可直观对比各模式效果。 |
+| `bin` | number\|string | - | 纸盘（进纸托盘），可为托盘编号或名称，取决于打印机驱动。 |
 
 ### 额外选项 (extraOptions)
 
-| 选项 | 类型 | 默认值 | 描述 | 详细描述 |
-|:-----|:---|:------|:-----|:-----|
-| `devtool` | boolean | false | 开发者工具，用于开发调试 HTML，仅对本地 chrome 和 edge PDF 引擎有用 | boolean (可选)，在开发中使用，调试 html 时可用。默认为 false。（开发者工具用于开发调试 html，仅对本地 chrome 和 edge PDF 引擎有用） |
-| `requestTimeout` | number | 15 | 网络超时（秒），默认 15 秒，应大于或等于页面中的 xhr 超时设置 | number (可选)，请求网络超时（http、xhr），默认 15（网络超时，默认 15 秒。此参数应大于或等于页面中的 xhr 超时设置） |
-| `cookies` | object | - | Cookie 对象，例如：{ key1:value1, key2:value2 } | Object (可选)，cookie 对象。例如：{ key1:value1, key2:value2 } |
-| `localStorages` | object | - | localStorage 对象，例如：{ key1:value1, key2:value2 }，所有页面都有默认的 { '_printMode_': 'true' } | Object (可选)，localStorage 对象。例如：{ key1:value1, key2:value2 }，每个页面都有一个默认的 localStorage 键值对 { '_printMode_' : 'true' }，用于在 UI 中进行区分。为了方便区分打印区域，所有页面都有一个默认的 { '_printMode_' : 'true' } localStorage 值可用 |
-| `sessionStorages` | object | - | sessionStorage 对象，例如：{ key1:value1, key2:value2 } | Object (可选)，sessionStorage 对象。例如：{ key1:value1, key2:value2 } |
-| `httpHeaders` | object | - | HTTP 请求头设置，例如：{ Authorization: 'string' }，所有 header 值必须是字符串 | Object (可选)，包含每个请求要发送的额外 HTTP 头的对象。例如：{ Authorization: 'string' }，所有 header 值必须是字符串。请求头设置 {key,value} |
-| `action` | string | 'print' | 行为：print（打印）、preview（预览），默认 print | enums string (可选)，"print"、"preview"，默认 'print'。客户端可以根据返回的预览地址决定预览行为。（行为：打印或预览，默认打印，客户端可以根据返回的预览地址决定预览行为） |
-| `[key]` | string | - | 可以添加任意键值对，将与 extraOptions 一起原样返回 | (可选)，您想添加的任何键值对。当 extraOptions 返回时可能有用（可以添加任何想添加的 key:value，将与 extraOptions 一起原样返回） |
+| 选项 | 类型 | 默认值 | 描述 |
+|:-----|:---|:------|:-----|
+| `devtool` | boolean | false | 渲染 HTML 时打开浏览器 DevTools（仅开发调试用）。仅对本地 Chrome 和 Edge PDF 引擎有效。 |
+| `requestTimeout` | number | 15 | 加载 URL 时 HTTP/XHR 请求的网络超时（秒），默认 `15`。应大于或等于被打印页面中配置的 xhr 超时时间。 |
+| `cookies` | object | - | 随请求发送的 Cookie 对象，如 `{ sessionId: 'abc123' }`。 |
+| `localStorages` | object | - | 注入到被打印页面的 `localStorage` 键值对，如 `{ theme: 'dark' }`。每页还会默认注入 `{ '_printMode_': 'true' }`，便于页面脚本识别打印模式并调整 UI。 |
+| `sessionStorages` | object | - | 注入到被打印页面的 `sessionStorage` 键值对，用法同 `localStorages`。 |
+| `httpHeaders` | object | - | 每个请求附加的 HTTP 头，如 `{ Authorization: 'Bearer token' }`。**所有 header 值必须是字符串。** |
+| `action` | string | 'print' | 任务行为：`"print"`（默认）— 直接打印；`"preview"` — 返回预览地址。客户端根据返回的预览地址决定如何展示预览。 |
+| `[key]` | string | - | 任意自定义键值对。自定义字段会随响应中的 `extraOptions` 原样返回，便于在应用中关联请求。 |
 
 ## 🛠️ 工具方法
 
@@ -447,42 +442,20 @@ console.log('纸张类型:', papers);
 如果不想使用 async，可以通过事件监听响应
 
 - 设置响应回调
-``` javascript
-webPrintPdf.utils.onResponse((response) => {
-    console.log('收到响应:', response);
-});
-```
+
+  ```javascript
+  webPrintPdf.utils.onResponse((response) => {
+      console.log('收到响应:', response);
+  });
+  ```
 
 - 设置错误回调
-``` javascript
-webPrintPdf.utils.onError((error) => {
-    console.error('发生错误:', error);
-});
-```
 
-## 💡 常见应用场景与解决方案
-
-以下场景均支持通过 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/) 实现静默打印、批量任务和本地打印机控制。
-
-### 电子商务应用
-- **订单发票**：为客户订单生成可打印的发票
-- **运输标签**：创建带条形码的运输标签
-- **装箱单**：打印仓库履行的订单详情
-
-### 商业与企业
-- **财务报表**：导出财务报表和资产负债表
-- **业务分析**：打印仪表板报表和 KPI 摘要
-- **员工文档**：生成工资单、合同和证书
-
-### 医疗保健与教育
-- **医疗记录**：打印患者记录和处方
-- **实验报告**：生成测试结果和医疗报告
-- **学生证书**：创建文凭和成就证书
-
-### 法律与政府
-- **合同**：打印格式正确的法律文档
-- **表单**：生成政府表单和申请
-- **证书**：创建官方证书和许可证
+  ```javascript
+  webPrintPdf.utils.onError((error) => {
+      console.error('发生错误:', error);
+  });
+  ```
 
 ## 🌐 支持的技术
 
@@ -494,32 +467,29 @@ webPrintPdf.utils.onError((error) => {
 
 ## ❓ 常见问题 (FAQ)
 
-### 我可以在没有后端的情况下使用这个库吗？
-无需自建后端服务——web-print-pdf 在浏览器中运行。但每位用户必须在本机安装并运行 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/)，打印功能才能正常工作。
-
-### 它可以与 TypeScript 一起使用吗？
-当然可以！包中包含完整的 TypeScript 类型定义。
-
-### 我可以在不显示打印对话框的情况下打印吗？
-可以，通过客户端应用设置支持静默打印。
-
-### 支持哪些纸张尺寸？
-支持所有标准纸张尺寸，包括 A4、Letter、Legal、A3、A5 和自定义尺寸。
-
-### 我可以在打印的文档中添加水印吗？
-可以，支持文本和图片水印，具有可自定义的位置和不透明度。
-
-### 支持批量打印吗？
-可以，您可以使用 `batchPrint()` 方法在单个操作中打印多个文档。
-
-### 它支持打印图片和现有的 PDF 吗？
-可以，该库支持打印 HTML、图片（URL 或 Base64）和 PDF 文件（URL 或 Base64）。
+### 需要后端或其他软件吗？
+不需要后端 — web-print-pdf 完全在浏览器中运行。执行 `npm install web-print-pdf` 后，每位终端用户须在本机安装并运行 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/)。库通过 `ws://127.0.0.1:16794` 连接客户端；客户端未启动时打印请求会失败。
 
 ### web-print-pdf 和 Print.js、jsPDF 有什么区别？
-**Print.js** 调用浏览器原生打印对话框，完全在浏览器内运行，无法实现静默打印、批量任务或对物理打印机的精细控制。**jsPDF** 在 JavaScript 中生成 PDF 文件供下载或预览，不会将任务发送到本地打印机。**web-print-pdf** 通过 WebSocket 连接 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/)，支持静默打印、选择打印机/纸张、批量打印、水印等企业级打印能力。
+**Print.js** 调用浏览器原生打印对话框，无法实现静默打印、批量任务或对物理打印机的精细控制。**jsPDF** 在 JavaScript 中生成 PDF 供下载或预览，不会将任务发送到本地打印机。**web-print-pdf** 通过 WebSocket 连接 Web 打印专家客户端，支持静默打印、选择打印机/纸张、批量打印、水印等企业级打印能力。
 
-### 除了 npm install，还需要安装什么吗？
-需要。执行 `npm install web-print-pdf` 之后，每位终端用户还需在本机安装并运行 [Web 打印专家客户端](http://webprintpdf.com/downloadApp/)。库通过 `ws://127.0.0.1:16794` 与客户端通信——若客户端未启动，打印请求将失败。
+### 支持 TypeScript 吗？
+支持。包内包含完整类型定义，无需单独安装 `@types` 包。
+
+### 可以不弹出打印对话框吗？
+可以。通过 Web 打印专家客户端实现静默打印，不会弹出浏览器打印对话框。
+
+### 支持哪些纸张尺寸？
+支持 A4、Letter、Legal、A3、A5 等标准尺寸，也可通过 `width`/`height` 自定义。打印机特有格式可用 `utils.getPrinterPapers()` 查询。
+
+### 可以添加水印吗？
+可以。通过 `pdfOptions.watermark` 配置文本或图片水印，支持位置、透明度、行列数和角度等。
+
+### 支持批量打印吗？
+支持。向 `batchPrint()` 传入多个任务，可一次打印 HTML、URL、Base64、图片或 PDF。
+
+### 支持打印图片和已有 PDF 吗？
+支持。除 HTML 方法外，还可使用 `printImageByUrl` / `printImageByBase64` 和 `printPdfByUrl` / `printPdfByBase64`。
 
 ## 🤝 贡献
 
