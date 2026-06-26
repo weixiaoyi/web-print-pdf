@@ -1,6 +1,10 @@
 # GitHub 仓库 SEO 配置指南
 
-本文档提供快速配置指南，帮助优化仓库的搜索引擎可见度和社区影响力。
+> **发版前请以以下文件为准（本文件 About/Topics 已与 2.1.8 同步）：**
+> - **Topics / Description**：`.github/GITHUB_TOPICS.md` 或 `package.json` → `githubDescription` + `.github/repo-seo.config.json`
+> - **快速清单**：`.github/QUICK_START_SEO.md`
+
+本文档提供仓库运营与 GitHub 配置的快速指南。
 
 ## 🎯 仓库基本设置（必做）
 
@@ -10,17 +14,17 @@
 
 **Description（描述）**（GitHub 上限 350 字符，建议 ≤120 字符，维护在 `package.json` → `githubDescription`）:
 ```
-JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print Expert Client. Vue, React, Angular.
+Silent browser printing via WebSocket local print agent. HTML/PDF to printer without dialog. Web Print Expert Client. Vue, React.
 ```
 
 **Website（网站）**:
 ```
-http://webprintpdf.com/
+https://webprintpdf.com/
 ```
 
-**Topics（标签）** - 添加以下 20 个标签（与 `package.json` keywords 前 20 项一致；npm 另有 8 个扩展词见 `repo-seo.config.json` → `npmOnlyKeywords`）：
+**Topics（标签）** - 添加以下 20 个标签（与 `package.json` keywords 前 20 项一致；npm 另有 7 个扩展词见 `repo-seo.config.json` → `npmOnlyKeywords`）：
 ```
-html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript-print, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend-print, html-print, web-print-pdf
+silent-print, silent-printing, websocket-print, print-agent, local-print-client, desktop-print-client, browser-print, direct-print, javascript-print, web-printing, print-library, invoice-printing, label-printing, receipt-printing, thermal-print, pos-printing, batch-printing, print-automation, watermark-pdf, web-print-pdf
 ```
 
 
@@ -48,24 +52,24 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 2. 点击右侧 "Releases"
 3. 点击 "Create a new release"
 4. 填写以下信息：
-   - **Tag**: v2.1.7
-   - **Title**: Release v2.1.7
+   - **Tag**: v2.1.8
+   - **Title**: Release v2.1.8
    - **Description**: 使用 `.github/RELEASE_TEMPLATE.md` 作为模板
 5. 点击 "Publish release"
 
 ### 方式二：命令行创建（需要 GitHub CLI）
 
 ```bash
-gh release create v2.1.7 \
-  --title "Release v2.1.7" \
+gh release create v2.1.8 \
+  --title "Release v2.1.8" \
   --notes-file .github/RELEASE_TEMPLATE.md
 ```
 
 ## 🏷️ npm 包优化检查清单
 
-- ✅ keywords 已配置（20 个核心词与 GitHub Topics 一致 + 8 个 npm 扩展词，共 28 个）
-- ✅ description 已优化
-- ✅ homepage 指向官网
+- ✅ keywords 已配置（20 个核心词与 GitHub Topics 一致 + 7 个 npm 扩展词，共 27 个）
+- ✅ description 已优化（静默打印 / local print agent 定位）
+- ✅ homepage 指向 `https://webprintpdf.com/en/docs/`
 - ✅ repository 链接正确
 - ✅ bugs 链接配置
 - ✅ license 声明（MIT）
@@ -122,36 +126,34 @@ npm 会自动从 GitHub 和 package.json 读取信息：
 
 **Twitter/X**:
 ```
-🚀 web-print-pdf - 强大的 JavaScript HTML 转 PDF 打印库
+🚀 web-print-pdf — Silent browser printing SDK via WebSocket local print agent
 
-✅ 支持 Vue/React/Angular
-✅ 批量打印
-✅ 自定义水印
-✅ WebSocket 实时通信
+✅ No print dialog · HTML/PDF to local printer
+✅ Vue / React / Angular
+✅ Receipts, labels, batch, watermarks
 
 GitHub: https://github.com/weixiaoyi/web-print-pdf
 npm: https://www.npmjs.com/package/web-print-pdf
 
-#JavaScript #WebDev #PDF #Vue #React #Angular
+#JavaScript #WebDev #SilentPrint #Vue #React
 ```
 
 **LinkedIn**:
 ```
-介绍一个强大的 JavaScript 打印库：web-print-pdf
+介绍 web-print-pdf：浏览器静默打印 SDK
 
 主要特性：
-• 支持 HTML 转 PDF，保持完美样式
+• 通过 WebSocket 连接本地打印客户端，无需浏览器打印对话框
+• 支持 HTML、PDF、图片发送到物理打印机
 • 兼容 Vue.js、React、Angular 等主流框架
-• 支持批量打印、自定义水印、页码等高级功能
-• 基于 WebSocket 实时通信
-• TypeScript 类型支持
+• 批量打印、水印、小票/面单/发票等企业场景
 
-适用场景：发票打印、报表生成、文档管理、标签打印等
+适用场景：POS 小票、ERP 发票、WMS 面单、自助终端等
 
 开源免费，MIT 许可证
 
 GitHub: https://github.com/weixiaoyi/web-print-pdf
-官网: http://webprintpdf.com/
+官网: https://webprintpdf.com/
 ```
 
 ## 📝 内容营销建议
@@ -266,5 +268,5 @@ GitHub: https://github.com/weixiaoyi/web-print-pdf
 2. 在 Discussions 中提问
 3. 提交 Issue
 
-**最后更新**: 2025-10-01
+**最后更新**: 2026-06-26
 

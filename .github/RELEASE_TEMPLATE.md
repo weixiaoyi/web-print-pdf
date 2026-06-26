@@ -52,7 +52,7 @@ yarn add web-print-pdf@latest
 pnpm add web-print-pdf@latest
 ```
 
-**官网**: http://webprintpdf.com/  
+**官网**: https://webprintpdf.com/  
 **文档**: https://github.com/weixiaoyi/web-print-pdf#readme  
-**客户端下载**: http://webprintpdf.com/downloadApp/
+**客户端下载**: https://webprintpdf.com/downloadApp/
 

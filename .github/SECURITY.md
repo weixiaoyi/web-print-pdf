@@ -83,7 +83,7 @@ if (!allowedDomains.includes(url.hostname)) {
 ## 📞 联系方式
 
 - 安全问题邮箱：[待补充]
-- 官方网站：http://webprintpdf.com/
+- 官方网站：https://webprintpdf.com/
 - GitHub Issues：https://github.com/weixiaoyi/web-print-pdf/issues（仅用于非安全问题）
 
 ## 🙏 致谢

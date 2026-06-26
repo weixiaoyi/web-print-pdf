@@ -13,19 +13,19 @@
 > GitHub About 描述上限 **350 字符**，建议控制在 **120 字符以内**，避免展示被截断。
 
 ```
-JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print Expert Client. Vue, React, Angular.
+Silent browser printing via WebSocket local print agent. HTML/PDF to printer without dialog. Web Print Expert Client. Vue, React.
 ```
 
 （本地维护位置：`package.json` → `githubDescription`）
 
 ### Website（网站）
 ```
-http://webprintpdf.com/
+https://webprintpdf.com/
 ```
 
 ### Topics（标签）- 复制粘贴以下内容
 ```
-html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript-print, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend-print, html-print, web-print-pdf
+silent-print, silent-printing, websocket-print, print-agent, local-print-client, desktop-print-client, browser-print, direct-print, javascript-print, web-printing, print-library, invoice-printing, label-printing, receipt-printing, thermal-print, pos-printing, batch-printing, print-automation, watermark-pdf, web-print-pdf
 ```
 
 4. 点击 **Save changes**
@@ -45,30 +45,31 @@ html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print
 
 **Choose a tag:**
 ```
-v2.1.7
+v2.1.8
 ```
 
 **Release title:**
 ```
-Release v2.1.7
+Release v2.1.8
 ```
 
 **Description:** （复制粘贴）
 ```
 ## 🔧 改进
 
-- ✅ 统一 npm keywords 与 GitHub Topics（前 20 项一致，7 个 npm 扩展词）
-- ✅ 修正 Topics 命名一致性（`typescript-print`、`frontend-print`）
-- ✅ 更新 GitHub SEO 配置文档
+- ✅ 关键词聚焦静默打印与本地打印代理（silent-print、print-agent、receipt-printing 等）
+- ✅ README 官网深链矩阵：样例中心、进阶配置、选型对比、框架/场景专题、部署指南、定价页
+- ✅ FAQ 内链至官网对比与场景文章；全站营销链接 UTM 追踪
+- ✅ 三平台客户端说明（Windows / Linux / macOS）；homepage 指向 webprintpdf.com/en/docs/
 
 ## 📦 安装
 
 \`\`\`bash
-npm install web-print-pdf@2.1.7
+npm install web-print-pdf@2.1.8
 # or
-yarn add web-print-pdf@2.1.7
+yarn add web-print-pdf@2.1.8
 # or
-pnpm add web-print-pdf@2.1.7
+pnpm add web-print-pdf@2.1.8
 \`\`\`
 
 ## 🚀 快速开始
@@ -81,10 +82,10 @@ await webPrintPdf.printHtml('<h1>Hello World!</h1>');
 
 ## 📚 文档
 
-- [完整文档](https://github.com/weixiaoyi/web-print-pdf#readme)
-- [使用示例](https://github.com/weixiaoyi/web-print-pdf/blob/master/.github/EXAMPLES.md)
-- [官方网站](http://webprintpdf.com/)
-- [客户端下载](http://webprintpdf.com/downloadApp/)
+- [开发文档](https://webprintpdf.com/docs/)
+- [在线样例（25 个 Demo）](https://webprintpdf.com/docs/demos/)
+- [GitHub README](https://github.com/weixiaoyi/web-print-pdf#readme)
+- [客户端下载](https://webprintpdf.com/downloadApp/)
 
 ## 🤝 贡献
 

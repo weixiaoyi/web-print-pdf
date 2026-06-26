@@ -549,10 +549,47 @@ async function printShippingLabel(shipment) {
 
 ## 📚 更多资源
 
-- [完整 API 文档](../README.md#api-文档)
-- [配置选项详解](../README.md#配置选项)
-- [常见问题](../README.md#常见问题-faq)
-- [官方网站](http://webprintpdf.com/)
+> 官网文档：**中文** `/docs/…` · **English** `/en/docs/…`
+
+### 本仓库
+
+- [完整 API 文档（中文）](../README_CN.md#api-文档)
+- [配置选项详解（中文）](../README_CN.md#配置选项)
+- [常见问题（中文）](../README_CN.md#常见问题-faq)
+- [English README](../README.md)
+
+### 官网 — 样例与进阶
+
+- [文档中心（中文）](https://webprintpdf.com/docs/?utm_source=github&utm_medium=examples&utm_campaign=docs-hub) · [Documentation hub (EN)](https://webprintpdf.com/en/docs/?utm_source=github&utm_medium=examples&utm_campaign=docs-hub)
+- [在线样例中心](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=examples&utm_campaign=demos) · [Live demos (EN)](https://webprintpdf.com/en/docs/demos/?utm_source=github&utm_medium=examples&utm_campaign=demos)
+- [打印参数详解](https://webprintpdf.com/docs/print-options/?utm_source=github&utm_medium=examples&utm_campaign=advanced) · [Print options (EN)](https://webprintpdf.com/en/docs/print-options/?utm_source=github&utm_medium=examples&utm_campaign=advanced)
+- [前端错误处理标准](https://webprintpdf.com/docs/error-handling/?utm_source=github&utm_medium=examples&utm_campaign=advanced) · [Error handling (EN)](https://webprintpdf.com/en/docs/error-handling/?utm_source=github&utm_medium=examples&utm_campaign=advanced)
+- [远程打印配置](https://webprintpdf.com/docs/remote-print/?utm_source=github&utm_medium=examples&utm_campaign=advanced) · [Remote print (EN)](https://webprintpdf.com/en/docs/remote-print/?utm_source=github&utm_medium=examples&utm_campaign=advanced)
+- [printHtml API 参考](https://webprintpdf.com/docs/api-printHtml/?utm_source=github&utm_medium=examples&utm_campaign=advanced) · [printHtml API (EN)](https://webprintpdf.com/en/docs/api-printHtml/?utm_source=github&utm_medium=examples&utm_campaign=advanced)
+- [batchPrint API 参考](https://webprintpdf.com/docs/api-batchPrint/?utm_source=github&utm_medium=examples&utm_campaign=advanced) · [batchPrint API (EN)](https://webprintpdf.com/en/docs/api-batchPrint/?utm_source=github&utm_medium=examples&utm_campaign=advanced)
+
+### 官网 — 选型对比
+
+- [Print.js 与 web-print-pdf 对比](https://webprintpdf.com/docs/printjs-comparison/?utm_source=github&utm_medium=examples&utm_campaign=comparison) · [Print.js comparison (EN)](https://webprintpdf.com/en/docs/printjs-comparison/?utm_source=github&utm_medium=examples&utm_campaign=comparison)
+- [jsPDF 与 web-print-pdf 对比](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=github&utm_medium=examples&utm_campaign=comparison) · [jsPDF comparison (EN)](https://webprintpdf.com/en/docs/jspdf-comparison/?utm_source=github&utm_medium=examples&utm_campaign=comparison)
+- [Lodop 与 web-print-pdf 选型](https://webprintpdf.com/docs/lodop-alternative/?utm_source=github&utm_medium=examples&utm_campaign=comparison) · [Lodop guide (EN)](https://webprintpdf.com/en/docs/lodop-alternative/?utm_source=github&utm_medium=examples&utm_campaign=comparison)
+- [Puppeteer / Playwright 对比](https://webprintpdf.com/docs/puppeteer-print-comparison/?utm_source=github&utm_medium=examples&utm_campaign=comparison) · [Puppeteer guide (EN)](https://webprintpdf.com/en/docs/puppeteer-print-comparison/?utm_source=github&utm_medium=examples&utm_campaign=comparison)
+
+### 官网 — 框架与场景
+
+- [Vue 静默打印](https://webprintpdf.com/docs/vue-silent-print/?utm_source=github&utm_medium=examples&utm_campaign=framework) · [Vue silent print (EN)](https://webprintpdf.com/en/docs/vue-silent-print/?utm_source=github&utm_medium=examples&utm_campaign=framework)
+- [React 静默打印](https://webprintpdf.com/docs/react-silent-print/?utm_source=github&utm_medium=examples&utm_campaign=framework) · [React silent print (EN)](https://webprintpdf.com/en/docs/react-silent-print/?utm_source=github&utm_medium=examples&utm_campaign=framework)
+- [热敏小票与快递面单](https://webprintpdf.com/docs/thermal-receipt-print/?utm_source=github&utm_medium=examples&utm_campaign=scenarios) · [Thermal receipts (EN)](https://webprintpdf.com/en/docs/thermal-receipt-print/?utm_source=github&utm_medium=examples&utm_campaign=scenarios)
+- [WMS 远程面单打印](https://webprintpdf.com/docs/wms-remote-print/?utm_source=github&utm_medium=examples&utm_campaign=scenarios) · [WMS remote labels (EN)](https://webprintpdf.com/en/docs/wms-remote-print/?utm_source=github&utm_medium=examples&utm_campaign=scenarios)
+- [ERP 发票与对账单](https://webprintpdf.com/docs/invoice-erp-print/?utm_source=github&utm_medium=examples&utm_campaign=scenarios) · [ERP invoices (EN)](https://webprintpdf.com/en/docs/invoice-erp-print/?utm_source=github&utm_medium=examples&utm_campaign=scenarios)
+
+### 官网 — 部署与下载
+
+- [Windows 部署指南](https://webprintpdf.com/docs/windows-deploy/?utm_source=github&utm_medium=examples&utm_campaign=deploy) · [Windows deploy (EN)](https://webprintpdf.com/en/docs/windows-deploy/?utm_source=github&utm_medium=examples&utm_campaign=deploy)
+- [Linux 部署指南](https://webprintpdf.com/docs/linux-deploy/?utm_source=github&utm_medium=examples&utm_campaign=deploy) · [Linux deploy (EN)](https://webprintpdf.com/en/docs/linux-deploy/?utm_source=github&utm_medium=examples&utm_campaign=deploy)
+- [macOS 部署指南](https://webprintpdf.com/docs/mac-deploy/?utm_source=github&utm_medium=examples&utm_campaign=deploy) · [macOS deploy (EN)](https://webprintpdf.com/en/docs/mac-deploy/?utm_source=github&utm_medium=examples&utm_campaign=deploy)
+- [客户端下载（中文）](https://webprintpdf.com/downloadApp/?utm_source=github&utm_medium=examples&utm_campaign=download) · [Client download (EN)](https://webprintpdf.com/en/downloadApp/?utm_source=github&utm_medium=examples&utm_campaign=download)
+- [定价与授权（中文）](https://webprintpdf.com/price/?utm_source=github&utm_medium=examples&utm_campaign=price) · [Pricing (EN)](https://webprintpdf.com/en/price/?utm_source=github&utm_medium=examples&utm_campaign=price)
 
 ---
 

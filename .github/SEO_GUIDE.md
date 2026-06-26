@@ -10,10 +10,13 @@ This guide provides comprehensive SEO strategies to improve the visibility of th
 
 #### Keywords Strategy
 Our package uses 27 focused keywords targeting:
-- **Primary keywords**: html-to-pdf, pdf-generator, web-printing
-- **Framework-specific**: vue-print, react-print, angular-print
-- **Differentiation**: websocket-print, silent-print, desktop-print-client, local-print-client
-- **Feature-based**: batch-printing, watermark-pdf, print-preview, print-automation
+- **Primary (differentiation)**: silent-print, silent-printing, print-agent, websocket-print, local-print-client, browser-print, direct-print
+- **Use-case (high intent)**: invoice-printing, receipt-printing, thermal-print, pos-printing, label-printing, batch-printing
+- **Framework-specific**: vue-print, react-print, typescript-print, frontend-print
+- **Traffic entry (1 keyword)**: html-to-pdf — README clarifies this is for silent physical printing, not PDF download
+
+#### Description Optimization
+The description leads with silent web printing and local print agent positioning, then framework compatibility and use cases (receipts, labels, batch, watermarks).
 
 #### Description Optimization
 The description includes:
@@ -54,9 +57,9 @@ Factors that improve npm search ranking:
 
 #### About Section
 ```
-Description (max 350 chars): JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print Expert Client. Vue, React, Angular.
+Description (max 350 chars): Silent browser printing via WebSocket local print agent. HTML/PDF to printer without dialog. Web Print Expert Client. Vue, React.
 
-Website: http://webprintpdf.com/
+Website: https://webprintpdf.com/
 
 Topics: (See GITHUB_TOPICS.md for recommended topics)
 ```
@@ -115,14 +118,15 @@ Add up to 20 relevant topics focusing on:
 
 #### Keyword Strategy
 Primary keywords to target:
-- "HTML to PDF JavaScript"
+- "silent printing javascript"
+- "browser silent print no dialog"
+- "local print agent websocket"
 - "JavaScript print library"
-- "Convert HTML to PDF"
-- "Web printing solution"
-- "Vue print plugin"
-- "React print component"
-- "PDF generator JavaScript"
-- "Browser print API"
+- "invoice printing web app"
+- "POS receipt printing browser"
+- "Vue silent print"
+- "React print without dialog"
+- "html to pdf print local printer"
 
 #### Content Structure
 README.md / README_CN.md include:

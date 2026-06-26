@@ -9,7 +9,7 @@ Canonical SEO settings: `package.json` → `githubDescription`（About 描述）
 GitHub About description max **350 characters**; keep it short (~120) for search display.
 
 ```
-JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print Expert Client. Vue, React, Angular.
+Silent browser printing via WebSocket local print agent. HTML/PDF to printer without dialog. Web Print Expert Client. Vue, React.
 ```
 
 （与 `package.json` 的 `githubDescription` 字段保持一致）
@@ -17,7 +17,7 @@ JavaScript HTML-to-PDF printing via WebSocket. Silent/local print with Web Print
 ## 🌐 Website
 
 ```
-http://webprintpdf.com/
+https://webprintpdf.com/
 ```
 
 ## 🔍 Recommended Topics (Max 20)
@@ -25,37 +25,43 @@ http://webprintpdf.com/
 Copy-paste for GitHub About → Topics:
 
 ```
-html-to-pdf, pdf-generator, javascript-print, web-printing, pdf-converter, print-library, vue-print, react-print, angular-print, typescript-print, batch-printing, websocket-print, silent-print, desktop-print-client, document-printing, print-automation, watermark-pdf, frontend-print, html-print, web-print-pdf
+silent-print, silent-printing, websocket-print, print-agent, local-print-client, desktop-print-client, browser-print, direct-print, javascript-print, web-printing, print-library, invoice-printing, label-printing, receipt-printing, thermal-print, pos-printing, batch-printing, print-automation, watermark-pdf, web-print-pdf
 ```
 
 | # | Topic | Purpose |
 |---|-------|---------|
-| 1 | `html-to-pdf` | Primary keyword |
-| 2 | `pdf-generator` | High search volume |
-| 3 | `javascript-print` | Language-specific |
-| 4 | `web-printing` | Core functionality |
-| 5 | `pdf-converter` | Alternative keyword |
-| 6 | `print-library` | Category identifier |
-| 7 | `vue-print` | Framework integration |
-| 8 | `react-print` | Framework integration |
-| 9 | `angular-print` | Framework integration |
-| 10 | `typescript-print` | Language support |
-| 11 | `batch-printing` | Feature highlight |
-| 12 | `websocket-print` | Differentiation |
-| 13 | `silent-print` | Unique feature |
-| 14 | `desktop-print-client` | Differentiation |
-| 15 | `document-printing` | Broader category |
-| 16 | `print-automation` | Use case |
-| 17 | `watermark-pdf` | Feature highlight |
-| 18 | `frontend-print` | Development category |
-| 19 | `html-print` | HTML content printing |
+| 1 | `silent-print` | Core differentiator |
+| 2 | `silent-printing` | Natural search phrase |
+| 3 | `websocket-print` | Architecture keyword |
+| 4 | `print-agent` | Industry category (local print agent) |
+| 5 | `local-print-client` | Requires desktop client |
+| 6 | `desktop-print-client` | Electron client pairing |
+| 7 | `browser-print` | Browser-side SDK category |
+| 8 | `direct-print` | No-dialog user intent |
+| 9 | `javascript-print` | Language-specific |
+| 10 | `web-printing` | Core functionality |
+| 11 | `print-library` | Category identifier |
+| 12 | `invoice-printing` | High-intent use case |
+| 13 | `label-printing` | Shipping/warehouse use case |
+| 14 | `receipt-printing` | POS/receipt use case |
+| 15 | `thermal-print` | Thermal printer workflows |
+| 16 | `pos-printing` | Retail/restaurant intent |
+| 17 | `batch-printing` | Enterprise feature |
+| 18 | `print-automation` | Production workflows |
+| 19 | `watermark-pdf` | Feature long-tail |
 | 20 | `web-print-pdf` | Brand keyword |
+
+### npm-only keywords (not GitHub Topics)
+
+```
+html-to-pdf, typescript-print, vue-print, react-print, frontend-print, printer-api, electron-print
+```
 
 ## 📈 SEO Benefits
 
-- Improve discoverability in GitHub search
-- Appear in topic pages (e.g. github.com/topics/html-to-pdf)
-- Align with the first 20 npm `keywords` in `package.json` (8 npm-only extras follow; see `repo-seo.config.json` → `npmOnlyKeywords`)
+- Improve discoverability in GitHub search for **silent printing** and **print agent** queries
+- Appear in topic pages (e.g. github.com/topics/silent-printing)
+- Align with the first 20 npm `keywords` in `package.json` (7 npm-only extras follow; see `repo-seo.config.json` → `npmOnlyKeywords`)
 
 ## 🔗 Related Files
 

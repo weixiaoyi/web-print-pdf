@@ -1,4 +1,4 @@
-# web-print-pdf - HTML to PDF Printing Library for JavaScript
+# web-print-pdf — Silent Web Printing SDK for JavaScript
 
 <div align="center">
   <strong>
@@ -19,51 +19,132 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![Framework Agnostic](https://img.shields.io/badge/Framework-Agnostic-green.svg)](https://github.com/weixiaoyi/web-print-pdf)
 
-> 🖨️ **Powerful JavaScript HTML to PDF Printing Library** — Convert HTML to PDF and print web pages, images, and documents via WebSocket. Requires Web Print Expert Client for silent/local printing. Works with Vue, React, Angular, and all modern JavaScript frameworks.
+> 🖨️ **Silent browser printing via local WebSocket print agent** — Send HTML, PDF, and images from any web app directly to local printers **without the browser print dialog**. Requires the [Web Print Expert Client](https://webprintpdf.com/en/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=intro) ([中文下载](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=intro)). Works with Vue, React, Angular, and vanilla JavaScript. Ideal for invoices, receipts, labels, and kiosk/POS workflows.
 
 ## 🎯 Overview
 
-**web-print-pdf** is a JavaScript printing library that enables web applications to convert HTML into high-quality PDF documents and send print jobs to local printers through the Web Print Expert Client — no backend server required. It is well suited for invoice printing, report generation, document management, and any web app that needs silent printing with production-grade control over printers, paper, and layout.
+**web-print-pdf** is a JavaScript **silent printing SDK** that connects your web application to the **Web Print Expert Client** over WebSocket (`ws://127.0.0.1:16794`). It targets production workflows that need **no-dialog printing**, printer and paper selection, batch jobs, receipts, labels, and watermarks — not PDF file download (jsPDF) or server-side PDF generation (Puppeteer).
+
+> **Not a PDF download library.** If users only need a PDF file in the browser, use jsPDF or html2pdf.js. Choose web-print-pdf when jobs must reach a **physical local printer** silently.
 
 ### Why web-print-pdf?
 
-- **Zero Configuration** — works out of the box with sensible defaults
-- **Framework Agnostic** — Vue, React, Angular, Svelte, or vanilla JavaScript
-- **Production Ready** — battle-tested in enterprise applications
+- **Silent by Default** — no browser print dialog when the client is running
+- **Local Print Agent** — WebSocket bridge to desktop printers via Electron client
+- **Framework Agnostic** — Vue, React, Angular, Svelte, Next.js, Nuxt, or vanilla JavaScript
+- **Production Ready** — battle-tested in enterprise invoice, receipt, and label workflows
 - **TypeScript Support** — full type definitions included
-- **HTML/CSS First** — control PDF styling with familiar web technologies, no proprietary template language
+- **HTML/CSS First** — control print layout with familiar web technologies, no proprietary template language
 
 ## ✨ Features
 
-- 🖨️ **Multiple Printing Methods**: Support HTML content, URL, Base64 and other formats
-- 📄 **PDF Generation**: Convert HTML to high-quality PDF documents
+- 🖨️ **Multiple Printing Methods**: HTML string, URL, Base64, images, and existing PDF files
+- 📄 **HTML-to-Print Pipeline**: Renders HTML/CSS locally and sends output to the physical printer (not a PDF download tool)
 - 🖼️ **Image Printing**: Support image URL and Base64 format printing
 - 📦 **Batch Printing**: Support batch task processing
-- 🔧 **Flexible Configuration**: Rich PDF and printing options
+- 🔧 **Flexible Configuration**: Rich print and layout options — see [print options guide](https://webprintpdf.com/en/docs/print-options/?utm_source=npm&utm_medium=readme&utm_campaign=features)
 - 🌐 **WebSocket Communication**: Real-time connection status monitoring
 - 🔕 **Silent Printing**: Local client-based silent printing without browser print dialogs
 - 🎨 **Custom Styling**: Support custom headers, footers, margins and client theme colors, titles, etc.
 - 🚀 **Simple API Design**: API consistency, frontend developer friendly, low learning curve
-- 🎯 **HTML/CSS Control**: Control all PDF styles through HTML and CSS, no additional learning required
+- 🎯 **HTML/CSS Control**: Control print layout through HTML and CSS — same skills as your web UI
 - ⚡ **Async Support**: Support complete Promise/async-await syntax while maintaining event listening mechanism
 
 ## 🔑 Use Cases
 
-- **E-commerce** — order invoices, shipping labels, packing slips
-- **Business & Enterprise** — financial reports, dashboard exports, payslips and contracts
-- **Healthcare & Education** — medical records, lab reports, certificates
-- **Legal & Government** — contracts, forms, official licenses
-- **General** — tickets, barcodes, form printing
+- **E-commerce** — [shipping labels & batch labels](https://webprintpdf.com/en/docs/ecommerce-shipping-label/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)
+- **Business & Enterprise** — [ERP invoices & statements](https://webprintpdf.com/en/docs/invoice-erp-print/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases), financial reports, payslips
+- **Healthcare & Education** — [prescriptions & pharmacy labels](https://webprintpdf.com/en/docs/medical-prescription-print/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)
+- **Logistics & WMS** — [remote label printing from server push](https://webprintpdf.com/en/docs/wms-remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)
+- **Retail & POS** — [80mm thermal receipts](https://webprintpdf.com/en/docs/retail-pos-receipt/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)
+- **General** — tickets, barcodes, [thermal receipts & waybills](https://webprintpdf.com/en/docs/thermal-receipt-print/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)
+
+## 🔀 Choose the Right Tool
+
+| Your goal | Best option | web-print-pdf? |
+|-----------|-------------|----------------|
+| Silent print to a **physical local printer**, no dialog | web-print-pdf + [Web Print Expert Client](https://webprintpdf.com/en/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=tool-table) | ✅ |
+| User **downloads** a PDF in the browser | [jsPDF](https://webprintpdf.com/en/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=tool-table), html2pdf.js | ❌ |
+| **Server-side** PDF file generation | [Puppeteer / Playwright](https://webprintpdf.com/en/docs/puppeteer-print-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=tool-table) | ❌ |
+| Simple print with the **browser dialog** | [Print.js](https://webprintpdf.com/en/docs/printjs-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=tool-table) (print-js) | ❌ |
+| Raw ESC/POS or certificate-based agent | QZ Tray, JSPrintManager | ⚠️ See FAQ |
 
 ## 📋 Requirements
 
 - Modern browser with WebSocket support
-- [Web Print Expert Client](http://webprintpdf.com/downloadApp/) installed locally (Chinese/English UI)
+- [Web Print Expert Client](https://webprintpdf.com/en/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=requirements) installed locally (Chinese/English UI)
+- **Client platforms**: **Windows** 10/11 (exe), **Linux** x64 (deb — Ubuntu, Debian, Kylin, UOS, and other distros), **macOS** Intel & Apple Silicon (dmg). The same `web-print-pdf` API works on all three platforms.
 
-## 🔗 Related Links
+## 🔗 Official Website Resources
 
-- [Official Website](http://webprintpdf.com/)
-- [Client Download](http://webprintpdf.com/downloadApp/)
+> **Documentation languages:** English docs live under `/en/docs/…`; 中文文档在 `/docs/…`（无 `/en` 前缀）。每项均提供 **English · 中文** 双语链接。
+
+Documentation hub: [English — webprintpdf.com/en/docs](https://webprintpdf.com/en/docs/?utm_source=npm&utm_medium=readme&utm_campaign=docs-hub) · [中文 — webprintpdf.com/docs](https://webprintpdf.com/docs/?utm_source=npm&utm_medium=readme&utm_campaign=docs-hub)
+
+### 🧪 Online Demo Center
+
+- [Online Demo Center — 25 runnable demos](https://webprintpdf.com/en/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=demos) · [中文](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=demos)
+
+### ⚙️ Advanced Configuration
+
+- [Print options (`pdfOptions` & `printOptions`)](https://webprintpdf.com/en/docs/print-options/?utm_source=npm&utm_medium=readme&utm_campaign=advanced) · [中文](https://webprintpdf.com/docs/print-options/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
+- [Frontend error handling](https://webprintpdf.com/en/docs/error-handling/?utm_source=npm&utm_medium=readme&utm_campaign=advanced) · [中文](https://webprintpdf.com/docs/error-handling/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
+- [Printing authenticated URLs (cookies / headers)](https://webprintpdf.com/en/docs/auth-url-print/?utm_source=npm&utm_medium=readme&utm_campaign=advanced) · [中文](https://webprintpdf.com/docs/auth-url-print/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
+- [Remote print configuration (WebSocket / HTTP)](https://webprintpdf.com/en/docs/remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=advanced) · [中文](https://webprintpdf.com/docs/remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
+- [printHtml API reference](https://webprintpdf.com/en/docs/api-printHtml/?utm_source=npm&utm_medium=readme&utm_campaign=advanced) · [中文](https://webprintpdf.com/docs/api-printHtml/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
+- [batchPrint API reference](https://webprintpdf.com/en/docs/api-batchPrint/?utm_source=npm&utm_medium=readme&utm_campaign=advanced) · [中文](https://webprintpdf.com/docs/api-batchPrint/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
+- [WebSocket connection troubleshooting](https://webprintpdf.com/en/docs/troubleshoot-websocket/?utm_source=npm&utm_medium=readme&utm_campaign=advanced) · [中文](https://webprintpdf.com/docs/troubleshoot-websocket/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
+
+### ⚖️ Comparison & Selection
+
+- [Lodop vs web-print-pdf](https://webprintpdf.com/en/docs/lodop-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=comparison) · [中文](https://webprintpdf.com/docs/lodop-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
+- [window.print alternatives & silent printing](https://webprintpdf.com/en/docs/window-print-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=comparison) · [中文](https://webprintpdf.com/docs/window-print-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
+- [hiprint vs web-print-pdf](https://webprintpdf.com/en/docs/hiprint-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison) · [中文](https://webprintpdf.com/docs/hiprint-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
+- [Print.js vs web-print-pdf](https://webprintpdf.com/en/docs/printjs-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison) · [中文](https://webprintpdf.com/docs/printjs-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
+- [jsPDF vs web-print-pdf](https://webprintpdf.com/en/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison) · [中文](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
+- [Puppeteer / Playwright vs web-print-pdf](https://webprintpdf.com/en/docs/puppeteer-print-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison) · [中文](https://webprintpdf.com/docs/puppeteer-print-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
+- [C-Lodop & Chrome compatibility](https://webprintpdf.com/en/docs/clodop-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=comparison) · [中文](https://webprintpdf.com/docs/clodop-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
+- [Lodop parallel migration guide](https://webprintpdf.com/en/docs/lodop-migration/?utm_source=npm&utm_medium=readme&utm_campaign=comparison) · [中文](https://webprintpdf.com/docs/lodop-migration/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
+
+### 🧩 Framework Integration
+
+- [Vue silent printing](https://webprintpdf.com/en/docs/vue-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework) · [中文](https://webprintpdf.com/docs/vue-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
+- [React silent printing](https://webprintpdf.com/en/docs/react-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework) · [中文](https://webprintpdf.com/docs/react-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
+- [Next.js silent printing](https://webprintpdf.com/en/docs/nextjs-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework) · [中文](https://webprintpdf.com/docs/nextjs-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
+- [Angular silent printing](https://webprintpdf.com/en/docs/angular-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework) · [中文](https://webprintpdf.com/docs/angular-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
+- [UniApp H5 printing](https://webprintpdf.com/en/docs/uniapp-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework) · [中文](https://webprintpdf.com/docs/uniapp-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
+- [Element Plus integration](https://webprintpdf.com/en/docs/element-plus-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework) · [中文](https://webprintpdf.com/docs/element-plus-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
+- [Ant Design integration](https://webprintpdf.com/en/docs/ant-design-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework) · [中文](https://webprintpdf.com/docs/ant-design-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
+
+### 🏭 Scenario Guides
+
+- [WMS remote shipping labels](https://webprintpdf.com/en/docs/wms-remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios) · [中文](https://webprintpdf.com/docs/wms-remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
+- [Thermal receipts & express waybills](https://webprintpdf.com/en/docs/thermal-receipt-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios) · [中文](https://webprintpdf.com/docs/thermal-receipt-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
+- [Medical prescriptions & pharmacy labels](https://webprintpdf.com/en/docs/medical-prescription-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios) · [中文](https://webprintpdf.com/docs/medical-prescription-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
+- [ERP invoices & account statements](https://webprintpdf.com/en/docs/invoice-erp-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios) · [中文](https://webprintpdf.com/docs/invoice-erp-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
+- [E-commerce shipping labels (100×150)](https://webprintpdf.com/en/docs/ecommerce-shipping-label/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios) · [中文](https://webprintpdf.com/docs/ecommerce-shipping-label/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
+- [Retail POS 80mm thermal receipts](https://webprintpdf.com/en/docs/retail-pos-receipt/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios) · [中文](https://webprintpdf.com/docs/retail-pos-receipt/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
+
+### 📋 Customer Case Studies
+
+- [Government xinchuang deployment](https://webprintpdf.com/en/docs/cases/government-xinchuang/?utm_source=npm&utm_medium=readme&utm_campaign=cases) · [中文](https://webprintpdf.com/docs/cases/government-xinchuang/?utm_source=npm&utm_medium=readme&utm_campaign=cases)
+- [Logistics WMS label printing](https://webprintpdf.com/en/docs/cases/logistics-wms/?utm_source=npm&utm_medium=readme&utm_campaign=cases) · [中文](https://webprintpdf.com/docs/cases/logistics-wms/?utm_source=npm&utm_medium=readme&utm_campaign=cases)
+- [Manufacturing ERP shop-floor printing](https://webprintpdf.com/en/docs/cases/manufacturing-erp/?utm_source=npm&utm_medium=readme&utm_campaign=cases) · [中文](https://webprintpdf.com/docs/cases/manufacturing-erp/?utm_source=npm&utm_medium=readme&utm_campaign=cases)
+
+### 🖥️ Deployment Guides
+
+- [Windows deployment](https://webprintpdf.com/en/docs/windows-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=deploy) · [中文](https://webprintpdf.com/docs/windows-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
+- [macOS deployment](https://webprintpdf.com/en/docs/mac-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=deploy) · [中文](https://webprintpdf.com/docs/mac-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
+- [Linux deployment](https://webprintpdf.com/en/docs/linux-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=deploy) · [中文](https://webprintpdf.com/docs/linux-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
+- [Kylin (银河麒麟) deployment](https://webprintpdf.com/en/docs/kylin-print/?utm_source=npm&utm_medium=readme&utm_campaign=deploy) · [中文](https://webprintpdf.com/docs/kylin-print/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
+- [UOS (统信 UOS) deployment](https://webprintpdf.com/en/docs/uos-print/?utm_source=npm&utm_medium=readme&utm_campaign=deploy) · [中文](https://webprintpdf.com/docs/uos-print/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
+- [Windows firewall troubleshooting](https://webprintpdf.com/en/docs/troubleshoot-windows-firewall/?utm_source=npm&utm_medium=readme&utm_campaign=deploy) · [中文](https://webprintpdf.com/docs/troubleshoot-windows-firewall/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
+
+### 📦 Download & Repository
+
+- [Official Website (EN)](https://webprintpdf.com/en/?utm_source=npm&utm_medium=readme&utm_campaign=home) · [中文官网](https://webprintpdf.com/?utm_source=npm&utm_medium=readme&utm_campaign=home)
+- [Client Download (EN)](https://webprintpdf.com/en/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=download) · [客户端下载（中文）](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=download)
+- [Pricing (EN)](https://webprintpdf.com/en/price/?utm_source=npm&utm_medium=readme&utm_campaign=price) · [定价（中文）](https://webprintpdf.com/price/?utm_source=npm&utm_medium=readme&utm_campaign=price)
 - [GitHub Repository](https://github.com/weixiaoyi/web-print-pdf)
 - [npm Package](https://www.npmjs.com/package/web-print-pdf)
 
@@ -86,14 +167,16 @@ Or using pnpm:
 pnpm add web-print-pdf
 ```
 
+> **Next steps:** Install the [Web Print Expert Client](https://webprintpdf.com/en/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=quickstart) ([中文下载](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=quickstart) · Windows / Linux / macOS), then try the [online demo center](https://webprintpdf.com/en/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=quickstart) ([中文](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=quickstart)) or read the [full documentation](https://webprintpdf.com/en/docs/?utm_source=npm&utm_medium=readme&utm_campaign=quickstart) ([中文](https://webprintpdf.com/docs/?utm_source=npm&utm_medium=readme&utm_campaign=quickstart)).
+
 ### Basic Usage Examples
 
-#### Simple HTML to PDF Printing
+#### Simple HTML silent print
 
 ```javascript
 import webPrintPdf from 'web-print-pdf';
 
-// Basic HTML printing - Convert any HTML string to PDF
+// Basic HTML printing — send HTML string to the local printer
 const handlePrint = async () => {
     try {
         await webPrintPdf.printHtml('<div>Hello World!</div>');
@@ -222,7 +305,7 @@ Print HTML page via URL
 
 ```javascript
 await webPrintPdf.printHtmlByUrl(
-    'http://webprintpdf.com',
+    'https://webprintpdf.com',
     { paperFormat: 'A4', printBackground: true }
 );
 ```
@@ -232,7 +315,7 @@ Print PDF file via URL
 
 ```javascript
 await webPrintPdf.printPdfByUrl(
-    'http://webprintpdf.com/api/fileCenter/webPrintExpert/fileCenterFileDownload/printTest.pdf',
+    'https://webprintpdf.com/api/fileCenter/webPrintExpert/fileCenterFileDownload/printTest.pdf',
     { paperFormat: 'A4' }
 );
 ```
@@ -242,7 +325,7 @@ Print image via URL
 
 ```javascript
 await webPrintPdf.printImageByUrl(
-    'http://webprintpdf.com/api/fileCenter/webPrintExpert/fileCenterFileDownload/printTest.png',
+    'https://webprintpdf.com/api/fileCenter/webPrintExpert/fileCenterFileDownload/printTest.png',
     { paperFormat: 'A4', printBackground: true }
 );
 ```
@@ -459,6 +542,7 @@ If you don't want to use async, you can respond through event listening
 
 ## 🌐 Supported Technologies
 
+- **Client OS**: Windows 10/11, Linux (deb — Kylin, UOS, Ubuntu, Debian, etc.), macOS (Intel & Apple Silicon)
 - **Frameworks**: Vue.js, React, Angular, Svelte, Next.js, Nuxt.js
 - **Languages**: JavaScript (ES5+), TypeScript
 - **Browsers**: Chrome, Firefox, Safari, Edge, Opera (WebSocket support required)
@@ -468,28 +552,51 @@ If you don't want to use async, you can respond through event listening
 ## ❓ Frequently Asked Questions (FAQ)
 
 ### Do I need a backend or extra software?
-No backend is required — web-print-pdf runs entirely in the browser. After `npm install web-print-pdf`, each end user must install and run the [Web Print Expert Client](http://webprintpdf.com/downloadApp/) locally. The library connects at `ws://127.0.0.1:16794`; print requests fail if the client is not running.
+No backend is required — web-print-pdf runs entirely in the browser. After `npm install web-print-pdf`, each end user must install and run the [Web Print Expert Client](https://webprintpdf.com/en/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=faq) ([中文下载](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=faq)) locally. The library connects at `ws://127.0.0.1:16794`; print requests fail if the client is not running. See the [Windows / Linux / macOS deployment guides](https://webprintpdf.com/en/docs/windows-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/windows-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=faq).
 
 ### How is web-print-pdf different from Print.js or jsPDF?
-**Print.js** uses the browser's native print dialog and cannot do silent printing, batch jobs, or direct printer control. **jsPDF** generates PDFs for download/preview but does not send jobs to a local printer. **web-print-pdf** connects to Web Print Expert Client via WebSocket for silent printing, printer/paper selection, batch jobs, watermarks, and other production workflows.
+**Print.js** uses the browser's native print dialog and cannot do silent printing, batch jobs, or direct printer control — see the [Print.js comparison](https://webprintpdf.com/en/docs/printjs-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/printjs-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq). **jsPDF** generates PDFs for download/preview but does not send jobs to a local printer — see the [jsPDF comparison](https://webprintpdf.com/en/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq). **web-print-pdf** connects to Web Print Expert Client via WebSocket for silent printing, printer/paper selection, batch jobs, watermarks, and other production workflows.
+
+### How is web-print-pdf different from QZ Tray or JSPrintManager?
+All three are **local print agents** that receive jobs from the browser over a local connection. **QZ Tray** and **JSPrintManager** focus on raw device printing, certificates, and long-standing enterprise deployments. **web-print-pdf** ships as an **npm SDK** with Promise/async APIs, HTML/CSS layout, optional PDF conversion, batch printing, and watermarks — paired with the free [Web Print Expert Client](https://webprintpdf.com/en/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文下载](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=faq) (Electron, Chinese/English UI). For Lodop-style migrations, see [Lodop vs web-print-pdf](https://webprintpdf.com/en/docs/lodop-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/lodop-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=faq).
+
+### Is this a PDF download library like jsPDF?
+No. jsPDF and html2pdf.js produce PDF **files** for download or preview. web-print-pdf sends jobs to a **local printer** through the desktop client. It may convert HTML to PDF internally, but the primary outcome is **physical printed output**, not file export. Details: [jsPDF vs web-print-pdf](https://webprintpdf.com/en/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq).
+
+### When should I use html-to-pdf libraries instead?
+Use **Puppeteer** or **Playwright** when you need server-side PDF **files** — [comparison guide](https://webprintpdf.com/en/docs/puppeteer-print-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/puppeteer-print-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq). Use **jsPDF** or **html2pdf.js** when users should **download** a PDF. Use **web-print-pdf** when end users must **print silently** on a local printer — see [thermal receipts](https://webprintpdf.com/en/docs/thermal-receipt-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/thermal-receipt-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq), [ERP invoices](https://webprintpdf.com/en/docs/invoice-erp-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/invoice-erp-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq), or [WMS labels](https://webprintpdf.com/en/docs/wms-remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/wms-remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq).
 
 ### Does it work with TypeScript?
 Yes. Full TypeScript type definitions are included — no separate `@types` package needed.
 
 ### Can I print without showing a print dialog?
-Yes. Silent printing is supported through the Web Print Expert Client — no browser print dialog is shown.
+Yes. Silent printing is supported through the Web Print Expert Client — no browser print dialog is shown. Background: [window.print alternatives](https://webprintpdf.com/en/docs/window-print-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/window-print-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=faq).
 
 ### What paper sizes are supported?
-Standard sizes (A4, Letter, Legal, A3, A5, etc.) and custom dimensions via `width`/`height`. For printer-specific formats, use `utils.getPrinterPapers()`.
+Standard sizes (A4, Letter, Legal, A3, A5, etc.) and custom dimensions via `width`/`height`. For printer-specific formats, use `utils.getPrinterPapers()`. Recipes: [print options guide](https://webprintpdf.com/en/docs/print-options/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/print-options/?utm_source=npm&utm_medium=readme&utm_campaign=faq).
 
 ### Can I add watermarks to printed documents?
-Yes. Both text and image watermarks are supported via `pdfOptions.watermark` — position, opacity, rows/cols, and angle are configurable.
+Yes. Both text and image watermarks are supported via `pdfOptions.watermark` — position, opacity, rows/cols, and angle are configurable. Try the watermark demo in the [online demo center](https://webprintpdf.com/en/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=faq).
 
 ### Is batch printing supported?
-Yes. Pass multiple tasks to `batchPrint()` to print HTML, URLs, Base64 content, images, or PDFs in one operation.
+Yes. Pass multiple tasks to `batchPrint()` to print HTML, URLs, Base64 content, images, or PDFs in one operation. See [batchPrint API reference](https://webprintpdf.com/en/docs/api-batchPrint/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/api-batchPrint/?utm_source=npm&utm_medium=readme&utm_campaign=faq) and [remote print configuration](https://webprintpdf.com/en/docs/remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq) · [中文](https://webprintpdf.com/docs/remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq).
 
 ### Does it support printing images and existing PDFs?
 Yes. Use `printImageByUrl` / `printImageByBase64` and `printPdfByUrl` / `printPdfByBase64` in addition to HTML methods.
+
+## 🏷️ Tags
+
+**English:** silent print, silent printing, browser print, local print agent, WebSocket print, direct print, no dialog print, invoice printing, receipt printing, thermal print, POS printing, label printing, batch printing, print automation, JavaScript print library, Vue print, React print, TypeScript print, Electron print client, web printing SDK, html to pdf print
+
+**中文:** 静默打印, 浏览器打印, 前端打印, 本地打印客户端, WebSocket打印, 无对话框打印, 发票打印, 小票打印, 热敏打印, POS打印, 标签打印, 批量打印, html转pdf打印
+
+## 🌐 Community & Ecosystem
+
+- **Tutorials & demos on the official site** — [Documentation hub (EN)](https://webprintpdf.com/en/docs/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem) · [文档中心（中文）](https://webprintpdf.com/docs/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem); [25 online demos (EN)](https://webprintpdf.com/en/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem) · [在线样例（中文）](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem)
+- **More code examples** — [.github/EXAMPLES.md](.github/EXAMPLES.md) (GitHub) complements the [online demo center](https://webprintpdf.com/en/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem)
+- **Share integrations** — publish tutorials (Dev.to, 掘金, CSDN) linking to this package and [webprintpdf.com (EN)](https://webprintpdf.com/en/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem) / [中文官网](https://webprintpdf.com/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem); open a [GitHub Discussion](https://github.com/weixiaoyi/web-print-pdf/discussions) or PR with your example
+- **Awesome Lists** — if you maintain an awesome-javascript / awesome-vue list, consider adding [web-print-pdf](https://www.npmjs.com/package/web-print-pdf) under silent printing or local print agent categories
+- **Issues & support** — [GitHub Issues](https://github.com/weixiaoyi/web-print-pdf/issues) for bugs; [pricing (EN)](https://webprintpdf.com/en/price/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem) · [定价（中文）](https://webprintpdf.com/price/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem)
 
 ## 🤝 Contributing
 
@@ -509,4 +616,4 @@ MIT License - See [LICENSE](https://github.com/weixiaoyi/web-print-pdf/blob/mast
 
 ---
 
-**Made with ❤️ for the JavaScript community** | [Report Bug](https://github.com/weixiaoyi/web-print-pdf/issues) | [Request Feature](https://github.com/weixiaoyi/web-print-pdf/issues) | [Documentation](http://webprintpdf.com/)
+**Made with ❤️ for the JavaScript community** | [Report Bug](https://github.com/weixiaoyi/web-print-pdf/issues) | [Request Feature](https://github.com/weixiaoyi/web-print-pdf/issues) | [Docs (EN)](https://webprintpdf.com/en/docs/?utm_source=npm&utm_medium=readme&utm_campaign=footer) · [文档（中文）](https://webprintpdf.com/docs/?utm_source=npm&utm_medium=readme&utm_campaign=footer) | [Demos (EN)](https://webprintpdf.com/en/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=footer) · [样例（中文）](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=footer) | [Pricing (EN)](https://webprintpdf.com/en/price/?utm_source=npm&utm_medium=readme&utm_campaign=footer) · [定价（中文）](https://webprintpdf.com/price/?utm_source=npm&utm_medium=readme&utm_campaign=footer)

@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.8] - 2026-06-26
+
+### Changed
+- SEO overhaul: keywords repositioned from html-to-pdf red ocean to silent printing / local print agent category
+- npm `description` and `githubDescription` lead with silent browser printing positioning
+- npm `homepage` points to `https://webprintpdf.com/en/docs/`
+- README / README_CN: new H1, tool comparison table, QZ Tray/JSPrintManager FAQ, Tags section, https links
+- README: official website resource links (demos, comparisons, frameworks, advanced config, deployment guides); cross-platform client support (Windows/Linux/macOS)
+- README: scenario guides, customer cases, pricing link; FAQ deep-links to official articles; UTM on all marketing links
+- README: Features aligned with silent-print positioning; Community & Ecosystem section
+- README / README_CN: bilingual official doc links (English `/en/docs/…` · 中文 `/docs/…`); English README defaults to EN URLs
+- README: FAQ bilingual doc links, bilingual footer pricing, silent-print quick-start titles
+- GitHub EXAMPLES.md expanded with bilingual official site link matrix
+- GitHub SEO docs and `repo-seo.config.json` aligned with new keyword strategy
+
 ## [2.1.7] - 2026-06-12
 
 ### Changed
