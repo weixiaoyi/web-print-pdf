@@ -1,8 +1,9 @@
 # GitHub 仓库 SEO 配置指南
 
-> **发版前请以以下文件为准（本文件 About/Topics 已与 2.1.8 同步）：**
+> **发版前请以以下文件为准（本文件 About/Topics 已与 2.1.9 同步）：**
 > - **Topics / Description**：`.github/GITHUB_TOPICS.md` 或 `package.json` → `githubDescription` + `.github/repo-seo.config.json`
 > - **快速清单**：`.github/QUICK_START_SEO.md`
+> - **本版 Release 说明**：`.github/RELEASE_v2.1.9.md`
 
 本文档提供仓库运营与 GitHub 配置的快速指南。
 
@@ -14,7 +15,7 @@
 
 **Description（描述）**（GitHub 上限 350 字符，建议 ≤120 字符，维护在 `package.json` → `githubDescription`）:
 ```
-Silent browser printing via WebSocket local print agent. HTML/PDF to printer without dialog. Web Print Expert Client. Vue, React.
+Silent browser printing. Lodop/C-Lodop/hiprint alternative. No print dialog. Vue/React. Receipts, thermal labels, invoices.
 ```
 
 **Website（网站）**:
@@ -22,9 +23,9 @@ Silent browser printing via WebSocket local print agent. HTML/PDF to printer wit
 https://webprintpdf.com/
 ```
 
-**Topics（标签）** - 添加以下 20 个标签（与 `package.json` keywords 前 20 项一致；npm 另有 7 个扩展词见 `repo-seo.config.json` → `npmOnlyKeywords`）：
+**Topics（标签）** - 添加以下 20 个标签（与 `package.json` keywords 前 20 项一致；npm 另有扩展词见 `repo-seo.config.json` → `npmOnlyKeywords`）：
 ```
-silent-print, silent-printing, websocket-print, print-agent, local-print-client, desktop-print-client, browser-print, direct-print, javascript-print, web-printing, print-library, invoice-printing, label-printing, receipt-printing, thermal-print, pos-printing, batch-printing, print-automation, watermark-pdf, web-print-pdf
+silent-print, silent-printing, no-print-dialog, lodop, c-lodop, clodop, lodop-alternative, hiprint, window-print, vue-print, thermal-print, receipt-printing, label-printing, shipping-label, invoice-printing, pos-printing, print-agent, browser-print, websocket-print, react-print
 ```
 
 
@@ -52,22 +53,22 @@ silent-print, silent-printing, websocket-print, print-agent, local-print-client,
 2. 点击右侧 "Releases"
 3. 点击 "Create a new release"
 4. 填写以下信息：
-   - **Tag**: v2.1.8
-   - **Title**: Release v2.1.8
-   - **Description**: 使用 `.github/RELEASE_TEMPLATE.md` 作为模板
+   - **Tag**: v2.1.9
+   - **Title**: Release v2.1.9
+   - **Description**: 使用 `.github/RELEASE_v2.1.9.md` 作为说明
 5. 点击 "Publish release"
 
 ### 方式二：命令行创建（需要 GitHub CLI）
 
 ```bash
-gh release create v2.1.8 \
-  --title "Release v2.1.8" \
-  --notes-file .github/RELEASE_TEMPLATE.md
+gh release create v2.1.9 \
+  --title "Release v2.1.9" \
+  --notes-file .github/RELEASE_v2.1.9.md
 ```
 
 ## 🏷️ npm 包优化检查清单
 
-- ✅ keywords 已配置（20 个核心词与 GitHub Topics 一致 + 7 个 npm 扩展词，共 27 个）
+- ✅ keywords 已配置（20 个核心词与 GitHub Topics 一致 + npm 扩展词，见 `repo-seo.config.json`）
 - ✅ description 已优化（静默打印 / local print agent 定位）
 - ✅ homepage 指向 `https://webprintpdf.com/en/docs/`
 - ✅ repository 链接正确

@@ -1,5 +1,6 @@
-# Updates GitHub About (description, homepage, topics) for web-print-pdf 2.1.8 SEO.
+# Updates GitHub About (description, homepage, topics) for web-print-pdf 2.1.9.
 # Usage: $env:GH_TOKEN = 'ghp_...'; pwsh -File .github/scripts/update-github-about.ps1
+# Must match package.json keywords[0..19] / repo-seo.config.json topics
 
 $ErrorActionPreference = 'Stop'
 $token = $env:GH_TOKEN
@@ -15,13 +16,13 @@ $headers = @{
 $topicHeaders = $headers.Clone()
 $topicHeaders['Accept'] = 'application/vnd.github.mercy-preview+json'
 
-$description = 'Silent browser printing via WebSocket local print agent. HTML/PDF to printer without dialog. Web Print Expert Client. Vue, React.'
+$description = 'Silent browser printing. Lodop/C-Lodop/hiprint alternative. No print dialog. Vue/React. Receipts, thermal labels, invoices.'
 $homepage = 'https://webprintpdf.com/'
 $topics = @(
-  'silent-print', 'silent-printing', 'websocket-print', 'print-agent', 'local-print-client',
-  'desktop-print-client', 'browser-print', 'direct-print', 'javascript-print', 'web-printing',
-  'print-library', 'invoice-printing', 'label-printing', 'receipt-printing', 'thermal-print',
-  'pos-printing', 'batch-printing', 'print-automation', 'watermark-pdf', 'web-print-pdf'
+  'silent-print', 'silent-printing', 'no-print-dialog', 'lodop', 'c-lodop',
+  'clodop', 'lodop-alternative', 'hiprint', 'window-print', 'vue-print',
+  'thermal-print', 'receipt-printing', 'label-printing', 'shipping-label', 'invoice-printing',
+  'pos-printing', 'print-agent', 'browser-print', 'websocket-print', 'react-print'
 )
 
 Write-Host 'Updating description and homepage...'

@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.9] - 2026-09-10
+
+### Added
+- `printOptions.sharp` documented (thermal printers only: enable sharpening / anti-alias)
+
+### Changed
+- Primary README is now Chinese (`README.md`); English moved to `README_EN.md` (formerly `README_CN.md` / English `README.md`)
+- README conversion path shortened: Requirements → tool table → Quick Start moved up; official resource link farm moved below FAQ; install section trimmed to a minimal `printHtml` example first
+- README language separation: Chinese README keeps Chinese-only copy and `/docs` links; English README keeps English-only copy and `/en/docs` links (language switcher at top only)
+- SEO keywords traffic-ranked for CN market: silent-print → Lodop/C-Lodop/clodop/hiprint/window-print → Vue + thermal/receipt/label/shipping/invoice → agent tech → React; overflow adds electron-hiprint, qz-tray, chrome-print
+- npm `description` / `githubDescription` lead with Lodop alternative + silent printing + scenario terms
+- npm `homepage` points to Chinese docs (`https://webprintpdf.com/docs/`)
+- npm `githubDescription` emphasizes Lodop/hiprint alternative positioning
+
 ## [2.1.8] - 2026-06-26
 
 ### Changed

@@ -9,11 +9,11 @@ This guide provides comprehensive SEO strategies to improve the visibility of th
 ### 1. Package.json Optimization
 
 #### Keywords Strategy
-Our package uses 27 focused keywords targeting:
-- **Primary (differentiation)**: silent-print, silent-printing, print-agent, websocket-print, local-print-client, browser-print, direct-print
-- **Use-case (high intent)**: invoice-printing, receipt-printing, thermal-print, pos-printing, label-printing, batch-printing
-- **Framework-specific**: vue-print, react-print, typescript-print, frontend-print
-- **Traffic entry (1 keyword)**: html-to-pdf — README clarifies this is for silent physical printing, not PDF download
+Traffic-first order (see `.github/GITHUB_TOPICS.md`). npm search also matches `description` — keep Lodop + silent + scenario terms there.
+- **Category**: silent-print, silent-printing, no-print-dialog
+- **CN competitor traffic**: lodop, c-lodop, clodop, lodop-alternative, hiprint, window-print
+- **Scenario + Vue**: thermal/receipt/label/shipping/invoice/pos + vue-print
+- **Never use**: html-to-pdf, watermark-pdf (wrong intent)
 
 #### Description Optimization
 The description leads with silent web printing and local print agent positioning, then framework compatibility and use cases (receipts, labels, batch, watermarks).
@@ -87,8 +87,8 @@ Add up to 20 relevant topics focusing on:
 #### File Structure
 ```
 /
-├── README.md (English - primary)
-├── README_CN.md (Chinese)
+├── README.md (Chinese - primary)
+├── README_EN.md (English)
 ├── CHANGELOG.md (version history)
 ├── CONTRIBUTING.md (contribution guide)
 ├── LICENSE (MIT license)
@@ -129,7 +129,7 @@ Primary keywords to target:
 - "html to pdf print local printer"
 
 #### Content Structure
-README.md / README_CN.md include:
+README.md / README_EN.md include:
 - ✅ H1 title with main keyword
 - ✅ Descriptive subtitle
 - ✅ Overview section with keywords
@@ -284,7 +284,7 @@ Create example repositories:
 
 ### Immediate Actions
 - [x] Optimize package.json keywords and description
-- [x] Enhance README.md / README_CN.md with SEO content
+- [x] Enhance README.md / README_EN.md with SEO content
 - [x] Add comprehensive examples
 - [x] Create GitHub topics guide
 - [x] Add topics guide and `repo-seo.config.json` (apply via GitHub About)

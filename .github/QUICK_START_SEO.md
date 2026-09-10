@@ -13,7 +13,7 @@
 > GitHub About 描述上限 **350 字符**，建议控制在 **120 字符以内**，避免展示被截断。
 
 ```
-Silent browser printing via WebSocket local print agent. HTML/PDF to printer without dialog. Web Print Expert Client. Vue, React.
+Silent browser printing. Lodop/C-Lodop/hiprint alternative. No print dialog. Vue/React. Receipts, thermal labels, invoices.
 ```
 
 （本地维护位置：`package.json` → `githubDescription`）
@@ -25,7 +25,7 @@ https://webprintpdf.com/
 
 ### Topics（标签）- 复制粘贴以下内容
 ```
-silent-print, silent-printing, websocket-print, print-agent, local-print-client, desktop-print-client, browser-print, direct-print, javascript-print, web-printing, print-library, invoice-printing, label-printing, receipt-printing, thermal-print, pos-printing, batch-printing, print-automation, watermark-pdf, web-print-pdf
+silent-print, silent-printing, no-print-dialog, lodop, c-lodop, clodop, lodop-alternative, hiprint, window-print, vue-print, thermal-print, receipt-printing, label-printing, shipping-label, invoice-printing, pos-printing, print-agent, browser-print, websocket-print, react-print
 ```
 
 4. 点击 **Save changes**
@@ -45,31 +45,31 @@ silent-print, silent-printing, websocket-print, print-agent, local-print-client,
 
 **Choose a tag:**
 ```
-v2.1.8
+v2.1.9
 ```
 
 **Release title:**
 ```
-Release v2.1.8
+Release v2.1.9
 ```
 
-**Description:** （复制粘贴）
+**Description:** （复制粘贴 `.github/RELEASE_v2.1.9.md`，或使用下方摘要）
 ```
 ## 🔧 改进
 
-- ✅ 关键词聚焦静默打印与本地打印代理（silent-print、print-agent、receipt-printing 等）
-- ✅ README 官网深链矩阵：样例中心、进阶配置、选型对比、框架/场景专题、部署指南、定价页
-- ✅ FAQ 内链至官网对比与场景文章；全站营销链接 UTM 追踪
-- ✅ 三平台客户端说明（Windows / Linux / macOS）；homepage 指向 webprintpdf.com/en/docs/
+- ✅ 主 README 改为中文；英文移至 README_EN.md
+- ✅ 行业 SEO 关键词：Lodop / C-Lodop / hiprint、静默打印、小票/热敏/POS/面单/发票
+- ✅ 文档补充 printOptions.sharp（仅热敏打印机）
+- ✅ homepage 指向 https://webprintpdf.com/docs/
 
 ## 📦 安装
 
 \`\`\`bash
-npm install web-print-pdf@2.1.8
+npm install web-print-pdf@2.1.9
 # or
-yarn add web-print-pdf@2.1.8
+yarn add web-print-pdf@2.1.9
 # or
-pnpm add web-print-pdf@2.1.8
+pnpm add web-print-pdf@2.1.9
 \`\`\`
 
 ## 🚀 快速开始

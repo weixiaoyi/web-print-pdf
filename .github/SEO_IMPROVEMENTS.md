@@ -7,7 +7,7 @@ SEO 相关设置以以下文件为唯一数据源，避免多处维护：
 | npm 描述 / keywords | `package.json` |
 | GitHub About 描述 | `package.json` → `githubDescription` |
 | GitHub Topics | `.github/repo-seo.config.json` |
-| 用户文档 | `README.md` / `README_CN.md` |
+| 用户文档 | `README.md` / `README_EN.md` |
 
 ## 快速配置
 

@@ -1,18 +1,16 @@
-# GitHub Repository Topics Configuration
+# GitHub Repository Topics & Keyword Traffic Strategy
 
-Canonical SEO settings: `package.json` → `githubDescription`（About 描述）、`.github/repo-seo.config.json`（Topics）。
+> **关键词是核心流量入口。** 维护时以 `package.json` → `keywords` 为准；本文件与 `.github/repo-seo.config.json` 必须与之顺序一致。
 
-在 GitHub 仓库 **About**（⚙️）中手动配置。
+Canonical sources:
+- npm：`package.json` → `description` + `keywords`（**顺序有权重**）
+- GitHub About：`githubDescription` + Topics（= keywords 前 20）
 
 ## 📝 Repository Description
 
-GitHub About description max **350 characters**; keep it short (~120) for search display.
-
 ```
-Silent browser printing via WebSocket local print agent. HTML/PDF to printer without dialog. Web Print Expert Client. Vue, React.
+Silent browser printing. Lodop/C-Lodop/hiprint alternative. No print dialog. Vue/React. Receipts, thermal labels, invoices.
 ```
-
-（与 `package.json` 的 `githubDescription` 字段保持一致）
 
 ## 🌐 Website
 
@@ -20,52 +18,74 @@ Silent browser printing via WebSocket local print agent. HTML/PDF to printer wit
 https://webprintpdf.com/
 ```
 
-## 🔍 Recommended Topics (Max 20)
+## 🎯 Traffic-first keyword order
 
-Copy-paste for GitHub About → Topics:
+| 优先级 | 层级 | 为什么 |
+|--------|------|--------|
+| 1 | 品类 | 静默打印身份：`silent-print` / `silent-printing` / `no-print-dialog` |
+| 2 | 国内主竞品 | **最大转化流量**：`lodop` / `c-lodop` / `clodop` / `lodop-alternative` / `hiprint` / `window-print` |
+| 3 | 场景 + Vue | 国内前端主栈 + 小票/热敏/面单/发票/POS |
+| 4 | 技术形态 | `print-agent` / `browser-print` / `websocket-print` |
+| 5 | React | 国际/次主栈 |
+| 6 | 溢出 | 次要竞品、次要框架、泛词 |
 
-```
-silent-print, silent-printing, websocket-print, print-agent, local-print-client, desktop-print-client, browser-print, direct-print, javascript-print, web-printing, print-library, invoice-printing, label-printing, receipt-printing, thermal-print, pos-printing, batch-printing, print-automation, watermark-pdf, web-print-pdf
-```
+**刻意提升：** `clodop`（国内高频拼写）进 Topics；`vue-print`、热敏/小票/面单场景前移。  
+**刻意后移：** `web-printing`、`batch-printing`（泛/功能弱意图）到溢出。
 
-| # | Topic | Purpose |
-|---|-------|---------|
-| 1 | `silent-print` | Core differentiator |
-| 2 | `silent-printing` | Natural search phrase |
-| 3 | `websocket-print` | Architecture keyword |
-| 4 | `print-agent` | Industry category (local print agent) |
-| 5 | `local-print-client` | Requires desktop client |
-| 6 | `desktop-print-client` | Electron client pairing |
-| 7 | `browser-print` | Browser-side SDK category |
-| 8 | `direct-print` | No-dialog user intent |
-| 9 | `javascript-print` | Language-specific |
-| 10 | `web-printing` | Core functionality |
-| 11 | `print-library` | Category identifier |
-| 12 | `invoice-printing` | High-intent use case |
-| 13 | `label-printing` | Shipping/warehouse use case |
-| 14 | `receipt-printing` | POS/receipt use case |
-| 15 | `thermal-print` | Thermal printer workflows |
-| 16 | `pos-printing` | Retail/restaurant intent |
-| 17 | `batch-printing` | Enterprise feature |
-| 18 | `print-automation` | Production workflows |
-| 19 | `watermark-pdf` | Feature long-tail |
-| 20 | `web-print-pdf` | Brand keyword |
-
-### npm-only keywords (not GitHub Topics)
+## 🔍 Topics（前 20，Copy-paste）
 
 ```
-html-to-pdf, typescript-print, vue-print, react-print, frontend-print, printer-api, electron-print
+silent-print, silent-printing, no-print-dialog, lodop, c-lodop, clodop, lodop-alternative, hiprint, window-print, vue-print, thermal-print, receipt-printing, label-printing, shipping-label, invoice-printing, pos-printing, print-agent, browser-print, websocket-print, react-print
 ```
 
-## 📈 SEO Benefits
+| # | Keyword | Tier |
+|---|---------|------|
+| 1 | `silent-print` | 品类 |
+| 2 | `silent-printing` | 品类 |
+| 3 | `no-print-dialog` | 品类 |
+| 4 | `lodop` | 竞品流量 |
+| 5 | `c-lodop` | 竞品流量 |
+| 6 | `clodop` | 竞品拼写（国内） |
+| 7 | `lodop-alternative` | 替代意图 |
+| 8 | `hiprint` | 竞品流量 |
+| 9 | `window-print` | 痛点流量 |
+| 10 | `vue-print` | 国内主框架 |
+| 11 | `thermal-print` | 热敏场景 |
+| 12 | `receipt-printing` | 小票 |
+| 13 | `label-printing` | 标签 |
+| 14 | `shipping-label` | 面单 |
+| 15 | `invoice-printing` | 发票 |
+| 16 | `pos-printing` | POS |
+| 17 | `print-agent` | 技术品类 |
+| 18 | `browser-print` | 技术品类 |
+| 19 | `websocket-print` | 技术路径 |
+| 20 | `react-print` | 框架 |
 
-- Improve discoverability in GitHub search for **silent printing** and **print agent** queries
-- Appear in topic pages (e.g. github.com/topics/silent-printing)
-- Align with the first 20 npm `keywords` in `package.json` (7 npm-only extras follow; see `repo-seo.config.json` → `npmOnlyKeywords`)
+### npm-only（keywords[20..]）
 
-## 🔗 Related Files
+```
+web-printing, batch-printing, electron-hiprint, qz-tray, print-js, jsprintmanager, uniapp-print, angular-print, nextjs-print, chrome-print
+```
 
-- `package.json` — `githubDescription`（GitHub About）、`description`（npm）、keywords
-- `.github/repo-seo.config.json` — Topics 列表
-- `README.md` / `README_CN.md` — primary documentation
-- `CHANGELOG.md` — version history
+| Keyword | 依据 |
+|---------|------|
+| `electron-hiprint` | 国内 hiprint 生态常见检索 |
+| `qz-tray` / `jsprintmanager` / `print-js` | 国际竞品对比 |
+| `chrome-print` | Chrome 静默/C-Lodop 相关检索 |
+| `uniapp-print` / `angular-print` / `nextjs-print` | 有官方文档的次流量框架 |
+| `web-printing` / `batch-printing` | 保留覆盖，但不占 Topics |
+
+## ✅ 发版检查
+
+1. `package.json` keywords 顺序 = 本文件列表  
+2. `repo-seo.config.json` topics / npmOnly 与 keywords 切片一致  
+3. npm `description` 含 Lodop / silent / 场景词（站内搜索会扫 description）  
+4. GitHub About Topics 用前 20（或跑 `scripts/update-github-about.ps1`）  
+5. **不要**加 `html-to-pdf` / `watermark-pdf` 等误导词
+
+## 🔗 Related
+
+- `package.json`
+- `.github/repo-seo.config.json`
+- `.github/scripts/update-github-about.ps1`
+- `README.md` / `README_EN.md` 标签区

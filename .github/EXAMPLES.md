@@ -553,10 +553,10 @@ async function printShippingLabel(shipment) {
 
 ### 本仓库
 
-- [完整 API 文档（中文）](../README_CN.md#api-文档)
-- [配置选项详解（中文）](../README_CN.md#配置选项)
-- [常见问题（中文）](../README_CN.md#常见问题-faq)
-- [English README](../README.md)
+- [完整 API 文档（中文）](../README.md#api-文档)
+- [配置选项详解（中文）](../README.md#配置选项)
+- [常见问题（中文）](../README.md#常见问题-faq)
+- [English README](../README_EN.md)
 
 ### 官网 — 样例与进阶
 
