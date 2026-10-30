@@ -1,0 +1,71 @@
+name: Release
+
+# Creates GitHub Releases without needing a local PAT.
+#
+# Two triggers, both idempotent:
+#   - tag push  → release that tag immediately
+#   - master push → backfill any tag that never got a Release (this repo lost v2.1.10)
+#
+# Notes come from .github/RELEASE_v<version>.md when present, otherwise GitHub's
+# auto-generated notes. Only tags starting with "v" are handled: the repo also has
+# legacy bare-number tags (2.1.6, 2.1.7) that already have releases.
+
+on:
+  push:
+    branches: [ master ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create missing releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -uo pipefail
+          PKG_VERSION=$(node -p "require('./package.json').version")
+
+          if [ "${GITHUB_REF_TYPE}" = "tag" ]; then
+            TAGS="${GITHUB_REF_NAME}"
+          else
+            TAGS=$(git tag --list 'v*' | sort -V)
+          fi
+
+          for TAG in $TAGS; do
+            if [[ "$TAG" != v* ]]; then
+              echo "skip $TAG (legacy bare-number tag)"
+              continue
+            fi
+
+            VERSION="${TAG#v}"
+
+            if gh release view "$TAG" >/dev/null 2>&1; then
+              echo "skip $TAG (release already exists)"
+              continue
+            fi
+
+            NOTES=".github/RELEASE_v${VERSION}.md"
+            ARGS=(--verify-tag --title "Release v${VERSION}")
+            if [ -f "$NOTES" ]; then
+              ARGS+=(--notes-file "$NOTES")
+            else
+              ARGS+=(--generate-notes)
+            fi
+            if [ "$VERSION" = "$PKG_VERSION" ]; then
+              ARGS+=(--latest)
+            else
+              ARGS+=(--latest=false)
+            fi
+
+            echo "creating release for $TAG"
+            gh release create "$TAG" "${ARGS[@]}" || echo "::warning::failed to create release for $TAG"
+          done

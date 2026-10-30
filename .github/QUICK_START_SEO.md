@@ -37,18 +37,18 @@ silent-print, silent-printing, no-print-dialog, lodop, c-lodop, clodop, lodop-al
 3. 勾选 ✅ **Discussions**
 4. 点击 **Set up discussions**
 
-## ⚡ 第三步：发 GitHub Release（一条命令）
+## ⚡ 第三步：发 GitHub Release（已自动化）
 
-发版后 npm 上已经是新版本，但 GitHub Release 要单独发 —— 这个仓库曾漏发过，所以改成脚本：
+推 tag 就会自动建 Release：`.github/workflows/release.yml` 在 tag push 时用 Actions 自带的 `GITHUB_TOKEN` 创建，notes 取自 `.github/RELEASE_v<version>.md`。master push 时还会补齐历史上漏发的 tag（v2.1.10 就是这么补的）。
 
-```powershell
-$env:GH_TOKEN = 'ghp_...'   # PAT with repo scope
-pwsh -File .github/scripts/publish-release.ps1 -Version 2.1.10
+所以正常发版只剩：
+
+```bash
+npm version patch       # 打 commit + tag
+git push && git push --tags
 ```
 
-先加 `-DryRun` 可只预览 payload。Notes 文件约定 `.github/RELEASE_v<version>.md`（`v2.1.10` 已写好、待补发）。
-
-手工兜底：Releases → **Create a new release** → tag `v2.1.10` → 粘贴同一份 notes → 勾选 **Set as the latest release** → **Publish release**。
+手工兜底（无网/无 Actions 时）：`pwsh -File .github/scripts/publish-release.ps1 -Version 2.1.10`，或 Releases → **Create a new release** → 选 tag → 粘贴 notes → **Publish release**。
 
 ## ✅ 完成！
 

@@ -304,9 +304,9 @@ Create example repositories:
 - [x] Add topics guide and `repo-seo.config.json` (apply via GitHub About)
 - [x] Set up GitHub Discussions
 - [x] Add runnable code examples — `examples/` (vanilla / vue / react / nextjs)
-- [x] Script the GitHub Release step — `.github/scripts/publish-release.ps1`
+- [x] Automate the GitHub Release step — `.github/workflows/release.yml`（tag push 即时建，master push 补齐漏发的），`publish-release.ps1` 作手工兜底
 - [x] Add `check-seo-metadata.ps1` so keywords↔topics drift fails loudly
-- [ ] **Backfill the v2.1.10 GitHub Release** (npm is at 2.1.10, latest Release is still v2.1.9)
+- [x] Backfill the v2.1.10 GitHub Release — 由 `release.yml` 的补齐逻辑在 master push 时自动完成
 - [ ] Upload a social preview image (Settings → Social preview, 1280×640 PNG)
 - [ ] Confirm the docs site emits `SoftwareSourceCode` / `FAQPage` JSON-LD in `<head>` (site repo, not this one)
 
