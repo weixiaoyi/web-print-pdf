@@ -2,8 +2,8 @@
 
 <div align="center">
  <strong>
- <a href="README.md">🇨🇳 中文</a> | 
- <a href="README_EN.md">🇺🇸 English</a>
+ <a href="https://github.com/weixiaoyi/web-print-pdf/blob/master/README.md">🇨🇳 中文</a> | 
+ <a href="https://github.com/weixiaoyi/web-print-pdf/blob/master/README_EN.md">🇺🇸 English</a>
  </strong>
 </div>
 
@@ -19,7 +19,13 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![Framework Agnostic](https://img.shields.io/badge/Framework-Agnostic-green.svg)](https://github.com/weixiaoyi/web-print-pdf)
 
-> 🖨️ **基于 WebSocket 本地打印代理的浏览器静默打印 SDK** — 将 HTML、PDF、图片从 Web 应用直接发送到本地打印机，**无需浏览器打印对话框**。需安装 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=intro)。兼容 Vue、React、Angular 及原生 JavaScript。适用于发票、小票、标签、自助终端/POS 等场景。
+> 🖨️ **基于 WebSocket 本地打印代理的浏览器静默打印 SDK** — 将 HTML、PDF、图片从 Web 应用直接发送到本地打印机，**无需浏览器打印对话框**。需安装 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=github&utm_medium=readme&utm_campaign=intro)。兼容 Vue、React、Angular 及原生 JavaScript。适用于发票、小票、标签、自助终端/POS 等场景。
+
+## ⚡ 一句话说明（TL;DR）
+
+**web-print-pdf 是浏览器端的 JavaScript 静默打印 SDK**：通过 WebSocket 连接本机 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=github&utm_medium=readme&utm_campaign=tldr)，把 HTML、PDF、图片直接送到本地打印机，**不弹浏览器打印对话框**。终端用户需在该机器安装客户端（Windows / Linux / macOS），前端只需 `npm install web-print-pdf`，Vue、React、Angular 通用。
+
+**In English** — `web-print-pdf` is a JavaScript silent-printing SDK that sends HTML, PDF, and images straight to local printers over WebSocket, with no browser dialog. Requires the Web Print Expert Client (Windows / Linux / macOS). → [English README](https://github.com/weixiaoyi/web-print-pdf/blob/master/README_EN.md)
 
 ## 🎯 概述
 
@@ -40,7 +46,7 @@
 ## 📋 环境要求
 
 - 支持 WebSocket 的现代浏览器
-- 本机安装 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=requirements)（支持中文界面）
+- 本机安装 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=github&utm_medium=readme&utm_campaign=requirements)（支持中文界面）
 - **客户端平台**：**Windows** 10/11（exe）、**Linux** x64（deb — 含 Ubuntu、Debian、银河麒麟、统信 UOS 等）、**macOS** Intel 与 Apple Silicon（dmg）。三平台共用同一套 `web-print-pdf` API。
 
 
@@ -48,10 +54,10 @@
 
 | 您的需求 | 推荐方案 | 适合 web-print-pdf？ |
 |----------|----------|----------------------|
-| **静默**打印到本地物理打印机，无对话框 | web-print-pdf + [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=tool-table) | ✅ |
-| 用户在浏览器中 **下载** PDF 文件 | [jsPDF](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=tool-table)、html2pdf.js | ❌ |
-| **服务端**生成 PDF 文件 | [Puppeteer / Playwright](https://webprintpdf.com/docs/puppeteer-print-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=tool-table) | ❌ |
-| 使用 **浏览器打印对话框** 的简单打印 | [Print.js](https://webprintpdf.com/docs/printjs-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=tool-table) (print-js) | ❌ |
+| **静默**打印到本地物理打印机，无对话框 | web-print-pdf + [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=github&utm_medium=readme&utm_campaign=tool-table) | ✅ |
+| 用户在浏览器中 **下载** PDF 文件 | [jsPDF](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=github&utm_medium=readme&utm_campaign=tool-table)、html2pdf.js | ❌ |
+| **服务端**生成 PDF 文件 | [Puppeteer / Playwright](https://webprintpdf.com/docs/puppeteer-print-comparison/?utm_source=github&utm_medium=readme&utm_campaign=tool-table) | ❌ |
+| 使用 **浏览器打印对话框** 的简单打印 | [Print.js](https://webprintpdf.com/docs/printjs-comparison/?utm_source=github&utm_medium=readme&utm_campaign=tool-table) (print-js) | ❌ |
 | 原始 ESC/POS 或证书型打印代理 | QZ Tray、JSPrintManager | ⚠️ 见 FAQ |
 
 
@@ -64,7 +70,7 @@ npm install web-print-pdf
 # 或 yarn add web-print-pdf / pnpm add web-print-pdf
 ```
 
-本机安装并运行 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=quickstart)。更多可运行 Demo 见 [在线样例中心](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=quickstart)。
+本机安装并运行 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=github&utm_medium=readme&utm_campaign=quickstart)。更多可运行 Demo 见 [在线样例中心](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=quickstart)。
 
 ### 最短示例
 
@@ -73,6 +79,19 @@ import webPrintPdf from 'web-print-pdf';
 
 await webPrintPdf.printHtml('<div>Hello World!</div>');
 ```
+
+### 可运行示例（examples/）
+
+仓库内含 4 个 clone 即可运行的示例，每个都只需 `npm install && npm run dev`：
+
+| 示例 | 技术栈 | 演示内容 |
+|:-----|:-------|:---------|
+| [vanilla-vite](https://github.com/weixiaoyi/web-print-pdf/tree/master/examples/vanilla-vite) | 原生 JS + Vite | 连接状态、打印 HTML / URL / 批量任务 |
+| [vue-vite](https://github.com/weixiaoyi/web-print-pdf/tree/master/examples/vue-vite) | Vue 3 + Vite | 组合式 API 打印发票与报表 |
+| [react-vite](https://github.com/weixiaoyi/web-print-pdf/tree/master/examples/react-vite) | React 18 + Vite | 自定义 Hook 封装、批量打印 |
+| [nextjs-app-router](https://github.com/weixiaoyi/web-print-pdf/tree/master/examples/nextjs-app-router) | Next.js App Router | 客户端组件内动态导入并静默打印 |
+
+> 运行前请先启动 Web 打印专家客户端；SDK 通过 `ws://127.0.0.1:16794` 连接，客户端未启动时打印请求会失败。
 
 ### 框架集成示例
 
@@ -144,7 +163,7 @@ export class PrintComponent {
 - 📄 **HTML 转物理打印**：本地渲染 HTML/CSS 并输出到物理打印机（非 PDF 下载工具）
 - 🖼️ **图片打印**：支持图片 URL 和 Base64 格式打印
 - 📦 **批量打印**：支持批量任务处理
-- 🔧 **灵活配置**：丰富的打印与版式选项 — 见 [打印参数详解](https://webprintpdf.com/docs/print-options/?utm_source=npm&utm_medium=readme&utm_campaign=features)
+- 🔧 **灵活配置**：丰富的打印与版式选项 — 见 [打印参数详解](https://webprintpdf.com/docs/print-options/?utm_source=github&utm_medium=readme&utm_campaign=features)
 - 🌐 **WebSocket 通信**：实时连接状态监控
 - 🔕 **静默打印**：通过本地客户端实现静默打印，无需浏览器打印对话框
 - 🎨 **自定义样式**：支持自定义页眉、页脚、边距以及客户端主题色、标题等
@@ -155,12 +174,12 @@ export class PrintComponent {
 
 ## 🔑 应用场景
 
-- **电子商务** — [发货面单与批量标签](https://webprintpdf.com/docs/ecommerce-shipping-label/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)
-- **商业与企业** — [ERP 发票与对账单](https://webprintpdf.com/docs/invoice-erp-print/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)、财务报表、工资单
-- **医疗与教育** — [处方笺与药房标签](https://webprintpdf.com/docs/medical-prescription-print/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)
-- **物流与 WMS** — [服务端推送远程面单打印](https://webprintpdf.com/docs/wms-remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)
-- **零售与 POS** — [80mm 热敏收银小票](https://webprintpdf.com/docs/retail-pos-receipt/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)
-- **通用** — 票据、条形码、[热敏小票与快递面单](https://webprintpdf.com/docs/thermal-receipt-print/?utm_source=npm&utm_medium=readme&utm_campaign=use-cases)
+- **电子商务** — [发货面单与批量标签](https://webprintpdf.com/docs/ecommerce-shipping-label/?utm_source=github&utm_medium=readme&utm_campaign=use-cases)
+- **商业与企业** — [ERP 发票与对账单](https://webprintpdf.com/docs/invoice-erp-print/?utm_source=github&utm_medium=readme&utm_campaign=use-cases)、财务报表、工资单
+- **医疗与教育** — [处方笺与药房标签](https://webprintpdf.com/docs/medical-prescription-print/?utm_source=github&utm_medium=readme&utm_campaign=use-cases)
+- **物流与 WMS** — [服务端推送远程面单打印](https://webprintpdf.com/docs/wms-remote-print/?utm_source=github&utm_medium=readme&utm_campaign=use-cases)
+- **零售与 POS** — [80mm 热敏收银小票](https://webprintpdf.com/docs/retail-pos-receipt/?utm_source=github&utm_medium=readme&utm_campaign=use-cases)
+- **通用** — 票据、条形码、[热敏小票与快递面单](https://webprintpdf.com/docs/thermal-receipt-print/?utm_source=github&utm_medium=readme&utm_campaign=use-cases)
 
 
 ## 📖 API 文档
@@ -485,41 +504,41 @@ console.log('纸张类型:', papers);
 }
 ```
 
-- 📖 [AI 打印与 MCP 接入指南（官网专题）](https://webprintpdf.com/docs/mcp-print/?utm_source=npm&utm_medium=readme&utm_campaign=mcp) — 各宿主配置位置、工具清单、参数速查、最容易踩的坑与验证清单
+- 📖 [AI 打印与 MCP 接入指南（官网专题）](https://webprintpdf.com/docs/mcp-print/?utm_source=github&utm_medium=readme&utm_campaign=mcp) — 各宿主配置位置、工具清单、参数速查、最容易踩的坑与验证清单
 - 📦 [npm 包](https://www.npmjs.com/package/mcp-web-print-pdf) · [GitHub 仓库](https://github.com/weixiaoyi/mcp-web-print-pdf) — 源码与更新日志
 
 
 ## ❓ 常见问题 (FAQ)
 
 ### 需要后端或其他软件吗？
-不需要后端 — web-print-pdf 完全在浏览器中运行。执行 `npm install web-print-pdf` 后，每位终端用户须在本机安装并运行 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=faq)。库通过 `ws://127.0.0.1:16794` 连接客户端；客户端未启动时打印请求会失败。详见 [Windows / Linux / macOS 部署指南](https://webprintpdf.com/docs/windows-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=faq)。
+不需要后端 — web-print-pdf 完全在浏览器中运行。执行 `npm install web-print-pdf` 后，每位终端用户须在本机安装并运行 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=github&utm_medium=readme&utm_campaign=faq)。库通过 `ws://127.0.0.1:16794` 连接客户端；客户端未启动时打印请求会失败。详见 [Windows / Linux / macOS 部署指南](https://webprintpdf.com/docs/windows-deploy/?utm_source=github&utm_medium=readme&utm_campaign=faq)。
 
 ### web-print-pdf 和 Print.js、jsPDF 有什么区别？
-**Print.js** 调用浏览器原生打印对话框，无法实现静默打印、批量任务或对物理打印机的精细控制 — 见 [Print.js 对比专题](https://webprintpdf.com/docs/printjs-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq)。**jsPDF** 在 JavaScript 中生成 PDF 供下载或预览，不会将任务发送到本地打印机 — 见 [jsPDF 对比专题](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq)。**web-print-pdf** 通过 WebSocket 连接 Web 打印专家客户端，支持静默打印、选择打印机/纸张、批量打印、水印等企业级打印能力。
+**Print.js** 调用浏览器原生打印对话框，无法实现静默打印、批量任务或对物理打印机的精细控制 — 见 [Print.js 对比专题](https://webprintpdf.com/docs/printjs-comparison/?utm_source=github&utm_medium=readme&utm_campaign=faq)。**jsPDF** 在 JavaScript 中生成 PDF 供下载或预览，不会将任务发送到本地打印机 — 见 [jsPDF 对比专题](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=github&utm_medium=readme&utm_campaign=faq)。**web-print-pdf** 通过 WebSocket 连接 Web 打印专家客户端，支持静默打印、选择打印机/纸张、批量打印、水印等企业级打印能力。
 
 ### web-print-pdf 和 QZ Tray、JSPrintManager 有什么区别？
-三者均为 **本地打印代理**，从浏览器接收任务并通过本机连接发送到打印机。**QZ Tray** 与 **JSPrintManager** 侧重原始设备打印、证书及长期企业部署。**web-print-pdf** 以 **npm SDK** 形式提供 Promise/async API、HTML/CSS 排版、可选 PDF 转换、批量打印与水印，配套免费的 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=faq)（Electron）。Lodop 迁移可参考 [Lodop 选型专题](https://webprintpdf.com/docs/lodop-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=faq)。
+三者均为 **本地打印代理**，从浏览器接收任务并通过本机连接发送到打印机。**QZ Tray** 与 **JSPrintManager** 侧重原始设备打印、证书及长期企业部署。**web-print-pdf** 以 **npm SDK** 形式提供 Promise/async API、HTML/CSS 排版、可选 PDF 转换、批量打印与水印，配套免费的 [Web 打印专家客户端](https://webprintpdf.com/downloadApp/?utm_source=github&utm_medium=readme&utm_campaign=faq)（Electron）。Lodop 迁移可参考 [Lodop 选型专题](https://webprintpdf.com/docs/lodop-alternative/?utm_source=github&utm_medium=readme&utm_campaign=faq)。
 
 ### 这是像 jsPDF 一样的 PDF 下载库吗？
-不是。jsPDF 和 html2pdf.js 生成供下载或预览的 PDF **文件**。web-print-pdf 通过桌面客户端将任务发送到 **本地打印机**，内部可能将 HTML 转为 PDF，但主要目标是 **物理打印输出**，而非文件导出。详见 [jsPDF 对比专题](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq)。
+不是。jsPDF 和 html2pdf.js 生成供下载或预览的 PDF **文件**。web-print-pdf 通过桌面客户端将任务发送到 **本地打印机**，内部可能将 HTML 转为 PDF，但主要目标是 **物理打印输出**，而非文件导出。详见 [jsPDF 对比专题](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=github&utm_medium=readme&utm_campaign=faq)。
 
 ### 什么时候该用 html-to-pdf 类库？
-需要服务端 PDF **文件** 时用 **Puppeteer** 或 **Playwright** — [对比专题](https://webprintpdf.com/docs/puppeteer-print-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=faq)；需要用户 **下载** PDF 时用 **jsPDF** 或 **html2pdf.js**；需要终端用户在本机 **静默打印** 时用 **web-print-pdf** — 参见 [热敏小票](https://webprintpdf.com/docs/thermal-receipt-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq)、[ERP 发票](https://webprintpdf.com/docs/invoice-erp-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq)、[WMS 面单](https://webprintpdf.com/docs/wms-remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq) 等场景专题。
+需要服务端 PDF **文件** 时用 **Puppeteer** 或 **Playwright** — [对比专题](https://webprintpdf.com/docs/puppeteer-print-comparison/?utm_source=github&utm_medium=readme&utm_campaign=faq)；需要用户 **下载** PDF 时用 **jsPDF** 或 **html2pdf.js**；需要终端用户在本机 **静默打印** 时用 **web-print-pdf** — 参见 [热敏小票](https://webprintpdf.com/docs/thermal-receipt-print/?utm_source=github&utm_medium=readme&utm_campaign=faq)、[ERP 发票](https://webprintpdf.com/docs/invoice-erp-print/?utm_source=github&utm_medium=readme&utm_campaign=faq)、[WMS 面单](https://webprintpdf.com/docs/wms-remote-print/?utm_source=github&utm_medium=readme&utm_campaign=faq) 等场景专题。
 
 ### 支持 TypeScript 吗？
 支持。包内包含完整类型定义，无需单独安装 `@types` 包。
 
 ### 可以不弹出打印对话框吗？
-可以。通过 Web 打印专家客户端实现静默打印，不会弹出浏览器打印对话框。原理说明：[window.print 替代方案](https://webprintpdf.com/docs/window-print-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=faq)。
+可以。通过 Web 打印专家客户端实现静默打印，不会弹出浏览器打印对话框。原理说明：[window.print 替代方案](https://webprintpdf.com/docs/window-print-alternative/?utm_source=github&utm_medium=readme&utm_campaign=faq)。
 
 ### 支持哪些纸张尺寸？
-支持 A4、Letter、Legal、A3、A5 等标准尺寸，也可通过 `width`/`height` 自定义。打印机特有格式可用 `utils.getPrinterPapers()` 查询。实战配方见 [打印参数详解](https://webprintpdf.com/docs/print-options/?utm_source=npm&utm_medium=readme&utm_campaign=faq)。
+支持 A4、Letter、Legal、A3、A5 等标准尺寸，也可通过 `width`/`height` 自定义。打印机特有格式可用 `utils.getPrinterPapers()` 查询。实战配方见 [打印参数详解](https://webprintpdf.com/docs/print-options/?utm_source=github&utm_medium=readme&utm_campaign=faq)。
 
 ### 可以添加水印吗？
-可以。通过 `pdfOptions.watermark` 配置文本或图片水印，支持位置、透明度、行列数和角度等。可在 [在线样例中心](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=faq) 体验水印 Demo。
+可以。通过 `pdfOptions.watermark` 配置文本或图片水印，支持位置、透明度、行列数和角度等。可在 [在线样例中心](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=faq) 体验水印 Demo。
 
 ### 支持批量打印吗？
-支持。向 `batchPrint()` 传入多个任务，可一次打印 HTML、URL、Base64、图片或 PDF。详见 [batchPrint API 参考](https://webprintpdf.com/docs/api-batchPrint/?utm_source=npm&utm_medium=readme&utm_campaign=faq) 与 [远程打印配置](https://webprintpdf.com/docs/remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=faq)。
+支持。向 `batchPrint()` 传入多个任务，可一次打印 HTML、URL、Base64、图片或 PDF。详见 [batchPrint API 参考](https://webprintpdf.com/docs/api-batchPrint/?utm_source=github&utm_medium=readme&utm_campaign=faq) 与 [远程打印配置](https://webprintpdf.com/docs/remote-print/?utm_source=github&utm_medium=readme&utm_campaign=faq)。
 
 ### 支持打印图片和已有 PDF 吗？
 支持。除 HTML 方法外，还可使用 `printImageByUrl` / `printImageByBase64` 和 `printPdfByUrl` / `printPdfByBase64`。
@@ -529,76 +548,76 @@ console.log('纸张类型:', papers);
 
 > 完整文档与样例见官网文档中心。
 
-文档中心：[webprintpdf.com/docs](https://webprintpdf.com/docs/?utm_source=npm&utm_medium=readme&utm_campaign=docs-hub)
+文档中心：[webprintpdf.com/docs](https://webprintpdf.com/docs/?utm_source=github&utm_medium=readme&utm_campaign=docs-hub)
 
 ### 🧪 在线样例中心
 
-- [在线样例中心 — 25 个可运行 Demo](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=demos)
+- [在线样例中心 — 25 个可运行 Demo](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=demos)
 
 ### ⚙️ 进阶配置
 
-- [打印参数详解（pdfOptions 与 printOptions）](https://webprintpdf.com/docs/print-options/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
-- [前端错误处理标准](https://webprintpdf.com/docs/error-handling/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
-- [需登录权限的页面如何打印](https://webprintpdf.com/docs/auth-url-print/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
-- [远程打印配置（WebSocket / HTTP）](https://webprintpdf.com/docs/remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
-- [printHtml API 参考](https://webprintpdf.com/docs/api-printHtml/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
-- [batchPrint API 参考](https://webprintpdf.com/docs/api-batchPrint/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
-- [WebSocket 连接排障](https://webprintpdf.com/docs/troubleshoot-websocket/?utm_source=npm&utm_medium=readme&utm_campaign=advanced)
+- [打印参数详解（pdfOptions 与 printOptions）](https://webprintpdf.com/docs/print-options/?utm_source=github&utm_medium=readme&utm_campaign=advanced)
+- [前端错误处理标准](https://webprintpdf.com/docs/error-handling/?utm_source=github&utm_medium=readme&utm_campaign=advanced)
+- [需登录权限的页面如何打印](https://webprintpdf.com/docs/auth-url-print/?utm_source=github&utm_medium=readme&utm_campaign=advanced)
+- [远程打印配置（WebSocket / HTTP）](https://webprintpdf.com/docs/remote-print/?utm_source=github&utm_medium=readme&utm_campaign=advanced)
+- [printHtml API 参考](https://webprintpdf.com/docs/api-printHtml/?utm_source=github&utm_medium=readme&utm_campaign=advanced)
+- [batchPrint API 参考](https://webprintpdf.com/docs/api-batchPrint/?utm_source=github&utm_medium=readme&utm_campaign=advanced)
+- [WebSocket 连接排障](https://webprintpdf.com/docs/troubleshoot-websocket/?utm_source=github&utm_medium=readme&utm_campaign=advanced)
 
 ### ⚖️ 选型对比
 
-- [Lodop 与 web-print-pdf 选型](https://webprintpdf.com/docs/lodop-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
-- [window.print 替代与静默打印原理](https://webprintpdf.com/docs/window-print-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
-- [hiprint 与 web-print-pdf 对比](https://webprintpdf.com/docs/hiprint-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
-- [Print.js 与 web-print-pdf 对比](https://webprintpdf.com/docs/printjs-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
-- [jsPDF 与 web-print-pdf 对比](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
-- [Puppeteer / Playwright 与 web-print-pdf 对比](https://webprintpdf.com/docs/puppeteer-print-comparison/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
-- [C-Lodop 与 Chrome 兼容](https://webprintpdf.com/docs/clodop-alternative/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
-- [Lodop 并行接入 web-print-pdf](https://webprintpdf.com/docs/lodop-migration/?utm_source=npm&utm_medium=readme&utm_campaign=comparison)
+- [Lodop 与 web-print-pdf 选型](https://webprintpdf.com/docs/lodop-alternative/?utm_source=github&utm_medium=readme&utm_campaign=comparison)
+- [window.print 替代与静默打印原理](https://webprintpdf.com/docs/window-print-alternative/?utm_source=github&utm_medium=readme&utm_campaign=comparison)
+- [hiprint 与 web-print-pdf 对比](https://webprintpdf.com/docs/hiprint-comparison/?utm_source=github&utm_medium=readme&utm_campaign=comparison)
+- [Print.js 与 web-print-pdf 对比](https://webprintpdf.com/docs/printjs-comparison/?utm_source=github&utm_medium=readme&utm_campaign=comparison)
+- [jsPDF 与 web-print-pdf 对比](https://webprintpdf.com/docs/jspdf-comparison/?utm_source=github&utm_medium=readme&utm_campaign=comparison)
+- [Puppeteer / Playwright 与 web-print-pdf 对比](https://webprintpdf.com/docs/puppeteer-print-comparison/?utm_source=github&utm_medium=readme&utm_campaign=comparison)
+- [C-Lodop 与 Chrome 兼容](https://webprintpdf.com/docs/clodop-alternative/?utm_source=github&utm_medium=readme&utm_campaign=comparison)
+- [Lodop 并行接入 web-print-pdf](https://webprintpdf.com/docs/lodop-migration/?utm_source=github&utm_medium=readme&utm_campaign=comparison)
 
 ### 🧩 框架专题
 
-- [Vue 静默打印](https://webprintpdf.com/docs/vue-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
-- [React 静默打印](https://webprintpdf.com/docs/react-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
-- [Next.js 静默打印](https://webprintpdf.com/docs/nextjs-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
-- [Angular 静默打印](https://webprintpdf.com/docs/angular-silent-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
-- [UniApp H5 静默打印](https://webprintpdf.com/docs/uniapp-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
-- [Element Plus 静默打印](https://webprintpdf.com/docs/element-plus-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
-- [Ant Design 静默打印](https://webprintpdf.com/docs/ant-design-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
+- [Vue 静默打印](https://webprintpdf.com/docs/vue-silent-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
+- [React 静默打印](https://webprintpdf.com/docs/react-silent-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
+- [Next.js 静默打印](https://webprintpdf.com/docs/nextjs-silent-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
+- [Angular 静默打印](https://webprintpdf.com/docs/angular-silent-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
+- [UniApp H5 静默打印](https://webprintpdf.com/docs/uniapp-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
+- [Element Plus 静默打印](https://webprintpdf.com/docs/element-plus-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
+- [Ant Design 静默打印](https://webprintpdf.com/docs/ant-design-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
 
 ### 🤖 AI 打印与 MCP 接入
 
-- [AI 打印与 MCP 接入指南（Claude Desktop / Cursor / Claude Code / dsh）](https://webprintpdf.com/docs/mcp-print/?utm_source=npm&utm_medium=readme&utm_campaign=mcp)
+- [AI 打印与 MCP 接入指南（Claude Desktop / Cursor / Claude Code / dsh）](https://webprintpdf.com/docs/mcp-print/?utm_source=github&utm_medium=readme&utm_campaign=mcp)
 
 ### 🏭 场景专题
 
-- [WMS 远程面单打印](https://webprintpdf.com/docs/wms-remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
-- [热敏小票与快递面单](https://webprintpdf.com/docs/thermal-receipt-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
-- [医疗处方与药房标签](https://webprintpdf.com/docs/medical-prescription-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
-- [ERP 发票与对账单](https://webprintpdf.com/docs/invoice-erp-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
-- [电商发货面单（100×150）](https://webprintpdf.com/docs/ecommerce-shipping-label/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
-- [零售 POS 80mm 热敏小票](https://webprintpdf.com/docs/retail-pos-receipt/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
+- [WMS 远程面单打印](https://webprintpdf.com/docs/wms-remote-print/?utm_source=github&utm_medium=readme&utm_campaign=scenarios)
+- [热敏小票与快递面单](https://webprintpdf.com/docs/thermal-receipt-print/?utm_source=github&utm_medium=readme&utm_campaign=scenarios)
+- [医疗处方与药房标签](https://webprintpdf.com/docs/medical-prescription-print/?utm_source=github&utm_medium=readme&utm_campaign=scenarios)
+- [ERP 发票与对账单](https://webprintpdf.com/docs/invoice-erp-print/?utm_source=github&utm_medium=readme&utm_campaign=scenarios)
+- [电商发货面单（100×150）](https://webprintpdf.com/docs/ecommerce-shipping-label/?utm_source=github&utm_medium=readme&utm_campaign=scenarios)
+- [零售 POS 80mm 热敏小票](https://webprintpdf.com/docs/retail-pos-receipt/?utm_source=github&utm_medium=readme&utm_campaign=scenarios)
 
 ### 📋 客户案例
 
-- [政务信创部署案例](https://webprintpdf.com/docs/cases/government-xinchuang/?utm_source=npm&utm_medium=readme&utm_campaign=cases)
-- [物流 WMS 面单案例](https://webprintpdf.com/docs/cases/logistics-wms/?utm_source=npm&utm_medium=readme&utm_campaign=cases)
-- [制造 ERP 车间案例](https://webprintpdf.com/docs/cases/manufacturing-erp/?utm_source=npm&utm_medium=readme&utm_campaign=cases)
+- [政务信创部署案例](https://webprintpdf.com/docs/cases/government-xinchuang/?utm_source=github&utm_medium=readme&utm_campaign=cases)
+- [物流 WMS 面单案例](https://webprintpdf.com/docs/cases/logistics-wms/?utm_source=github&utm_medium=readme&utm_campaign=cases)
+- [制造 ERP 车间案例](https://webprintpdf.com/docs/cases/manufacturing-erp/?utm_source=github&utm_medium=readme&utm_campaign=cases)
 
 ### 🖥️ 部署指南
 
-- [Windows 部署指南](https://webprintpdf.com/docs/windows-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
-- [macOS 部署指南](https://webprintpdf.com/docs/mac-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
-- [Linux 部署指南](https://webprintpdf.com/docs/linux-deploy/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
-- [银河麒麟静默打印](https://webprintpdf.com/docs/kylin-print/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
-- [统信 UOS 静默打印](https://webprintpdf.com/docs/uos-print/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
-- [Windows 防火墙排障](https://webprintpdf.com/docs/troubleshoot-windows-firewall/?utm_source=npm&utm_medium=readme&utm_campaign=deploy)
+- [Windows 部署指南](https://webprintpdf.com/docs/windows-deploy/?utm_source=github&utm_medium=readme&utm_campaign=deploy)
+- [macOS 部署指南](https://webprintpdf.com/docs/mac-deploy/?utm_source=github&utm_medium=readme&utm_campaign=deploy)
+- [Linux 部署指南](https://webprintpdf.com/docs/linux-deploy/?utm_source=github&utm_medium=readme&utm_campaign=deploy)
+- [银河麒麟静默打印](https://webprintpdf.com/docs/kylin-print/?utm_source=github&utm_medium=readme&utm_campaign=deploy)
+- [统信 UOS 静默打印](https://webprintpdf.com/docs/uos-print/?utm_source=github&utm_medium=readme&utm_campaign=deploy)
+- [Windows 防火墙排障](https://webprintpdf.com/docs/troubleshoot-windows-firewall/?utm_source=github&utm_medium=readme&utm_campaign=deploy)
 
 ### 📦 下载与仓库
 
-- [官网](https://webprintpdf.com/?utm_source=npm&utm_medium=readme&utm_campaign=home)
-- [客户端下载](https://webprintpdf.com/downloadApp/?utm_source=npm&utm_medium=readme&utm_campaign=download)
-- [定价与授权](https://webprintpdf.com/price/?utm_source=npm&utm_medium=readme&utm_campaign=price)
+- [官网](https://webprintpdf.com/?utm_source=github&utm_medium=readme&utm_campaign=home)
+- [客户端下载](https://webprintpdf.com/downloadApp/?utm_source=github&utm_medium=readme&utm_campaign=download)
+- [定价与授权](https://webprintpdf.com/price/?utm_source=github&utm_medium=readme&utm_campaign=price)
 - [GitHub 仓库](https://github.com/weixiaoyi/web-print-pdf)
 - [npm 包](https://www.npmjs.com/package/web-print-pdf)
 - [MCP Server（让 AI 助手调用本库打印）](https://www.npmjs.com/package/mcp-web-print-pdf)
@@ -611,11 +630,11 @@ console.log('纸张类型:', papers);
 
 ## 🌐 社区与生态
 
-- **官网教程与样例** — [文档中心](https://webprintpdf.com/docs/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem)；[25 个在线 Demo](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem)
-- **更多代码示例** — GitHub [.github/EXAMPLES.md](.github/EXAMPLES.md) 与 [在线样例中心](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem) 互补
-- **分享集成经验** — 在掘金、CSDN、知乎等平台发布教程并链接本包与 [官网](https://webprintpdf.com/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem)；欢迎通过 [GitHub Discussions](https://github.com/weixiaoyi/web-print-pdf/discussions) 或 PR 分享示例
+- **官网教程与样例** — [文档中心](https://webprintpdf.com/docs/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)；[25 个在线 Demo](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)
+- **更多代码示例** — 仓库内 [examples/](https://github.com/weixiaoyi/web-print-pdf/tree/master/examples)（4 个可运行 demo）、GitHub [.github/EXAMPLES.md](.github/EXAMPLES.md) 与 [在线样例中心](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem) 互补
+- **分享集成经验** — 在掘金、CSDN、知乎等平台发布教程并链接本包与 [官网](https://webprintpdf.com/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)；欢迎通过 [GitHub Discussions](https://github.com/weixiaoyi/web-print-pdf/discussions) 或 PR 分享示例
 - **开源精选列表** — 若维护 awesome-javascript / awesome-vue 等列表，可在「静默打印 / 本地打印代理」分类下收录 [web-print-pdf](https://www.npmjs.com/package/web-print-pdf)
-- **问题与支持** — [GitHub Issues](https://github.com/weixiaoyi/web-print-pdf/issues) 报告缺陷；[定价](https://webprintpdf.com/price/?utm_source=npm&utm_medium=readme&utm_campaign=ecosystem)
+- **问题与支持** — [GitHub Issues](https://github.com/weixiaoyi/web-print-pdf/issues) 报告缺陷；[定价](https://webprintpdf.com/price/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)
 
 
 ## 🤝 贡献
@@ -637,4 +656,4 @@ MIT License - 详见 [LICENSE](https://github.com/weixiaoyi/web-print-pdf/blob/m
 
 ---
 
-**用 ❤️ 为 JavaScript 社区制作** | [报告错误](https://github.com/weixiaoyi/web-print-pdf/issues) | [请求功能](https://github.com/weixiaoyi/web-print-pdf/issues) | [文档](https://webprintpdf.com/docs/?utm_source=npm&utm_medium=readme&utm_campaign=footer) | [样例](https://webprintpdf.com/docs/demos/?utm_source=npm&utm_medium=readme&utm_campaign=footer) | [定价](https://webprintpdf.com/price/?utm_source=npm&utm_medium=readme&utm_campaign=footer)
+**用 ❤️ 为 JavaScript 社区制作** | [报告错误](https://github.com/weixiaoyi/web-print-pdf/issues) | [请求功能](https://github.com/weixiaoyi/web-print-pdf/issues) | [文档](https://webprintpdf.com/docs/?utm_source=github&utm_medium=readme&utm_campaign=footer) | [样例](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=footer) | [定价](https://webprintpdf.com/price/?utm_source=github&utm_medium=readme&utm_campaign=footer)

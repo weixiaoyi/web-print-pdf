@@ -37,65 +37,18 @@ silent-print, silent-printing, no-print-dialog, lodop, c-lodop, clodop, lodop-al
 3. 勾选 ✅ **Discussions**
 4. 点击 **Set up discussions**
 
-## ⚡ 第三步：创建 Release（2分钟）
+## ⚡ 第三步：发 GitHub Release（一条命令）
 
-1. 进入仓库首页
-2. 点击右侧 **Releases** → **Create a new release**
-3. 填写以下信息：
+发版后 npm 上已经是新版本，但 GitHub Release 要单独发 —— 这个仓库曾漏发过，所以改成脚本：
 
-**Choose a tag:**
-```
-v2.1.9
+```powershell
+$env:GH_TOKEN = 'ghp_...'   # PAT with repo scope
+pwsh -File .github/scripts/publish-release.ps1 -Version 2.1.10
 ```
 
-**Release title:**
-```
-Release v2.1.9
-```
+先加 `-DryRun` 可只预览 payload。Notes 文件约定 `.github/RELEASE_v<version>.md`（`v2.1.10` 已写好、待补发）。
 
-**Description:** （复制粘贴 `.github/RELEASE_v2.1.9.md`，或使用下方摘要）
-```
-## 🔧 改进
-
-- ✅ 主 README 改为中文；英文移至 README_EN.md
-- ✅ 行业 SEO 关键词：Lodop / C-Lodop / hiprint、静默打印、小票/热敏/POS/面单/发票
-- ✅ 文档补充 printOptions.sharp（仅热敏打印机）
-- ✅ homepage 指向 https://webprintpdf.com/docs/
-
-## 📦 安装
-
-\`\`\`bash
-npm install web-print-pdf@2.1.9
-# or
-yarn add web-print-pdf@2.1.9
-# or
-pnpm add web-print-pdf@2.1.9
-\`\`\`
-
-## 🚀 快速开始
-
-\`\`\`javascript
-import webPrintPdf from 'web-print-pdf';
-
-await webPrintPdf.printHtml('<h1>Hello World!</h1>');
-\`\`\`
-
-## 📚 文档
-
-- [开发文档](https://webprintpdf.com/docs/)
-- [在线样例（25 个 Demo）](https://webprintpdf.com/docs/demos/)
-- [GitHub README](https://github.com/weixiaoyi/web-print-pdf#readme)
-- [客户端下载](https://webprintpdf.com/downloadApp/)
-
-## 🤝 贡献
-
-欢迎提交 Issues 和 Pull Requests！
-
-查看 [贡献指南](https://github.com/weixiaoyi/web-print-pdf/blob/master/CONTRIBUTING.md)
-```
-
-4. 勾选 ✅ **Set as the latest release**
-5. 点击 **Publish release**
+手工兜底：Releases → **Create a new release** → tag `v2.1.10` → 粘贴同一份 notes → 勾选 **Set as the latest release** → **Publish release**。
 
 ## ✅ 完成！
 

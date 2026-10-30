@@ -16,14 +16,12 @@ Traffic-first order (see `.github/GITHUB_TOPICS.md`). npm search also matches `d
 - **Never use**: html-to-pdf, watermark-pdf (wrong intent)
 
 #### Description Optimization
-The description leads with silent web printing and local print agent positioning, then framework compatibility and use cases (receipts, labels, batch, watermarks).
+The description leads with silent web printing / local print agent positioning, then framework compatibility and use cases (receipts, labels, batch, watermarks). Keep that shape:
 
-#### Description Optimization
-The description includes:
-- Primary functionality (HTML to PDF conversion)
-- Framework compatibility (Vue, React, Angular)
-- Key features (batch printing, watermarks)
-- Technology stack (JavaScript, WebSocket)
+- Lead: silent printing + "no print dialog" + local print agent
+- Differentiator: Lodop / C-Lodop / hiprint alternative — this is the traffic that converts
+- Constraint: requires the Web Print Expert Client (set expectations before install)
+- Never: "HTML to PDF converter" / "PDF watermark" framing — it attracts jsPDF-intent traffic that bounces (see `GITHUB_TOPICS.md` "不要加" list)
 
 ### 2. npm Package Page Enhancement
 
@@ -166,14 +164,31 @@ While GitHub doesn't support custom structured data, your website (webprintpdf.c
   "@context": "https://schema.org",
   "@type": "SoftwareSourceCode",
   "name": "web-print-pdf",
-  "description": "Powerful JavaScript HTML to PDF printing library",
+  "description": "JavaScript silent-printing SDK: sends HTML/PDF/images from the browser to local printers over WebSocket, no print dialog. Lodop/C-Lodop/hiprint alternative.",
   "url": "https://github.com/weixiaoyi/web-print-pdf",
+  "codeRepository": "https://github.com/weixiaoyi/web-print-pdf",
   "programmingLanguage": "JavaScript",
-  "runtimePlatform": "Node.js, Browser"
+  "runtimePlatform": "Browser",
+  "license": "https://opensource.org/licenses/MIT",
+  "keywords": "silent printing, silent print, lodop alternative, browser print, websocket print, thermal printer, receipt printing"
 }
 ```
 
 ## 📊 Monitoring and Analytics
+
+### 归因口径（UTM：github vs npm）
+
+同一份 README 会同时出现在 GitHub 和 npmjs.com，无法按平台输出不同的链接，所以按「主要阅读场景」定口径：
+
+| 入口 | utm_source | utm_medium | 说明 |
+|:-----|:-----------|:-----------|:-----|
+| README 内所有官网链接 | `github` | `readme` | README 主要在 GitHub 被阅读 |
+| npm `homepage` 字段 | `npm` | `package-page` | npm 页面侧栏的 Homepage 按钮 |
+| `examples/` 内链接 | `github` | `examples` | 与 README 区分，便于看示例的实际引流 |
+
+已知偏差：在 npm 页面上点 README 内链会被记成 `github`。量级远小于 GitHub 侧，可接受；若要精确拆分，唯一干净的解法是发版时用 `prepublishOnly` 生成一份 npm 专用 README（替换 `utm_source` 后再发布），不要再靠人工维护两份。
+
+历史数据注意：2.1.10 及以前的 README 记为 `utm_source=npm`，所以 2026-10 之后 `npm` 来源会断崖式下降 —— 那是口径变化，不是流量下跌。
 
 ### Key Metrics to Track
 
@@ -284,20 +299,23 @@ Create example repositories:
 
 ### Immediate Actions
 - [x] Optimize package.json keywords and description
-- [x] Enhance README.md / README_EN.md with SEO content
-- [x] Add comprehensive examples
+- [x] Enhance README.md / README_EN.md with SEO content — including a TL;DR answer block and absolute language-switch links
 - [x] Create GitHub topics guide
 - [x] Add topics guide and `repo-seo.config.json` (apply via GitHub About)
-- [ ] Create GitHub releases for versions
-- [ ] Set up GitHub Discussions
-- [ ] Add code examples to repository
+- [x] Set up GitHub Discussions
+- [x] Add runnable code examples — `examples/` (vanilla / vue / react / nextjs)
+- [x] Script the GitHub Release step — `.github/scripts/publish-release.ps1`
+- [x] Add `check-seo-metadata.ps1` so keywords↔topics drift fails loudly
+- [ ] **Backfill the v2.1.10 GitHub Release** (npm is at 2.1.10, latest Release is still v2.1.9)
+- [ ] Upload a social preview image (Settings → Social preview, 1280×640 PNG)
+- [ ] Confirm the docs site emits `SoftwareSourceCode` / `FAQPage` JSON-LD in `<head>` (site repo, not this one)
 
 ### Short-Term Actions (1-2 weeks)
 - [ ] Write blog post about the library
 - [ ] Share on social media
 - [ ] Submit to awesome lists
 - [ ] Create video tutorial
-- [ ] Set up GitHub Pages site
+- [x] ~~Set up GitHub Pages site~~ — 不做：文档在 webprintpdf.com（自有域名 + 双语 hreflang），GitHub Pages 只会制造重复内容
 - [ ] Add more comprehensive examples
 
 ### Medium-Term Actions (1-3 months)

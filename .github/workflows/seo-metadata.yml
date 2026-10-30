@@ -1,0 +1,41 @@
+name: SEO metadata
+
+# Guards the parts of SEO that live in files and drift silently:
+# package.json keywords ↔ GitHub topics, UTM attribution convention, TL;DR block,
+# examples/ completeness, and release-notes availability.
+#
+# Deliberately standalone (no npm install, no build): it must stay fast and never
+# be blocked by the main build matrix.
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'package.json'
+      - 'README.md'
+      - 'README_EN.md'
+      - 'CHANGELOG.md'
+      - '.github/repo-seo.config.json'
+      - '.github/RELEASE_v*.md'
+      - 'examples/**'
+      - '.github/scripts/check-seo-metadata.ps1'
+      - '.github/workflows/seo-metadata.yml'
+  pull_request:
+    paths:
+      - 'package.json'
+      - 'README.md'
+      - 'README_EN.md'
+      - '.github/repo-seo.config.json'
+      - 'examples/**'
+      - '.github/scripts/check-seo-metadata.ps1'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check SEO metadata invariants
+        shell: pwsh
+        run: ./.github/scripts/check-seo-metadata.ps1

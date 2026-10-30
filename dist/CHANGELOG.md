@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.11] - 2026-10-30
+
+### Added
+- `examples/`：4 个 clone 即可运行的示例（`vanilla-vite` / `vue-vite` / `react-vite` / `nextjs-app-router`），README 新增「可运行示例」表格，并从「更多代码示例」链入
+- README（中/英）新增「一句话说明（TL;DR）」摘要块：中英各一段自包含说明，便于搜索结果页与 AI 摘要直接引用
+- `.github/scripts/check-seo-metadata.ps1`：校验 keywords↔topics 一致性、UTM 归因口径、TL;DR/examples 链接、版本 release notes 齐备
+- `.github/scripts/publish-release.ps1`：从 `.github/RELEASE_v<version>.md` 创建 GitHub Release，避免「发了 npm 没发 Release」
+
+### Changed
+- **归因口径**：README 内链 `utm_source` 由 `npm` 改为 `github`（README 主要在 GitHub 被阅读）；npm 侧改用 `homepage` 的 `utm_source=npm` 单独标记，两类流量不再混在一起
+- `package.json` `homepage` 增加 `utm_source=npm&utm_medium=package-page`
+- README 语言切换链接改为绝对 GitHub URL：npm 页面上相对链接会 404，国际访客点「English」原本是死链
+- `dist/README*.md` 是 `npm run build` 的产物（`prepublishOnly` 会自动执行），本次未手改，发版时自动同步
+
 ## [2.1.10] - 2026-10-30
 
 ### Added

@@ -2,6 +2,8 @@
 
 本文档提供了 web-print-pdf 在各种实际场景中的使用示例。
 
+> 想直接跑起来？见仓库内 [`examples/`](../examples) —— vanilla / Vue / React / Next.js 四个可运行 demo。本文档偏「代码片段速查」，两者互补。
+
 ## 📋 目录
 
 - [基础示例](#基础示例)
