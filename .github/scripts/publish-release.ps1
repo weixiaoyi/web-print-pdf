@@ -6,8 +6,11 @@
 #
 # Usage:
 #   $env:GH_TOKEN = 'ghp_...'                      # PAT with repo scope
-#   pwsh -File .github/scripts/publish-release.ps1 -Version 2.1.10
-#   pwsh -File .github/scripts/publish-release.ps1 -Version 2.1.10 -DryRun
+#   powershell -ExecutionPolicy Bypass -File .github/scripts/publish-release.ps1 -Version 2.1.10
+#   powershell -ExecutionPolicy Bypass -File .github/scripts/publish-release.ps1 -Version 2.1.10 -DryRun
+#
+# Note: releases are normally created by .github/workflows/release.yml (no PAT needed).
+# Keep this script for the offline / no-Actions fallback.
 #
 # Tag must already exist on the remote (the repo's `npm version` flow pushes tags).
 

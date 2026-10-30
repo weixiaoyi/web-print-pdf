@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- `.github/workflows/release.yml`：tag push 自动建 GitHub Release（notes 取自 `.github/RELEASE_v<version>.md`），master push 时补齐历史上漏发的 tag —— v2.1.10 的 Release 已由它补发
+
 ## [2.1.11] - 2026-10-30
 
 ### Added

@@ -1,5 +1,5 @@
 # Guards the SEO invariants that are easy to break by hand.
-# Usage: pwsh -File .github/scripts/check-seo-metadata.ps1
+# Usage: powershell -ExecutionPolicy Bypass -File .github/scripts/check-seo-metadata.ps1
 # Exits 1 if anything drifts, so it can run in CI.
 
 $ErrorActionPreference = 'Stop'
