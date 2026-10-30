@@ -1,6 +1,6 @@
 {
   "name": "web-print-pdf",
-  "version": "2.1.9",
+  "version": "2.1.10",
   "description": "Silent printing SDK — Lodop / C-Lodop / hiprint alternative. Print HTML/PDF/images from browser to local printers via WebSocket with no print dialog. Vue, React. Receipts, thermal labels, invoices. Requires Web Print Expert Client.",
   "githubDescription": "Silent browser printing. Lodop/C-Lodop/hiprint alternative. No print dialog. Vue/React. Receipts, thermal labels, invoices.",
   "main": "dist/index.js",

@@ -470,6 +470,25 @@ If you don't want to use async, you can respond through event listening
 - **Build Tools**: Webpack, Vite, Rollup, Parcel, esbuild
 
 
+## 🤖 AI Agents / MCP Integration (optional)
+
+Want an **AI assistant** (Claude Desktop, Cursor, Cline, Codex CLI, …) to print through this library? Use the companion MCP server — [mcp-web-print-pdf](https://www.npmjs.com/package/mcp-web-print-pdf). It maps this package's public API 1:1 to MCP tools and talks to the same `ws://127.0.0.1:16794` endpoint of the Web Print Expert Client, so normal browser SDK usage is unaffected.
+
+```json
+{
+  "mcpServers": {
+    "webprint": {
+      "command": "npx",
+      "args": ["-y", "mcp-web-print-pdf"]
+    }
+  }
+}
+```
+
+- 📖 [AI printing & MCP setup guide (official)](https://webprintpdf.com/en/docs/mcp-print/?utm_source=npm&utm_medium=readme&utm_campaign=mcp) — host-by-host config paths, tool reference, argument cheat sheet, pitfalls and verification checklist
+- 📦 [npm package](https://www.npmjs.com/package/mcp-web-print-pdf) · [GitHub repository](https://github.com/weixiaoyi/mcp-web-print-pdf) — source and changelog
+
+
 ## ❓ Frequently Asked Questions (FAQ)
 
 ### Do I need a backend or extra software?
@@ -547,6 +566,10 @@ Documentation hub: [webprintpdf.com/en/docs](https://webprintpdf.com/en/docs/?ut
 - [Element Plus integration](https://webprintpdf.com/en/docs/element-plus-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
 - [Ant Design integration](https://webprintpdf.com/en/docs/ant-design-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
 
+### 🤖 AI Printing & MCP
+
+- [AI printing & MCP setup guide (Claude Desktop / Cursor / Claude Code / dsh)](https://webprintpdf.com/en/docs/mcp-print/?utm_source=npm&utm_medium=readme&utm_campaign=mcp)
+
 ### 🏭 Scenario Guides
 
 - [WMS remote shipping labels](https://webprintpdf.com/en/docs/wms-remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
@@ -578,6 +601,7 @@ Documentation hub: [webprintpdf.com/en/docs](https://webprintpdf.com/en/docs/?ut
 - [Pricing](https://webprintpdf.com/en/price/?utm_source=npm&utm_medium=readme&utm_campaign=price)
 - [GitHub Repository](https://github.com/weixiaoyi/web-print-pdf)
 - [npm Package](https://www.npmjs.com/package/web-print-pdf)
+- [MCP Server — print from AI assistants](https://www.npmjs.com/package/mcp-web-print-pdf)
 
 
 ## 🏷️ Tags

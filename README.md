@@ -470,6 +470,25 @@ console.log('纸张类型:', papers);
 - **构建工具**：Webpack、Vite、Rollup、Parcel、esbuild
 
 
+## 🤖 AI 智能体 / MCP 集成（可选）
+
+想让 **AI 助手**（Claude Desktop、Cursor、Cline、Codex CLI 等）直接驱动本库打印，可使用配套的 MCP Server —— [mcp-web-print-pdf](https://www.npmjs.com/package/mcp-web-print-pdf)。它把本包的公开 API 一对一映射成 MCP 工具，连接的是同一个 `ws://127.0.0.1:16794` 与 Web 打印专家客户端，浏览器 SDK 用法不受影响。
+
+```json
+{
+  "mcpServers": {
+    "webprint": {
+      "command": "npx",
+      "args": ["-y", "mcp-web-print-pdf"]
+    }
+  }
+}
+```
+
+- 📖 [AI 打印与 MCP 接入指南（官网专题）](https://webprintpdf.com/docs/mcp-print/?utm_source=npm&utm_medium=readme&utm_campaign=mcp) — 各宿主配置位置、工具清单、参数速查、最容易踩的坑与验证清单
+- 📦 [npm 包](https://www.npmjs.com/package/mcp-web-print-pdf) · [GitHub 仓库](https://github.com/weixiaoyi/mcp-web-print-pdf) — 源码与更新日志
+
+
 ## ❓ 常见问题 (FAQ)
 
 ### 需要后端或其他软件吗？
@@ -547,6 +566,10 @@ console.log('纸张类型:', papers);
 - [Element Plus 静默打印](https://webprintpdf.com/docs/element-plus-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
 - [Ant Design 静默打印](https://webprintpdf.com/docs/ant-design-print/?utm_source=npm&utm_medium=readme&utm_campaign=framework)
 
+### 🤖 AI 打印与 MCP 接入
+
+- [AI 打印与 MCP 接入指南（Claude Desktop / Cursor / Claude Code / dsh）](https://webprintpdf.com/docs/mcp-print/?utm_source=npm&utm_medium=readme&utm_campaign=mcp)
+
 ### 🏭 场景专题
 
 - [WMS 远程面单打印](https://webprintpdf.com/docs/wms-remote-print/?utm_source=npm&utm_medium=readme&utm_campaign=scenarios)
@@ -578,6 +601,7 @@ console.log('纸张类型:', papers);
 - [定价与授权](https://webprintpdf.com/price/?utm_source=npm&utm_medium=readme&utm_campaign=price)
 - [GitHub 仓库](https://github.com/weixiaoyi/web-print-pdf)
 - [npm 包](https://www.npmjs.com/package/web-print-pdf)
+- [MCP Server（让 AI 助手调用本库打印）](https://www.npmjs.com/package/mcp-web-print-pdf)
 
 
 ## 🏷️ 标签

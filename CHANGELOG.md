@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.10] - 2026-10-30
+
+### Added
+- README（中/英）新增「🤖 AI 智能体 / MCP 集成」章节：配套 MCP Server `mcp-web-print-pdf` 的定位说明、`npx -y mcp-web-print-pdf` 配置示例，以及 npm / GitHub 双入口
+- README 官网资源新增「AI 打印与 MCP 接入」专题入口（中文 `/docs/mcp-print/`、英文 `/en/docs/mcp-print/`，带 UTM 追踪）
+- `README_EN.md` 同步：`AI Agents / MCP Integration` 章节 + `AI Printing & MCP` 专题入口
+
+### Changed
+- README「📦 下载与仓库」补充 `mcp-web-print-pdf` npm 链接，补齐 AI 场景的生态入口
+- 文档口径明确：MCP 只是给客户端已有的本机端口再加一个客户端，`web-print-pdf` 的浏览器 API 与用法完全不变
+- 新增 `utm_campaign=mcp`，与既有 campaign 命名（framework / scenarios / advanced 等）保持一致
+
 ## [2.1.9] - 2026-09-10
 
 ### Added
