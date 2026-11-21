@@ -40,7 +40,9 @@
 - **Framework Agnostic** — Vue, React, Angular, Svelte, Next.js, Nuxt, or vanilla JavaScript
 - **Production Ready** — battle-tested in enterprise invoice, receipt, and label workflows
 - **TypeScript Support** — full type definitions included
-- **HTML/CSS First** — control print layout with familiar web technologies, no proprietary template language
+- **HTML/CSS First** — control print layout with familiar web technologies; or use the free [visual template designer](https://webprintpdf.com/en/designer/?utm_source=github&utm_medium=readme&utm_campaign=why) to drag-and-drop, export standard HTML, then pass it to `printHtml`
+- **AI That Understands Printing** — pair with [mcp-web-print-pdf](https://webprintpdf.com/en/ai/?utm_source=github&utm_medium=readme&utm_campaign=why) so Claude / Cursor / dsh truly understand this SDK and can take over the full developer workflow — integrate, debug, and ship (and print locally when needed)
+- **99 Online Demos** — the [demo center](https://webprintpdf.com/en/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=why) covers receipts, shipping labels, tags, watermarks, batch jobs, and more
 
 
 ## 📋 Requirements
@@ -169,6 +171,9 @@ export class PrintComponent {
 - 🎨 **Custom Styling**: Support custom headers, footers, margins and client theme colors, titles, etc.
 - 🚀 **Simple API Design**: API consistency, frontend developer friendly, low learning curve
 - 🎯 **HTML/CSS Control**: Control print layout through HTML and CSS — same skills as your web UI
+- 🧩 **Visual Template Designer**: Free [drag-and-drop designer](https://webprintpdf.com/en/designer/?utm_source=github&utm_medium=readme&utm_campaign=features) on the official site (receipts / labels / shipping), export HTML and silent-print
+- 🤖 **AI That Understands Printing**: Pair with [MCP](https://webprintpdf.com/en/ai/?utm_source=github&utm_medium=readme&utm_campaign=features) so AI truly understands this SDK and can take over the full developer workflow (integrate, debug; print locally when needed)
+- 🧪 **99 Online Demos**: [Demo center](https://webprintpdf.com/en/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=features) — runnable layouts and API samples
 - ⚡ **Async Support**: Support complete Promise/async-await syntax while maintaining event listening mechanism
 
 
@@ -489,9 +494,9 @@ If you don't want to use async, you can respond through event listening
 - **Build Tools**: Webpack, Vite, Rollup, Parcel, esbuild
 
 
-## 🤖 AI Agents / MCP Integration (optional)
+## 🤖 AI That Understands Printing / MCP Integration (optional)
 
-Want an **AI assistant** (Claude Desktop, Cursor, Cline, Codex CLI, …) to print through this library? Use the companion MCP server — [mcp-web-print-pdf](https://www.npmjs.com/package/mcp-web-print-pdf). It maps this package's public API 1:1 to MCP tools and talks to the same `ws://127.0.0.1:16794` endpoint of the Web Print Expert Client, so normal browser SDK usage is unaffected.
+Want an **AI assistant** (Claude Desktop, Cursor, Cline, Codex CLI, …) that truly understands this print SDK — so it can take over the full developer workflow: integrate, write code, debug, and ship? Use the companion MCP server — [mcp-web-print-pdf](https://www.npmjs.com/package/mcp-web-print-pdf). It maps this package's public API 1:1 to MCP tools, so the model learns the real capability boundaries and correct usage; it can also print locally when you need to verify. It talks to the same `ws://127.0.0.1:16794` endpoint of the Web Print Expert Client, so normal browser SDK usage is unaffected.
 
 ```json
 {
@@ -504,6 +509,7 @@ Want an **AI assistant** (Claude Desktop, Cursor, Cline, Codex CLI, …) to prin
 }
 ```
 
+- 🧭 [AI That Understands Printing (nav page)](https://webprintpdf.com/en/ai/?utm_source=github&utm_medium=readme&utm_campaign=mcp) — help AI understand the SDK and take over the full developer workflow; host entry points and FAQ
 - 📖 [AI printing & MCP setup guide (official)](https://webprintpdf.com/en/docs/mcp-print/?utm_source=github&utm_medium=readme&utm_campaign=mcp) — host-by-host config paths, tool reference, argument cheat sheet, pitfalls and verification checklist
 - 📦 [npm package](https://www.npmjs.com/package/mcp-web-print-pdf) · [GitHub repository](https://github.com/weixiaoyi/mcp-web-print-pdf) — source and changelog
 
@@ -550,9 +556,10 @@ Yes. Use `printImageByUrl` / `printImageByBase64` and `printPdfByUrl` / `printPd
 
 Documentation hub: [webprintpdf.com/en/docs](https://webprintpdf.com/en/docs/?utm_source=github&utm_medium=readme&utm_campaign=docs-hub)
 
-### 🧪 Online Demo Center
+### 🧪 Online Demos & Template Designer
 
-- [Online Demo Center — 25 runnable demos](https://webprintpdf.com/en/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=demos)
+- [Online Demo Center — 99 runnable demos](https://webprintpdf.com/en/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=demos)
+- [Visual Template Designer — drag, export HTML, pass to printHtml](https://webprintpdf.com/en/designer/?utm_source=github&utm_medium=readme&utm_campaign=designer)
 
 ### ⚙️ Advanced Configuration
 
@@ -585,8 +592,9 @@ Documentation hub: [webprintpdf.com/en/docs](https://webprintpdf.com/en/docs/?ut
 - [Element Plus integration](https://webprintpdf.com/en/docs/element-plus-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
 - [Ant Design integration](https://webprintpdf.com/en/docs/ant-design-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
 
-### 🤖 AI Printing & MCP
+### 🤖 AI That Understands Printing & MCP
 
+- [AI That Understands Printing (nav page)](https://webprintpdf.com/en/ai/?utm_source=github&utm_medium=readme&utm_campaign=mcp)
 - [AI printing & MCP setup guide (Claude Desktop / Cursor / Claude Code / dsh)](https://webprintpdf.com/en/docs/mcp-print/?utm_source=github&utm_medium=readme&utm_campaign=mcp)
 
 ### 🏭 Scenario Guides
@@ -620,7 +628,7 @@ Documentation hub: [webprintpdf.com/en/docs](https://webprintpdf.com/en/docs/?ut
 - [Pricing](https://webprintpdf.com/en/price/?utm_source=github&utm_medium=readme&utm_campaign=price)
 - [GitHub Repository](https://github.com/weixiaoyi/web-print-pdf)
 - [npm Package](https://www.npmjs.com/package/web-print-pdf)
-- [MCP Server — print from AI assistants](https://www.npmjs.com/package/mcp-web-print-pdf)
+- [MCP Server — help AI understand this SDK and take over the full developer workflow](https://www.npmjs.com/package/mcp-web-print-pdf)
 
 
 ## 🏷️ Tags
@@ -630,7 +638,7 @@ silent print, silent printing, no print dialog, Lodop, C-Lodop, clodop, Lodop al
 
 ## 🌐 Community & Ecosystem
 
-- **Tutorials & demos on the official site** — [Documentation hub](https://webprintpdf.com/en/docs/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem); [25 online demos](https://webprintpdf.com/en/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)
+- **Tutorials & demos on the official site** — [Documentation hub](https://webprintpdf.com/en/docs/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem); [99 online demos](https://webprintpdf.com/en/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem); [Template Designer](https://webprintpdf.com/en/designer/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem); [AI That Understands Printing](https://webprintpdf.com/en/ai/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)
 - **More code examples** — [examples/](https://github.com/weixiaoyi/web-print-pdf/tree/master/examples) (4 runnable demos), [.github/EXAMPLES.md](.github/EXAMPLES.md) (GitHub), and [online demo center](https://webprintpdf.com/en/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)
 - **Share integrations** — publish tutorials (Dev.to, Medium) linking to this package and [webprintpdf.com](https://webprintpdf.com/en/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem); open a [GitHub Discussion](https://github.com/weixiaoyi/web-print-pdf/discussions) or PR with your example
 - **Awesome Lists** — if you maintain an awesome-javascript / awesome-vue list, consider adding [web-print-pdf](https://www.npmjs.com/package/web-print-pdf) under silent printing or local print agent categories

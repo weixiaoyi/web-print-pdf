@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.12] - 2026-11-22
+
 ### Added
+- README（中/英）同步官网新能力：可视化模板设计器（`/designer`）、AI 更懂打印导航页（`/ai`）、在线样例中心 Demo 数量更新为 99
 - `.github/workflows/release.yml`：tag push 自动建 GitHub Release（notes 取自 `.github/RELEASE_v<version>.md`），master push 时补齐历史上漏发的 tag —— v2.1.10 的 Release 已由它补发
+
+### Changed
+- **AI 更懂打印**定位：从「让 AI 直接出纸」调整为「让 AI 真正理解本 SDK，从而接管接入、联调、排错等开发全流程」（需要验证时也可直接出纸）
+- README「为什么选择 / 特性 / 官网资源 / 社区」补齐模板设计器与 AI 导航入口；`examples/README.md` 同步 Demo 数量与相关链接
 
 ## [2.1.11] - 2026-10-30
 

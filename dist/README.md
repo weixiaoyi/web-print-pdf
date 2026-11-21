@@ -40,7 +40,9 @@
 - **框架无关** — Vue、React、Angular、Svelte、Next.js、Nuxt 或原生 JavaScript
 - **生产就绪** — 已在企业发票、小票、标签等场景广泛验证
 - **TypeScript 支持** — 内置完整类型定义
-- **HTML/CSS 优先** — 用熟悉的 Web 技术控制打印版式，无需专有模板语法
+- **HTML/CSS 优先** — 用熟悉的 Web 技术控制打印版式；也可使用免费 [可视化模板设计器](https://webprintpdf.com/designer/?utm_source=github&utm_medium=readme&utm_campaign=why) 拖拽导出标准 HTML，再交给 `printHtml`
+- **AI 更懂打印** — 配套 [mcp-web-print-pdf](https://webprintpdf.com/ai/?utm_source=github&utm_medium=readme&utm_campaign=why)，让 Claude / Cursor / dsh 等真正理解本 SDK，从而接管接入、联调、排错等开发全流程（需要时也可直接出纸）
+- **99 个在线 Demo** — [样例中心](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=why) 覆盖小票、面单、标签、水印、批量等常见场景
 
 
 ## 📋 环境要求
@@ -169,6 +171,9 @@ export class PrintComponent {
 - 🎨 **自定义样式**：支持自定义页眉、页脚、边距以及客户端主题色、标题等
 - 🚀 **简洁的 API 设计**：API 一致性，前端开发友好，学习成本低
 - 🎯 **HTML/CSS 控制**：用 HTML 和 CSS 控制打印版式，与 Web 界面同一套技能
+- 🧩 **可视化模板设计器**：官网免费 [拖拽设计器](https://webprintpdf.com/designer/?utm_source=github&utm_medium=readme&utm_campaign=features)（小票 / 面单 / 标签），导出 HTML 即可静默打印
+- 🤖 **AI 更懂打印**：配上 [MCP](https://webprintpdf.com/ai/?utm_source=github&utm_medium=readme&utm_campaign=features)，让 AI 真正理解本 SDK，接管开发全流程（接入、联调、排错；需要时也可直接出纸）
+- 🧪 **99 个在线 Demo**：[样例中心](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=features) 开箱可跑，快速对照版式与 API
 - ⚡ **异步支持**：完全支持 Promise/async-await 语法，同时保留事件监听机制
 
 
@@ -489,9 +494,9 @@ console.log('纸张类型:', papers);
 - **构建工具**：Webpack、Vite、Rollup、Parcel、esbuild
 
 
-## 🤖 AI 智能体 / MCP 集成（可选）
+## 🤖 AI 更懂打印 / MCP 集成（可选）
 
-想让 **AI 助手**（Claude Desktop、Cursor、Cline、Codex CLI 等）直接驱动本库打印，可使用配套的 MCP Server —— [mcp-web-print-pdf](https://www.npmjs.com/package/mcp-web-print-pdf)。它把本包的公开 API 一对一映射成 MCP 工具，连接的是同一个 `ws://127.0.0.1:16794` 与 Web 打印专家客户端，浏览器 SDK 用法不受影响。
+想让 **AI 助手**（Claude Desktop、Cursor、Cline、Codex CLI 等）真正理解本打印 SDK，从而接管接入、写代码、联调与排错等开发全流程，可使用配套的 MCP Server —— [mcp-web-print-pdf](https://www.npmjs.com/package/mcp-web-print-pdf)。它把本包的公开 API 一对一映射成 MCP 工具，AI 能摸清能力边界与正确用法；需要验证时也可直接打到本机。连接的是同一个 `ws://127.0.0.1:16794` 与 Web 打印专家客户端，浏览器 SDK 用法不受影响。
 
 ```json
 {
@@ -504,6 +509,7 @@ console.log('纸张类型:', papers);
 }
 ```
 
+- 🧭 [AI 更懂打印（官网导航页）](https://webprintpdf.com/ai/?utm_source=github&utm_medium=readme&utm_campaign=mcp) — 让 AI 理解 SDK、接管开发全流程；宿主配置入口与常见问题
 - 📖 [AI 打印与 MCP 接入指南（官网专题）](https://webprintpdf.com/docs/mcp-print/?utm_source=github&utm_medium=readme&utm_campaign=mcp) — 各宿主配置位置、工具清单、参数速查、最容易踩的坑与验证清单
 - 📦 [npm 包](https://www.npmjs.com/package/mcp-web-print-pdf) · [GitHub 仓库](https://github.com/weixiaoyi/mcp-web-print-pdf) — 源码与更新日志
 
@@ -550,9 +556,10 @@ console.log('纸张类型:', papers);
 
 文档中心：[webprintpdf.com/docs](https://webprintpdf.com/docs/?utm_source=github&utm_medium=readme&utm_campaign=docs-hub)
 
-### 🧪 在线样例中心
+### 🧪 在线样例与模板设计器
 
-- [在线样例中心 — 25 个可运行 Demo](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=demos)
+- [在线样例中心 — 99 个可运行 Demo](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=demos)
+- [可视化模板设计器 — 拖拽导出 HTML，交给 printHtml](https://webprintpdf.com/designer/?utm_source=github&utm_medium=readme&utm_campaign=designer)
 
 ### ⚙️ 进阶配置
 
@@ -585,8 +592,9 @@ console.log('纸张类型:', papers);
 - [Element Plus 静默打印](https://webprintpdf.com/docs/element-plus-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
 - [Ant Design 静默打印](https://webprintpdf.com/docs/ant-design-print/?utm_source=github&utm_medium=readme&utm_campaign=framework)
 
-### 🤖 AI 打印与 MCP 接入
+### 🤖 AI 更懂打印与 MCP 接入
 
+- [AI 更懂打印（官网导航）](https://webprintpdf.com/ai/?utm_source=github&utm_medium=readme&utm_campaign=mcp)
 - [AI 打印与 MCP 接入指南（Claude Desktop / Cursor / Claude Code / dsh）](https://webprintpdf.com/docs/mcp-print/?utm_source=github&utm_medium=readme&utm_campaign=mcp)
 
 ### 🏭 场景专题
@@ -620,7 +628,7 @@ console.log('纸张类型:', papers);
 - [定价与授权](https://webprintpdf.com/price/?utm_source=github&utm_medium=readme&utm_campaign=price)
 - [GitHub 仓库](https://github.com/weixiaoyi/web-print-pdf)
 - [npm 包](https://www.npmjs.com/package/web-print-pdf)
-- [MCP Server（让 AI 助手调用本库打印）](https://www.npmjs.com/package/mcp-web-print-pdf)
+- [MCP Server（让 AI 更懂本 SDK，接管开发全流程）](https://www.npmjs.com/package/mcp-web-print-pdf)
 
 
 ## 🏷️ 标签
@@ -630,7 +638,7 @@ console.log('纸张类型:', papers);
 
 ## 🌐 社区与生态
 
-- **官网教程与样例** — [文档中心](https://webprintpdf.com/docs/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)；[25 个在线 Demo](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)
+- **官网教程与样例** — [文档中心](https://webprintpdf.com/docs/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)；[99 个在线 Demo](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)；[模板设计器](https://webprintpdf.com/designer/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)；[AI 更懂打印](https://webprintpdf.com/ai/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)
 - **更多代码示例** — 仓库内 [examples/](https://github.com/weixiaoyi/web-print-pdf/tree/master/examples)（4 个可运行 demo）、GitHub [.github/EXAMPLES.md](.github/EXAMPLES.md) 与 [在线样例中心](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem) 互补
 - **分享集成经验** — 在掘金、CSDN、知乎等平台发布教程并链接本包与 [官网](https://webprintpdf.com/?utm_source=github&utm_medium=readme&utm_campaign=ecosystem)；欢迎通过 [GitHub Discussions](https://github.com/weixiaoyi/web-print-pdf/discussions) 或 PR 分享示例
 - **开源精选列表** — 若维护 awesome-javascript / awesome-vue 等列表，可在「静默打印 / 本地打印代理」分类下收录 [web-print-pdf](https://www.npmjs.com/package/web-print-pdf)

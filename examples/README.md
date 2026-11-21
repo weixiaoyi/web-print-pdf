@@ -45,6 +45,8 @@ npm install ../../
 ## 相关链接
 
 - 文档中心：[webprintpdf.com/docs](https://webprintpdf.com/docs/?utm_source=github&utm_medium=examples&utm_campaign=examples)
-- 25 个在线样例：[webprintpdf.com/docs/demos](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=examples&utm_campaign=examples)
+- 99 个在线样例：[webprintpdf.com/docs/demos](https://webprintpdf.com/docs/demos/?utm_source=github&utm_medium=examples&utm_campaign=examples)
+- 模板设计器：[webprintpdf.com/designer](https://webprintpdf.com/designer/?utm_source=github&utm_medium=examples&utm_campaign=examples)
+- AI 更懂打印：[webprintpdf.com/ai](https://webprintpdf.com/ai/?utm_source=github&utm_medium=examples&utm_campaign=examples)
 - 打印参数详解：[print-options](https://webprintpdf.com/docs/print-options/?utm_source=github&utm_medium=examples&utm_campaign=examples)
 - 更多代码片段：[../.github/EXAMPLES.md](../.github/EXAMPLES.md)
